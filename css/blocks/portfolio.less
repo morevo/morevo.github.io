@@ -1,0 +1,14 @@
+// main: ../style.less
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;  //Разрешаем перенос колонок на след строку если не влизают на текущую
+    margin: 0 -1rem;  //Выравниваем наши элементы .portfolio__col по центру, компенсируем padding 1rem
+    margin-bottom: 2.2rem;
+
+    &__col {
+        padding: 1rem;
+        flex-basis: 33.33333%;  //Делает то же самое что и width: 33.33333%; (Выравниваем по центру блоки)
+        text-align: center;
+    }
+}

@@ -1,0 +1,54 @@
+// compress: true             /* Сжимаем наш код в css */
+@import "vars";
+
+html {
+    font-size: 15px;          /* Теперь 1rem = 15px */
+    cursor: default;
+}
+
+body {
+    margin: 0; 
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;          /* Исп. много размеров шрифтов - плохо */
+    color: @black;            /* Переменная с цветом - черный */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;           /* Убираем margin у всех заголовков, так удобнее работать */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;   /* Алгоритм подсчетов, все padding'i во внутрь */
+                              /* padding не меняют размер наших блоков */
+}
+
+
+/* Blocks 
+============= */
+
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/user";
+@import "blocks/nav";
+@import "blocks/intro";
+@import "blocks/social";
+@import "blocks/btn";
+@import "blocks/works";
+@import "blocks/work";
+@import "blocks/portfolio";
+@import "blocks/about";
+
+
+
+
+
+
+
+
+
+
+
+

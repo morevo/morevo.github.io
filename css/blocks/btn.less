@@ -1,0 +1,53 @@
+// main: ../style.less
+
+.buttons {
+    display: flex;               /* Делаем наш блок с кнопками display-flex чтобы именно при наведении на кнопку эффект создавался в ней */
+
+    .btn {
+        display: flex;           /* И здесь тоже display-flex */
+        position: relative;
+        font-size: 1.06rem;
+        text-transform: uppercase;
+        color: @gray;
+        text-decoration: none;
+        border: 1px solid @black;
+        border-radius: 1.7rem;
+        padding: 1rem 1.7rem;    /* Задаем padding'i от текста до границ */
+        transition: .2s linear;
+        overflow: hidden;        /* Скрываем лишние элементы .border'a, чтобы наводить именно на кнопку и создавался эффект кольца */
+
+        + .btn {              /*(+ означает от текущего элемента к следующему переход) Если идёт кнопка, и после неё идет опять след. кнопка, то для второй кнопки делаем margin-left: 1rem;, и будет отступ только у второго элемента .btn, первый игнорируется */
+          margin-left: 1rem;
+        }
+    
+        &:hover {
+            background-color: @gray;
+            color: @white;
+            background-position: 0; /* Даем начальную позицию плавному затемнению кнопки */
+            box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+        }
+        .border {                  /* Делаем движение по траэктории нашей границы кнопки */
+            position: absolute;
+            left: 0;
+            top: 0;
+            fill: none;
+            stroke: @white;          /* Цвет обводки */
+            stroke-dasharray: 17 1;  /* 17(Длинна линии) 1(Расстояние между линиями) Управляет видом пунктирной обводки */
+            stroke-dashoffset: 150;  /* Задает смещение пунктирной обводки относительно первоначального положения */
+            stroke-width: 4px;       /* Толщина обводки */
+            transition: 1s ease-in-out;
+          }
+          
+          &:hover svg {
+            stroke-dashoffset: -480; /* Возвращаем в исходное положение нашу линию движения */
+          }
+    
+          & {
+            background-image: linear-gradient(45deg, #000 50%, transparent 50%);
+            background-image: fade(@black, 50%);
+            background-position: 100%;
+            background-size: 400%;
+            transition: all .4s linear;
+          }
+    }
+}

@@ -1,0 +1,58 @@
+// main:  ../style.less
+
+.about {
+    margin: 8.4rem 0;
+}
+
+.about__inner {          //Разбиваем photo и content на 2 ровные части
+    display: flex;
+}
+
+.about__photo {           
+    flex-basis: 50%;     //Аналогично что и width: 50%;
+    position: relative;
+
+    & .about__img {
+        position: relative;
+        z-index: 2;
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &:before {
+        content: "";
+        width: 413px;
+        height: 413px;
+        background-color: #EFEFEF;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+}
+
+.about__content {
+    flex-basis: 50%;     //Аналогично что и width: 50%;
+    padding: 2.66rem 1rem;
+}
+
+.about__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.about__bigtitle {
+    font-size: 6.13rem;
+    font-weight: 700;
+    color: fade(@black; 15%);
+    margin-bottom: 1rem;
+}
+
+.about__text {
+    margin-bottom: 2.66rem;
+    font-size: 0.8rem;
+    color: @gray;
+}

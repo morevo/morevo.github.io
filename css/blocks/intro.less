@@ -1,0 +1,44 @@
+// main: ../style.less
+
+.intro__inner {
+    background: url(/images/symbols.png) no-repeat right bottom;  //Распологаем наш фоновый рисунок справа, прижимаем вниз(bottom) и не повторяем(no-repeat).
+    display: flex;
+    border-bottom: 0.5px solid fade(@gray,30%);   /* Добавляем границы + непрозрачность */
+    padding-bottom: 8rem;         /* Добавляем padding снизу, чтобы отделить наш border-bottom от контента */
+    padding-top: 6.86rem;         /* Добавляем padding чтобы отделить наш контент внутрь и отлепить от шапки (6.86rem = 103px) */
+    position: relative;           /* Задаем относительное позиционирование для .intro__inner чтобы двигать нашу фотографию */
+    overflow: hidden;
+}
+
+.intro__content {         /* Разделяем поле для контента и фото */
+    width: 50%;
+
+    .intro__subtittle {
+        font-size: 2.13rem;
+        font-weight: 200;
+        color: @black;
+    }
+
+    .intro__tittle {
+        margin-bottom: 5px;
+        font-size: 3rem;
+        font-weight: 700;
+        color: @black;
+    }
+
+    .intro__text {
+        font-size: 1.2rem;               /* 18px/15px = 1.2rem (0.1rem = 1.5px) */
+        font-weight: 400;
+        color: fade(@black,70%);         /* Analog rgba только в less */
+        margin-bottom: 42px;
+    }
+}
+
+.intro__photo {           /* Позиционируем нашу фотографию относительно блока intro__inner */
+    display: block;
+    position: absolute;
+    bottom: -400px;
+    right: -220px;
+    z-index: 1;
+    height: 930px;
+}

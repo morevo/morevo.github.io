@@ -41,7 +41,7 @@
 .about__title {
     font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .about__bigtitle {
@@ -49,6 +49,34 @@
     font-weight: 700;
     color: fade(@black; 15%);
     margin-bottom: 1rem;
+
+    & span {
+        transition: all .4s linear;
+    }
+
+    & span:nth-child(2) {
+        transition-delay: .1s;
+    }
+
+    & span:nth-child(3) {
+        transition-delay: .2s;
+    }
+
+    & span:nth-child(4) {
+        transition-delay: .3s;
+    }
+    
+    & span:nth-child(5) {
+        transition-delay: .4s;
+    }
+
+    & span:nth-child(6) {
+        transition-delay: .5s;
+    }
+
+    .about__content:hover & span {
+        color: @black;
+    }
 }
 
 .about__text {

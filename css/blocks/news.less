@@ -2,6 +2,7 @@
 
 .news {
     margin-top: 12rem;
+    margin-bottom: 8.13rem;
 }
 
 .news__header {
@@ -24,16 +25,29 @@
 
 .news__items {
     display: flex;
-    margin: -1rem;
+    margin: -1.2rem;
     flex-wrap: wrap;
 }
 
 .news__item {
     flex-basis: 33.33333%;
     padding: 1rem;
+    border-radius: 1.13rem;
 
     &:hover .news__content {
         opacity: 1;
+    }
+}
+
+.news__shadow {
+    box-shadow: 0 0 4px rgb(43 42 44 / 25%);
+    border-radius: 17px;
+    border: 1px solid rgba(43,42,44,0);
+    transition: .2s linear;
+
+    &:hover {
+        box-shadow: 0 0 25px fade(@black, 25%);
+        border: 1px solid fade(@black, 30%);
     }
 }
 
@@ -41,10 +55,6 @@
     position: relative;
     border-top-left-radius: 1.13rem;
     border-top-right-radius: 1.13rem;
-}
-
-.news__content-main {
-    
 }
 
 .news__content {
@@ -58,6 +68,7 @@
     z-index: 1;
     background-color: fade(@black, 80%);
     border-top-left-radius: 1.13rem;
+    border-bottom-right-radius: 1.13rem;
     justify-content: center;
     align-items: center;
 
@@ -108,4 +119,68 @@
     .news__item:hover & span {
         color: @white;
     }
+}
+
+.news__item-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    margin-top: 1rem;
+    padding: 0 0.66rem;
+}
+
+.news__item-category {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    padding: 0 0.66rem;
+}
+
+.news__item-text {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: @gray;
+    margin-bottom: 1.2rem;
+    padding: 0 0.66rem;
+}
+
+.news__button {
+    padding: 0.67rem 0;
+    
+}
+
+.news__btn {
+    text-align: left;
+    font-size: 0.93rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @gray;
+    border: 1px solid @black;
+    border-bottom-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    padding: 0.66rem 1.33rem;
+    transition: all .2s linear;
+
+    &:hover {
+        background-color: fade(@black, 90%);
+        color: @white;
+    }
+}
+
+.news__link {
+    width: 1200px;
+    text-align: right;
+}
+
+.news__link-more {
+    font-size: 0.93rem;
+    font-weight: 400;
+    color: @gray;
+}
+
+.news__button__arrow {
+    width: 1200px;
+    margin-top: 1rem;
 }

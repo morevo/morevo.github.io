@@ -1,0 +1,145 @@
+// main: ../style.less
+
+.footer {
+    background-color: @black;
+    padding: 1.33rem 0;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__border {
+    border-color: @white;
+}
+
+.footer__date-site {
+    font-size: 0.93rem;
+    color: @gray-light;
+    font-weight: 400;
+    margin-right: 1.86rem;
+
+    &:after {
+        position: absolute;
+        content: "";
+        height: 1.33rem;
+        width: 0.066rem;
+        background-color: @gray-light;
+        margin: 0 0.66rem 0 0.66rem;
+    }
+}
+
+.footer__back-nav {
+    
+}
+
+.footer__back__links {
+    font-size: 0.93rem;
+    font-weight: 400;
+    color: @gray-light;
+    text-decoration: none;
+    margin-right: 0.66rem;
+    transition: all .2s linear;
+
+    &:hover {
+        color: @white;
+    }
+}
+
+.footer__last__link {
+    border: 1px solid @gray-light;
+    padding: 0.33rem 1.33rem;
+    border-radius: 1.7rem;
+    transition: all .2s linear;
+    text-transform: uppercase;
+
+    &:hover {
+        color: @white;
+        background-color: fade(@gray, 10%);
+    }
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__link__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid @gray;
+    margin-right: 0.33rem;
+    transition: all .2s linear;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &--one:hover {
+        background-color: fade(#1869FF, 70%);
+    }
+    &--two:hover {
+        background-color: fade(#E51A68, 70%);
+    }
+    &--three:hover {
+        background-color: fade(#007BB6,70%);
+    }
+    &--four:hover {
+        background-color: fade(#3A5898,70%);
+    }
+
+    &--five {
+        position: relative;        /* Относительно этого элемента */
+        z-index: 1;                /* Показываем обычный элемент сверху */
+    
+        &::before {                  /* Создаем новый элемент за нашей иконкой (hover плавно не покажет градиент) */
+                border-radius: 50%;  /* Закругляем */
+                position: absolute;  /* До - делаем position absolute */
+                content: "";         /* Создаем элемент (before) */
+                top: 0;          /* Распологаем наш элемент по центру нашей иконки */
+                right: 0;        /* Распологаем наш элемент по центру нашей иконки */
+                bottom: 0;       /* Распологаем наш элемент по центру нашей иконки */
+                left: 0;         /* Распологаем наш элемент по центру нашей иконки */
+                background-image:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); /* Цвет hover */
+                opacity: 0;    /* Скрываем цвет градиента */
+                z-index: -1;   /* Делаем этот элемент before за нашей иконкой */
+                transition: all .2s linear; 
+            }
+            &:hover::before {
+                opacity: 1;    /* При наведении на нашу иконку показываем цвет градиент, чтобы был плавный */
+            }
+    }
+    &--six:hover {
+        background-color: fade(#56ACEF,70%);
+    }
+    &--seven:hover {
+        background-color: fade(@black, 100%);
+    }
+    
+}
+
+.footer__item {
+    width: 2.3rem;
+    height: 2.3rem;
+    padding: 0.37rem;
+
+    &:hover .footer__icon {
+        fill: @white;
+    }
+}
+
+.footer__icon {
+    fill: @gray-light;
+    transition: all .2s linear;
+}

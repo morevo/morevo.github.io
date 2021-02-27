@@ -37,10 +37,6 @@
     }
 }
 
-.footer__back-nav {
-    
-}
-
 .footer__back__links {
     font-size: 0.93rem;
     font-weight: 400;
@@ -100,20 +96,20 @@
     }
 
     &--five {
-        position: relative;        /* Относительно этого элемента */
-        z-index: 1;                /* Показываем обычный элемент сверху */
+        position: relative;        
+        z-index: 1;                
     
-        &::before {                  /* Создаем новый элемент за нашей иконкой (hover плавно не покажет градиент) */
-                border-radius: 50%;  /* Закругляем */
-                position: absolute;  /* До - делаем position absolute */
-                content: "";         /* Создаем элемент (before) */
-                top: 0;          /* Распологаем наш элемент по центру нашей иконки */
-                right: 0;        /* Распологаем наш элемент по центру нашей иконки */
-                bottom: 0;       /* Распологаем наш элемент по центру нашей иконки */
-                left: 0;         /* Распологаем наш элемент по центру нашей иконки */
-                background-image:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); /* Цвет hover */
-                opacity: 0;    /* Скрываем цвет градиента */
-                z-index: -1;   /* Делаем этот элемент before за нашей иконкой */
+        &::before {                  
+                border-radius: 50%;  
+                position: absolute;  
+                content: "";         
+                top: 0;         
+                right: 0;       
+                bottom: 0;       
+                left: 0;         
+                background-image:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+                opacity: 0;   
+                z-index: -1;   
                 transition: all .2s linear; 
             }
             &:hover::before {

@@ -1,0 +1,182 @@
+// main: ../style.less
+
+/* Делаем одно отдельное модальное окно, так как оно отличается от других структурой, будем делать его отдельно */
+
+.modal-work {
+    display: flex;
+    border-radius: 2.3rem;
+}
+
+.modal-work__preview {
+    width: 65%;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 2.3rem;
+    border-bottom-left-radius: 2.3rem;
+}
+
+.modal-work__photo {
+    position: absolute;
+    left: 50%;    //Поставили картинку посередине
+    top: 50%;     //Поставили картинку посередине
+    z-index: 1;
+
+    transform: translate3d(-50%, -50%, 0); //Выравниваем фотографию по центру.
+
+} 
+
+.modal-work__content {
+    position: relative;
+    width: 35%;
+    padding: 3rem 3rem 1rem 3rem;
+}
+
+.modal-work__title {
+    font-size: 2.13rem;
+    font-weight: 700;
+    color: @black;
+}
+
+.modal-work__info {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 2.13rem;
+}
+
+.modal-work__cat-date {
+    color: @gray;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.modal-work__cat {
+        margin-right: 1rem;
+        position: relative;
+
+    &:after {
+        content: "";
+        width: 1px;
+        height: 1.4rem;
+        background-color: @gray;
+        
+        margin-left: 0.5rem;
+        position: absolute;
+    }
+}
+
+.modal-work__time {
+
+}
+
+.modal-work__customer {
+
+}
+
+.modal-work__user {
+    font-size: 1.13rem;
+    font-weight: 700;
+    color: @black;
+}
+
+.modal-work__name {
+    font-size: 0.93rem;
+    color: @gray;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.modal-work__text {
+    line-height: 2;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: @gray;
+    margin-bottom: 8.66rem;
+}
+
+.modal-work__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-work__button {
+    text-transform: uppercase;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    
+    &:focus {
+        outline: none;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    right: .9rem;
+    top: .9rem;
+    z-index: 1;
+    outline: none;
+    border: none;
+    background-color: @white;
+    border-radius: 50%;
+
+    &:hover .modal__pleace-img {
+        background-color: @black;
+        box-shadow: 0 0 7px fade(@black, 100%);
+        transform: scale(1.1);
+    }
+
+    &:hover .modal__close-img-icon {
+        fill: @white;
+    }
+
+    &:hover .modal__close-img {
+        transform: rotate(180deg);
+    }
+}
+
+.modal__pleace-img {
+    border: 1px solid @black;
+    border-radius: 50%;
+    transition: all .7s ease;
+    box-shadow: 0 0 5px fade(@black, 100%);
+    transform: scale(0.95);
+}
+
+.modal__close-img {
+    transition: all .7s ease;
+    display: flex;
+    height: 39px;
+    width: 39px;
+    padding: 0.55rem;
+    cursor: pointer;
+}
+
+.modal__close-img-icon {
+    transition: ease .7s all;
+    transform: scale(1);
+}
+
+.modal-work__buttons {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem 1.2rem;
+}
+
+.modal__buttons-rotate {
+    width: 40px;
+}
+
+.work__button--mod--left {
+    transform: rotate(90deg);
+}
+
+.work__button--mod--right {
+    transform: rotate(-90deg);
+}

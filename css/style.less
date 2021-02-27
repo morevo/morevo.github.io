@@ -12,6 +12,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;          /* Исп. много размеров шрифтов - плохо */
     color: @black;            /* Переменная с цветом - черный */
+
+    &.no-scroll {  //Если у тега body есть тег no-scroll, тогда ты отменяем прокрутку колесика мыши
+        overflow: hidden;  //Мы будем отменять скролл нашей страницы
+    } //Пишем тегу body тег no-scroll
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,6 +46,8 @@ h1, h2, h3, h4, h5, h6 {
 @import "blocks/about";
 @import "blocks/news";
 @import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/modal-work";
 
 
 

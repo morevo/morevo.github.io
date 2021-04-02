@@ -1,0 +1,159 @@
+// main: ../style.less
+
+.modal__resume {
+    padding: 5rem 14.4rem;
+}
+
+.modal__resume__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: @black;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 3.66rem;
+}
+
+.modal__resume__buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4.2rem;
+}
+
+.modal__resume__download {
+
+}
+
+.modal__resume__print {
+    
+}
+
+.modal__resume__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: @gray;
+    text-transform: uppercase;
+    border: 1px solid @black;
+    border-radius: 1.66rem;
+    padding: 1rem;
+    transition: .4s;
+    box-shadow: 0 0 3px fade(@black, 100%);
+    cursor: pointer;
+    margin: 0 0.5rem;
+
+    &:hover {
+        color: @white;
+        background-color: @black;
+        box-shadow: 0 0 7px fade(@black, 100%);
+        padding-right: 2rem;
+    }
+}
+
+.modal__resume__button--color {
+
+    &:hover .modal__resume__icon {
+        fill: @white;
+    }
+}
+
+.modal__resume__item {
+    position: absolute;
+    right: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    transition: all .7s ease;
+    margin-right: 0.21rem;
+    transform: scale(1);
+    transform: rotate(180deg);
+ 
+    .modal__resume__button--color:hover & {
+        transform: rotate(360deg);
+        
+    }
+}
+
+.modal__resume__icon {
+    transition: all .3s ease;
+    fill: transparent;
+}
+
+.modal__resume__main {
+    margin-bottom: 4.93rem;
+}
+
+.modal__resume__inner {
+    display: flex;
+}
+
+.modal__inner__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: @black;
+    text-transform: uppercase;
+    margin-bottom: 2.46rem;
+}
+
+.modal__inner__item {
+    margin-bottom: 2.4rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.modal__inner__subtitle {
+    font-size: 0.93rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+
+.modal__inner__work {
+    font-size: 1.06rem;
+    font-weight: 700;
+    color: @black;
+
+}
+
+.modal__inner__post {
+    font-size: 0.93rem;
+    font-style: italic;
+    font-weight: 700;
+    color: @black;
+    margin-bottom: 0.53rem;
+}
+
+.modal__inner__text {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: @gray;
+    line-height: 1.2;
+}
+
+.modal__resume__experience {
+    position: relative;
+    padding: 0 3.16rem;
+    width: 50%;
+    text-align: right;
+
+    &::after {
+        content: "";
+        width: 0.5px;
+        display: block;
+        height: 100%;
+        background-color: @gray;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+.modal__resume__education {
+    padding: 0 3.16rem;
+    width: 50%;
+    text-align: left;
+}

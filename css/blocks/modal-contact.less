@@ -1,0 +1,138 @@
+//main:  ../style.less
+
+.modal__contact {
+
+}
+
+.modal__contact__inner {
+    display: flex;
+}
+
+.modal__contact__left {
+    width: 48%;
+    padding: 2.26rem;
+}
+
+.modal__contact__title {
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+    color: @black;
+}
+
+.modal__contact__subtitle {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.modal__contact__text {
+    font-size: 1.06rem;
+    font-weight: 400;
+}
+
+.modal__contact__contacts {
+    
+}
+
+.modal__contact__item {
+    position: relative;
+    display: flex;
+
+    &:first-child {
+        padding-bottom: 0.4rem;
+    }
+}
+
+.modal__contact__hover {
+    display: flex;
+    align-items: center;
+    max-height: 2.2rem;
+    height: 100%;
+
+    font-size: 0.93rem;
+    color: @black;
+
+
+    &:hover .contact__photo__item{
+        background-color: @black;
+        box-shadow: 0 0 7px @black;
+        transform: translateX(5px);
+    }
+
+    &:hover .contact__photo {
+        transform: rotate(360deg);
+        transition: all .7s ease;
+
+    }
+
+    &:hover .contact__icon {
+        fill: @white;
+        transition: all .7s ease;
+
+    }
+
+    &:hover .contact__text {
+        transform: translateX(-5px);
+    }
+
+    &:hover .contact__text {
+        
+    }
+}
+
+.contact__photo__item {
+    display: flex;
+    border: 1px solid @black;
+    border-radius: 50%;
+    transition: all .7s ease;
+
+    box-shadow: 0 0 4px @black;
+}
+
+.contact__photo {
+    width: 2rem;
+    height: 2rem;
+
+    padding: .3rem;
+
+    transition: all .7s ease;
+}
+
+.contact__icon {
+    fill: @black;
+    transition: all .7s ease;
+}
+
+.contact__text {
+    padding: 0 0.93rem;
+    transition: all .7s ease;
+}
+
+.modal__contact__right {
+    position: relative;
+
+    width: 52%;
+    height: 676px;
+}
+
+.modal__right-photo {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate3d(-50%,-50%,0);
+    z-index: 1;
+   
+
+    width: 100%;
+    height: 100%;
+
+    border-top-right-radius: 2.3rem;
+    border-bottom-right-radius: 2.3rem;
+
+
+}
+
+.content__index {
+    z-index: 2;
+}

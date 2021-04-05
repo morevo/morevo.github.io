@@ -1,0 +1,145 @@
+//main: ../style.less
+
+.form__group {
+    margin-bottom: 2rem;
+}
+
+.form__label {
+    display: inline-block; // Делает label (inline-block) - чтобы мы могли сделать margin-bottom для label
+                           // В отличие от display: block; - display:inline-block; не добавляет разрыв строки после элемента, поэтому элемент может сидеть рядом с другими элементами.
+                           // Он игнорирует все свойства блочного элемента, не растягивается, не зависит ни от чего, просто к нему можно добавить разные свойства наподобие margin-bottom: 0.6rem;
+    margin: 0 0 0.6rem 1.6rem;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: @black;
+}
+
+.form__input, // Делаем отступы для наших полей input,textarea,до кнопки.Для этих полей одни и те же значения применяем
+.form__textarea {
+    display: block; // Чтобы растянуть input и textarea, можно и без него.
+    width: 100%;
+
+    border: 1px solid fade(@gray, 30%);
+    border-radius: 27px;
+
+    padding: 1.26rem;
+
+    transition: all .3s ease;
+
+    font-family: inherit; // Так как у input шрифты по умолчанию заданы, а font-family: Monzerat; не действует на них, меняем на наши шрифты путем наследование от родителей.
+
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    color: @black;
+
+    &:hover {
+        border: 1px solid fade(@black, 70%);
+    }
+
+    &:focus {
+        outline: none; // Убираем стандартный border при фокусе, и добавляем свой, который будет работать с radius.
+        border: 1px solid fade(@black, 70%);
+        
+    }
+
+    &::placeholder {
+        transition: all .2s ease;
+       color: @gray; // Указываем цвет для нашего placeholder
+    }
+
+    &:focus::placeholder { // Меняем цвет placefolder'a при фокусе на input и textarea
+        color: @black;
+    }
+}
+
+.form__textarea {
+    height: 200px; // Устанавливаем фиксированную высоту для textarea
+    resize: none; // Убираем произвольное расширение, растягивание окна textarea
+}
+
+.modal__form__button {
+    display: flex;
+    justify-content: center;
+    transition: all .7s ease;
+}
+
+.form__button__inner {
+    
+}
+
+.form__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    color: @black;
+
+    text-transform: uppercase;
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    background-color: transparent;
+
+    border: 1px solid @black;
+    border-radius: 27px;
+
+    padding: 1.1rem 2rem;
+
+    cursor: pointer;
+
+    transition: all .6s ease;
+
+    box-shadow: 0 0 3px fade(@black, 100%);
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: @black;
+        color: @white;
+        padding: 1.1rem 0.4rem;
+        box-shadow: 0 0 7px fade(@black, 100%);
+    }
+
+    &:hover .form__text__opacity {
+        color: transparent;
+    }
+
+    &:hover .button__icon {
+        fill: @white;
+    }
+
+    &:hover .button__item {
+        transform: rotate(360deg);
+        top: 0.7rem;
+        z-index: 1;
+    }
+}
+
+.form__text__opacity {
+    transition: all .5s ease;
+}
+
+.button__item {
+    transition: all .6s ease;
+    position: absolute;
+
+    z-index: -1;
+
+    top: -2rem;
+
+    width: 2rem;
+    height: 2rem;
+}
+
+.button__icon {
+    transition: all .5s ease;
+    fill: transparent;
+}
+

@@ -703,14 +703,14 @@
 
                 <div class="modal__resume__buttons">
                     <div class="modal__resume__download">
-                    <button class="modal__resume__button modal__resume__button--color">Download pdf
+                    <button class="modal__resume__button">Download pdf
                         <svg class="modal__resume__item">
                             <use class="modal__resume__icon" xlink:href="#download"></use>
                         </svg>
                     </button>
                 </div>
                 <div class="modal__resume__print">
-                    <button class="modal__resume__button modal__resume__button--color modal__resume__button--margin">Print
+                    <button class="modal__resume__button modal__resume__button--margin">Print
                         <svg class="modal__resume__item">
                             <use class="modal__resume__icon" xlink:href="#printer"></use>
                         </svg>
@@ -832,12 +832,11 @@
 
             <div class="modal__resume__buttons">
                 <div class="modal__resume__download">
-                <button class="modal__resume__button modal__resume__button--color">Hire Me
+                <button class="modal__resume__button">Hire Me
                     <svg class="modal__resume__item">
                         <use class="modal__resume__icon" xlink:href="#man"></use>
                     </svg>
                 </button>
-
             </div>
         </div>
     </div>
@@ -855,7 +854,6 @@
             </button>
 
             <section class="modal__contact">
-                <div class="modal__contact__inner">
                     <div class="modal__contact__left">
                         <div class="modal__contact__left-inner">
                             <div class="modal__contact__title">
@@ -872,7 +870,6 @@
                                         </svg>
                                     </div>
                                         <p class="contact__text">(380)-99-205-4196</p>
-
                                 </div>
                             </div>
                                 <div class="modal__contact__item">
@@ -886,13 +883,34 @@
                             </div>
                     </div>
                             </div>
+                            
+                            <form class="form" action="/" method="post"> <!--Тег<form> устанавливает форму на веб-странице. -->
+                                <div class="form__group">
+                                <label for="input-email" class="form__label">Adress e-mail</label> <!--Название которое выше поля для ввода. for - нужен для связки id input'a и label.-->
+                                <input class="form__input" type="text" placeholder="Adress e-mail" id="input-email"> <!-- placeholder - Текст который исчезает после ввода текста в input -->
+                            </div>
+                            <div class="form__group">
+                                <label for="textarea-message" class="form__label">Request</label> <!-- Request - запрос, заявка -->
+                                <textarea class="form__textarea" name="" id="textarea-message" placeholder="Type your request..."></textarea>
+                            </div>
+                            </form>
+
+                            <div class="modal__form__button">
+                                <div class="form__button__inner">
+                                <button class="form__button"><span class="form__text__opacity">Send</span> 
+                                    <svg class="button__item">
+                                        <use class="button__icon" xlink:href="#mail"></use>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
+
+                        </div> <!-- /modal__contact__left-inner -->
                     </div>
 
                     <div class="modal__contact__right">
                         <img class="modal__right-photo" src="https://via.placeholder.com/470x676" alt="">
                     </div>
-                </div>
             </section>
 
         </div> <!--/modal__dialog-->

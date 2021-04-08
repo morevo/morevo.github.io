@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <title>Portfolio</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Подключаем jquery CDN -->
 </head>
 <body>
 
@@ -227,7 +229,7 @@
             <div class="header__inner">    <!--Флэксовый контейнер-->
                 <div class="user">
                     <div class="user__avatar">
-                        <img src="https://placehold.it/57/333" alt="">
+                        <img src="https://via.placeholder.com/57" alt="">
                     </div>
                     <div class="user__content">
                         <div class="user__name">Ivan <br> Svilohuzov</div>
@@ -235,7 +237,7 @@
                     </div>
                 </div>
                 <nav class="nav">
-                    <a class="nav__item" href="#">
+                    <a class="nav__item" href="#" data-show="work">
                         <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                             <rect width="107" height="37" x="0.4" y="0" rx="20" ry="20" />
                           </svg>WORK
@@ -268,7 +270,7 @@
                             <use xlink:href="#portfolio"></use>
                         </svg>
                     </a>
-                    <a class="nav__item" href="#">
+                    <a class="nav__item" href="#" data-show="contact">
                         <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                             <rect width="129" height="37" x="0.4" y="0" rx="20" ry="20" />
                           </svg>CONTACT
@@ -279,7 +281,7 @@
                             <use xlink:href="#portfolio"></use>
                         </svg>
                     </a>
-                        <a class="nav__item" href="#">
+                        <a class="nav__item" href="#" data-show="contact">
                             <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                                 <rect width="121" height="37" x="0.4" y="0" rx="20" ry="20" />
                               </svg>HIRE ME
@@ -296,6 +298,7 @@
     </header>
 
     <!-- Intro -->
+
     <section class="intro">       <!--Используем section вместо div потому-что внутри есть заголовок, хорошо для SEO (поисковая оптимизация)-->
         <div class="container">
             <div class="intro__inner">    <!--Флэксовый контейнер-->
@@ -356,24 +359,24 @@
     </section>
 
     <!-- Works -->
+
     <div class="works">
         <div class="container">
-            
             <div class="works__nav">
-                <a class="works__nav-link" href="#"><span>A</span><span>l</span><span>l</span></a>
-                <a class="works__nav-link" href="#"><span>A</span><span>p</span><span>p</span></a>
-                <a class="works__nav-link" href="#"><span>W</span><span>e</span><span>b</span><span>s</span><span>i</span><span>t</span><span>e</span></a>
-                <a class="works__nav-link" href="#"><span>I</span><span>n</span><span>t</span><span>e</span><span>r</span><span>a</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span></a>
+                <a class="works__nav-link" href="#" data-filter="all"><span>A</span><span>l</span><span>l</span></a>
+                <a class="works__nav-link" href="#" data-filter="app"><span>A</span><span>p</span><span>p</span></a>
+                <a class="works__nav-link" href="#" data-filter="website"><span>W</span><span>e</span><span>b</span><span>s</span><span>i</span><span>t</span><span>e</span></a>
+                <a class="works__nav-link" href="#" data-filter="interaction"><span>I</span><span>n</span><span>t</span><span>e</span><span>r</span><span>a</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span></a>
             </div>
 
             <div class="portfolio"> <!--Portfolio будем делать disp-flex,так как он лежит в container уже-->
-                <div class="portfolio__col"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="app"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo work__photo-demo" src="images/work_2.jpg" alt="">
                     </div>
                     <div class="work__text">
-                        <div class="work__cat">Landing page</div> 
+                        <div class="work__cat">Landing page: App</div> 
                         <div class="work__info">                    <!--Для разделения Game Dev. от даты jus. cont. space between-->
                         <div class="work__title">Game Development</div>
                         <time class="work__date" datetime="2020-11-10 18:00">2020</time> <!--Используем тэг time для отображения даты, для семантики-->
@@ -381,13 +384,13 @@
                     </div>
                 </div> 
             </div>
-                <div class="portfolio__col"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="website"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
-                        <img class="work__photo" src="https://placehold.it/370x300" alt="">
+                        <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
                     <div class="work__text">
-                        <div class="work__cat">Landing page</div> 
+                        <div class="work__cat">Landing page: Website</div> 
                         <div class="work__info">
                         <div class="work__title">Game Development</div>
                         <div class="work__date">2020</div>
@@ -395,13 +398,13 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="interaction"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
-                        <img class="work__photo" src="https://placehold.it/370x300" alt="">
+                        <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
                     <div class="work__text">
-                        <div class="work__cat">Landing page</div> 
+                        <div class="work__cat">Landing page: Interaction</div> 
                         <div class="work__info">
                         <div class="work__title">Game Development</div>
                         <div class="work__date">2020</div>
@@ -409,13 +412,13 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="app"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
-                        <img class="work__photo" src="https://placehold.it/370x300" alt="">
+                        <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
                     <div class="work__text">
-                        <div class="work__cat">Landing page</div> 
+                        <div class="work__cat">Landing page: App</div> 
                         <div class="work__info">
                         <div class="work__title">Game Development</div>
                         <div class="work__date">2020</div>
@@ -423,13 +426,13 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="website"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
-                        <img class="work__photo" src="https://placehold.it/370x300" alt="">
+                        <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
                     <div class="work__text">
-                        <div class="work__cat">Landing page</div> 
+                        <div class="work__cat">Landing page: Website</div> 
                         <div class="work__info">
                         <div class="work__title">Game Development</div>
                         <div class="work__date">2020</div>
@@ -437,13 +440,13 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="interaction"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
-                        <img class="work__photo" src="https://placehold.it/370x300" alt="">
+                        <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
                     <div class="work__text">
-                        <div class="work__cat">Landing page</div> 
+                        <div class="work__cat">Landing page: Interaction</div> 
                         <div class="work__info">
                         <div class="work__title">Game Development</div>
                         <div class="work__date">2020</div>
@@ -468,7 +471,8 @@
     </div> <!--/works-->
 
 <!-- About -->
-    <section class="about">
+
+    <section class="about" data-scrollDown="scroll">
         <div class="container">
             <div class="about__inner">
                 <div class="about__photo">
@@ -497,6 +501,7 @@
     </section> <!--/about-->
 
 <!-- News -->
+
     <section class="news">
         <div class="container">
             <div class="news__header">
@@ -511,7 +516,7 @@
                             <div class="news__content-text"><span>3</span> <br> <span>J</span><span>a</span><span>n</span><span>u</span><span>a</span><span>r</span><span>y</span></div>
                         </div>
                     </div>
-                    <img src="https://placehold.it/370x300" alt="" class="news__photo">
+                    <img src="https://via.placeholder.com/370x330" alt="" class="news__photo">
                     <h5 class="news__item-title">TEN THE BEST APP IN 2017</h5>
                     <div class="news__item-category">CATEGORY</div>
                     <div class="news__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</div>
@@ -527,7 +532,7 @@
                             <div class="news__content-text"><span>1</span><span>5</span> <br> <span>F</span><span>e</span><span>b</span><span>r</span><span>u</span><span>a</span><span>r</span><span>y</span></div>
                         </div>
                     </div>
-                    <img src="https://placehold.it/370x300" alt="" class="news__photo">
+                    <img src="https://via.placeholder.com/370x330" alt="" class="news__photo">
                     <h5 class="news__item-title">WEBSITE INSPIRATION</h5>
                     <div class="news__item-category">CATEGORY</div>
                     <div class="news__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</div>
@@ -543,7 +548,7 @@
                             <div class="news__content-text"><span>2</span><span>3</span> <br> <span>F</span><span>e</span><span>b</span><span>r</span><span>u</span><span>a</span><span>r</span><span>y</span></div>
                         </div>
                     </div>
-                    <img src="https://placehold.it/370x300" alt="" class="news__photo">
+                    <img src="https://via.placeholder.com/370x330" alt="" class="news__photo">
                     <h5 class="news__item-title">CHANGES IN SOCIAL MEDIA</h5>
                     <div class="news__item-category">CATEGORY</div>
                     <div class="news__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</div>
@@ -569,6 +574,7 @@
     </section> <!-- /news -->
 
     <!-- Footer -->
+
     <footer class="footer">
         <div class="container">
         <div class="footer__inner">
@@ -625,9 +631,10 @@
     </footer>
 
     <!-- Modals --> 
-    <div class="modal" style="display: none;">  <!-- В этом блоке будет храниться маска, фон -->
+    <div class="modal" style="display: none;" data-modal="work">  <!-- В этом блоке будет храниться маска, фон -->
+
         <div class="modal__dialog"> <!-- Здесь будет содержмое модального окна -->
-            <button type="button" class="modal__close">
+            <button type="button" class="modal__close" data-exit="close">
                 <div class="modal__pleace-img">
                 <svg class="modal__close-img">
                     <use class="modal__close-img-icon" xlink:href="#close"></use>
@@ -688,9 +695,9 @@
         </div> <!--/modal__dialog-->
     </div> <!--/modal-->
 
-    <div class="modal" style="display: none;">  <!-- В этом блоке будет храниться маска, фон -->
+    <div class="modal" style="display: none;" data-modal="resume">  <!-- В этом блоке будет храниться маска, фон -->
         <div class="modal__dialog"> <!-- Здесь будет содержмое модального окна -->
-            <button type="button" class="modal__close">
+            <button type="button" class="modal__close" data-exit="close">
                 <div class="modal__pleace-img">
                 <svg class="modal__close-img">
                     <use class="modal__close-img-icon" xlink:href="#close"></use>
@@ -830,7 +837,7 @@
 </div>
         </div>
 
-            <div class="modal__resume__buttons">
+            <div class="modal__resume__buttons modal__resume__buttons--margin">
                 <div class="modal__resume__download">
                 <button class="modal__resume__button">Hire Me
                     <svg class="modal__resume__item">
@@ -844,9 +851,9 @@
     </div> <!--/modal-->
 
 
-    <div class="modal" style="display: none;">
+    <div class="modal" style="display: none;" data-modal="contact">
         <div class="modal__dialog">
-            <button type="button" class="modal__close content__index">
+            <button type="button" class="modal__close content__index" data-exit="close">
                 <div class="modal__pleace-img">
                 <svg class="modal__close-img">
                     <use class="modal__close-img-icon" xlink:href="#close"></use>
@@ -916,6 +923,7 @@
         </div> <!--/modal__dialog-->
     </div> <!--/modal-->
 
+    <script src="/js/app.js"></script> <!-- Подключаем JS файл -->
 
 </body>
 </html>

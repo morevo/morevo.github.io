@@ -41,7 +41,6 @@
     &:focus {
         outline: none; // Убираем стандартный border при фокусе, и добавляем свой, который будет работать с radius.
         border: 1px solid fade(@black, 70%);
-        
     }
 
     &::placeholder {
@@ -51,6 +50,7 @@
 
     &:focus::placeholder { // Меняем цвет placefolder'a при фокусе на input и textarea
         color: @black;
+        transform: translateY(-13px);
     }
 }
 

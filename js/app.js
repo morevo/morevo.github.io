@@ -76,6 +76,54 @@ $( () => {  // Можно напписать так или $(() => { }) или �
 
         }
     });
+
+    /* Click and scroll from (header,footer) to "about me". */
+
+    let scrollFromAbout = $(".start__about__scroll");
+    let scrollFromNews = $(".start__news__scroll");
+    let scrollFromFooter = $(".start__footer__scroll");
+    let toAbout = $(".final__about__scroll");
+    let toNews = $(".final__news__scroll");
+
+    scrollFromAbout.on("click", function(e) {
+        e.preventDefault();
+
+       let aboutDistance = toAbout.offset().top;
+        $("body, html").animate({
+            scrollTop: aboutDistance - 160,
+        }, 1500);
+    });
+
+    scrollFromNews.on("click", function(e) {
+        e.preventDefault();
+
+        let newsDistance = toNews.offset().top;
+        $("body, html").animate({
+            scrollTop: newsDistance,
+        },1500);
+    });
+
+    scrollFromFooter.on("click", function(e) {
+        e.preventDefault();
+        
+        let distance = toAbout.offset().top;
+
+        $("body, html").animate({
+            scrollTop: distance - 160,
+        },1500);
+    });
+
+    /* Create class up and fixed box arrow to up */
+    $(window).scroll( function() {
+        let up = $("[data-up]").offset().top; // Scroll count
+        
+        if(up > 1200)  {
+            $("[data-up]").fadeTo("slow", 1, "swing"); 
+        }else {   //...
+            
+        }
+    });
+
 });
 
 /* Scroll event - about */

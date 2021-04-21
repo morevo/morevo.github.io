@@ -34,10 +34,6 @@
     flex-basis: 33.33333%;
     padding: 1rem;
     border-radius: 1.13rem;
-
-    &:hover .news__content {
-        opacity: 1;
-    }
 }
 
 .news__shadow {
@@ -49,6 +45,10 @@
     &:hover {
         box-shadow: 0 0 25px fade(@black, 25%);
         border: 1px solid fade(@black, 30%);
+    }
+
+    &:hover .news__content {
+        opacity: 1;
     }
 }
 

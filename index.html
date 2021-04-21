@@ -248,7 +248,7 @@
                             <use xlink:href="#portfolio"></use>
                         </svg>
                     </a>
-                    <a class="nav__item" href="#">
+                    <a class="nav__item start__about__scroll" href="#">
                         <svg width="180px" height="60px" viewBox="0 0 180 60" class="border"> <!--Делаем размер по которому двигается линия-->
                             <rect width="138" height="37" x="0.4" y="0" rx="20" ry="20" /><!--Делаем полукруглую траэкт. по кнопке + располо-->
                           </svg>ABOUT ME
@@ -259,21 +259,10 @@
                             <use xlink:href="#portfolio"></use>
                         </svg>
                     </a>
-                    <a class="nav__item" href="#">
+                    <a class="nav__item start__news__scroll" href="#">
                         <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                             <rect width="101" height="37" x="0.4" y="0" rx="20" ry="20" />
                           </svg>BLOG
-                        <svg class="nav__item--icon">
-                            <use xlink:href="#portfolio"></use>
-                        </svg>
-                        <svg class="nav__item--icon--right">
-                            <use xlink:href="#portfolio"></use>
-                        </svg>
-                    </a>
-                    <a class="nav__item" href="#" data-show="contact">
-                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                            <rect width="129" height="37" x="0.4" y="0" rx="20" ry="20" />
-                          </svg>CONTACT
                         <svg class="nav__item--icon">
                             <use xlink:href="#portfolio"></use>
                         </svg>
@@ -296,6 +285,19 @@
             </div> <!--/header__inner-->
         </div> <!--/container-->
     </header>
+
+    <div class="btn__up__header disp__block" data-up="show">
+        <div class="work__button">
+            <a class="btn-works btn-up-center" href="#">
+                <svg class="work__item work__item--up">
+                    <use class="work__icon" xlink:href="#arrow"></use>
+                </svg>
+                <svg class="work__item work__item--down">
+                    <use class="work__icon" xlink:href="#arrow"></use>
+                </svg>
+            </a>
+            </div>
+    </div>
 
     <!-- Intro -->
 
@@ -344,10 +346,10 @@
                         </a>
                     </div>
                     <div class="buttons">
-                    <a class="btn" href="#"><svg width="217px" height="170px" viewBox="0 0 180 110" class="border">
+                    <a class="btn" href="#"><svg width="217px" height="170px" viewBox="0 0 180 110" class="border" data-show="contact">
                         <rect width="96.6" height="37" x="1.7" y="-14" rx="20" ry="20" />
                       </svg>HIRE ME</a>
-                    <a class="btn" href="#">
+                    <a class="btn" href="#" data-show="resume">
                         <svg width="217px" height="170px" viewBox="0 0 180 110" class="border">
                             <rect width="150.5" height="37" x="1.8" y="-14" rx="20" ry="20" />
                           </svg>SEE MY RESUME</a>
@@ -474,7 +476,7 @@
 
     <section class="about" data-scrollDown="scroll">
         <div class="container">
-            <div class="about__inner">
+            <div class="about__inner final__about__scroll">
                 <div class="about__photo">
                     <img class="about__img" src="/images/photo2.png" alt="">
                 </div>
@@ -487,10 +489,10 @@
                         <p>Suspendisse placerat, quam vitae ullamcorper sollicitudin, dui ligula molestie massa, sit amet laoreet nibh ex vitae dui. Aenean laoreet pellentesque lacus, eget varius massa mattis quis. Nunc ultrices urna eu nunc lobortis pulvinar. Duis viverra, quam non imperdiet scelerisque, urna nunc consequat velit, in mollis erat nibh in libero.</p>
                     </div>
                     <div class="buttons">
-                        <a class="btn" href="#"><svg width="217px" height="170px" viewBox="0 0 180 110" class="border">
+                        <a class="btn" href="#"><svg width="217px" height="170px" viewBox="0 0 180 110" class="border" data-show="contact">
                             <rect width="96.6" height="37" x="1.7" y="-14" rx="20" ry="20" />
                           </svg>HIRE ME</a>
-                        <a class="btn" href="#">
+                        <a class="btn" href="#" data-show="resume">
                             <svg width="217px" height="170px" viewBox="0 0 180 110" class="border">
                                 <rect width="150.5" height="37" x="1.8" y="-14" rx="20" ry="20" />
                               </svg>SEE MY RESUME</a>
@@ -502,7 +504,7 @@
 
 <!-- News -->
 
-    <section class="news">
+    <section class="news final__news__scroll">
         <div class="container">
             <div class="news__header">
                 <h3 class="news__title">Read me</h3>
@@ -620,10 +622,9 @@
         </div>
             <nav class="footer__back-nav">
                 <a class="footer__back__links" href="#">Work</a>
-                <a class="footer__back__links" href="#">About Me</a>
+                <a class="footer__back__links start__footer__scroll" href="#">About Me</a>
                 <a class="footer__back__links" href="#">Blog</a>
-                <a class="footer__back__links" href="#">Contact</a>
-                <a class="footer__back__links footer__last__link" href="#">Hire Me</a>
+                <a class="footer__back__links footer__last__link" href="#" data-show="contact">Hire Me</a>
             </nav>  
         
         </div>
@@ -839,7 +840,7 @@
 
             <div class="modal__resume__buttons modal__resume__buttons--margin">
                 <div class="modal__resume__download">
-                <button class="modal__resume__button">Hire Me
+                <button class="modal__resume__button" data-show="contact">Hire Me
                     <svg class="modal__resume__item">
                         <use class="modal__resume__icon" xlink:href="#man"></use>
                     </svg>
@@ -891,26 +892,27 @@
                     </div>
                             </div>
                             
-                            <form class="form" action="/" method="post"> <!--Тег<form> устанавливает форму на веб-странице. -->
+                            <form class="form" action="/php/handler.php" method="POST" name="form"> <!--Тег<form> устанавливает форму на веб-странице. -->
                                 <div class="form__group">
                                 <label for="input-email" class="form__label">Adress e-mail</label> <!--Название которое выше поля для ввода. for - нужен для связки id input'a и label.-->
-                                <input class="form__input" type="text" placeholder="Adress e-mail" id="input-email"> <!-- placeholder - Текст который исчезает после ввода текста в input -->
-                            </div>
+                                <input class="form__input form__width" type="text" placeholder="Adress e-mail" id="input-email" name="email"> <!-- placeholder - Текст который исчезает после ввода текста в input -->
+                        </div>
+
                             <div class="form__group">
                                 <label for="textarea-message" class="form__label">Request</label> <!-- Request - запрос, заявка -->
-                                <textarea class="form__textarea" name="" id="textarea-message" placeholder="Type your request..."></textarea>
+                                <textarea class="form__textarea" id="textarea-message" placeholder="Type your request..." name="message"></textarea>
                             </div>
-                            </form>
-
+                            
                             <div class="modal__form__button">
                                 <div class="form__button__inner">
-                                <button class="form__button"><span class="form__text__opacity">Send</span> 
+                                <button type="submit" class="form__button"><span class="form__text__opacity">Send</span> 
                                     <svg class="button__item">
                                         <use class="button__icon" xlink:href="#mail"></use>
                                     </svg>
                                 </button>
                             </div>
                         </div>
+                    </form>
 
                         </div> <!-- /modal__contact__left-inner -->
                     </div>

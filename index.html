@@ -224,7 +224,7 @@
 
     <!-- Header -->
 
-    <header class="header">
+    <header class="header final__up__scroll">
         <div class="container">
             <div class="header__inner">    <!--Флэксовый контейнер-->
                 <div class="user">
@@ -286,9 +286,9 @@
         </div> <!--/container-->
     </header>
 
-    <div class="btn__up__header disp__block" data-up="show">
+    <div class="btn__up__header disp__block start__up__scroll" data-up="show" style="transition: all 0.8s ease;">
         <div class="work__button">
-            <a class="btn-works btn-up-center" href="#">
+            <a class="btn-works btn-up-center btn-cursor-default" href="#">
                 <svg class="work__item work__item--up">
                     <use class="work__icon" xlink:href="#arrow"></use>
                 </svg>
@@ -309,37 +309,37 @@
                     <h1 class="intro__tittle">Ivan Svilohuzov</h1>
                     <div class="intro__text">Beginner Front-end Developer</div>
                     <div class="social">
-                        <a class="social__link social__link--bg--one" href="#">
+                        <a class="social__link social__link--bg--one" href="https://www.behance.net/svilohuzov3da0">
                             <svg class="social__item">
                                 <use class="social__icon" xlink:href="#behance"></use>
                             </svg>
                         </a>
-                        <a class="social__link social__link--bg--two" href="#">
+                        <a class="social__link social__link--bg--two" href="https://dribbble.com/Bombur">
                             <svg class="social__item">
                                 <use class="social__icon" xlink:href="#dribbble"></use>
                             </svg>
                         </a>
-                        <a class="social__link social__link--bg--three" href="#">
+                        <a class="social__link social__link--bg--three" href="https://www.linkedin.com/in/ivan-svilohuzov-a0205a208/">
                             <svg class="social__item">
                                 <use class="social__icon" xlink:href="#linkedin"></use>
                             </svg>
                         </a>
-                        <a class="social__link social__link--bg--four" href="#">
+                        <a class="social__link social__link--bg--four" href="https://www.facebook.com/svilohuzov.ivan/">
                             <svg class="social__item">
                                 <use class="social__icon" xlink:href="#facebook"></use>
                             </svg>
                         </a>
-                        <a class="social__link social__link--bg--five" href="#">
+                        <a class="social__link social__link--bg--five" href="https://www.instagram.com/ivansviloguzov/">
                             <svg class="social__item">
                                 <use class="social__icon" xlink:href="#instagram"></use>
                             </svg>
                         </a>
-                        <a class="social__link social__link--bg--six" href="#">
+                        <a class="social__link social__link--bg--six" href="https://twitter.com/ivanSvilohuzov">
                             <svg class="social__item">
                                 <use class="social__icon" xlink:href="#twitter"></use>
                             </svg>
                         </a>
-                        <a href="#" class="social__link social__link--bg--seven">
+                        <a class="social__link social__link--bg--seven" href="https://github.com/morevo">
                             <svg class="social__item-git">
                                 <use class="social__icon" xlink:href="#github"></use>
                             </svg>
@@ -372,7 +372,7 @@
             </div>
 
             <div class="portfolio"> <!--Portfolio будем делать disp-flex,так как он лежит в container уже-->
-                <div class="portfolio__col" data-category="app"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="app" data-show="work"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo work__photo-demo" src="images/work_2.jpg" alt="">
@@ -386,7 +386,7 @@
                     </div>
                 </div> 
             </div>
-                <div class="portfolio__col" data-category="website"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="website" data-show="work"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
@@ -400,7 +400,7 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="interaction"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="interaction" data-show="work"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
@@ -414,7 +414,7 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="app"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="app" data-show="work"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
@@ -428,7 +428,7 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="website"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="website" data-show="work"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
@@ -442,7 +442,7 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="interaction"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="interaction" data-show="work"> <!--Отвечает за ширину каждой колонки-->
                     <div class="work__shadow">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
@@ -583,37 +583,37 @@
             <div class="footer__left">
             <div class="footer__date-site">© 2021 UI43 - Free Templates</div>
             <div class="footer__nav">
-                <a href="#" class="footer__link__icon footer__link__icon--one">
+                <a href="https://www.behance.net/svilohuzov3da0" class="footer__link__icon footer__link__icon--one">
                     <svg class="footer__item">
                         <use class="footer__icon" xlink:href="#behance"></use>
                     </svg>
                 </a>
-                <a href="#" class="footer__link__icon footer__link__icon--two">
+                <a href="https://dribbble.com/Bombur" class="footer__link__icon footer__link__icon--two">
                     <svg class="footer__item">
                         <use class="footer__icon" xlink:href="#dribbble"></use>
                     </svg>
                 </a>
-                <a href="#" class="footer__link__icon footer__link__icon--three">
+                <a href="https://www.linkedin.com/in/ivan-svilohuzov-a0205a208/" class="footer__link__icon footer__link__icon--three">
                     <svg class="footer__item">
                         <use class="footer__icon" xlink:href="#linkedin"></use>
                     </svg>
                 </a>
-                <a href="#" class="footer__link__icon footer__link__icon--four">
+                <a href="https://www.facebook.com/svilohuzov.ivan/" class="footer__link__icon footer__link__icon--four">
                     <svg class="footer__item">
                         <use class="footer__icon" xlink:href="#facebook"></use>
                     </svg>
                 </a>
-                <a href="#" class="footer__link__icon footer__link__icon--five">
+                <a href="https://www.instagram.com/ivansviloguzov/" class="footer__link__icon footer__link__icon--five">
                     <svg class="footer__item">
                         <use class="footer__icon" xlink:href="#instagram"></use>
                     </svg>
                 </a>
-                <a href="#" class="footer__link__icon footer__link__icon--six">
+                <a href="https://twitter.com/ivanSvilohuzov" class="footer__link__icon footer__link__icon--six">
                     <svg class="footer__item">
                         <use class="footer__icon" xlink:href="#twitter"></use>
                     </svg>
                 </a>
-                <a href="#" class="footer__link__icon footer__link__icon--seven">
+                <a href="https://github.com/morevo" class="footer__link__icon footer__link__icon--seven">
                     <svg class="footer__item">
                         <use class="footer__icon" xlink:href="#github"></use>
                     </svg>
@@ -621,9 +621,9 @@
             </div>
         </div>
             <nav class="footer__back-nav">
-                <a class="footer__back__links" href="#">Work</a>
+                <a class="footer__back__links" href="#" data-show="work">Work</a>
                 <a class="footer__back__links start__footer__scroll" href="#">About Me</a>
-                <a class="footer__back__links" href="#">Blog</a>
+                <a class="footer__back__links start__news__scroll" href="#">Blog</a>
                 <a class="footer__back__links footer__last__link" href="#" data-show="contact">Hire Me</a>
             </nav>  
         

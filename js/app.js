@@ -82,8 +82,10 @@ $( () => {  // Можно напписать так или $(() => { }) или �
     let scrollFromAbout = $(".start__about__scroll");
     let scrollFromNews = $(".start__news__scroll");
     let scrollFromFooter = $(".start__footer__scroll");
+    let scrollFromUp = $(".start__up__scroll");
     let toAbout = $(".final__about__scroll");
     let toNews = $(".final__news__scroll");
+    let toHeader = $(".final__up__scroll");
 
     scrollFromAbout.on("click", function(e) {
         e.preventDefault();
@@ -113,17 +115,28 @@ $( () => {  // Можно напписать так или $(() => { }) или �
         },1500);
     });
 
+    scrollFromUp.on("click", function(e) {
+        e.preventDefault();
+        
+        let distance = toHeader.offset().top;
+        $("body, html").animate({
+            scrollTop: distance,
+        },1500);
+    });
+
     /* Create class up and fixed box arrow to up */
     $(window).scroll( function() {
         let up = $("[data-up]").offset().top; // Scroll count
         
         if(up > 1200)  {
-            $("[data-up]").fadeTo("slow", 1, "swing"); 
-        }else {   //...
-            
+            $("[data-up]").css("opacity", "1");  
+            $("[data-up] a").css("cursor", "pointer");  
+        } else {
+            $("[data-up]").css("opacity", "0");
+            $("[data-up] a").css("cursor", "");
         }
+        
     });
-
 });
 
 /* Scroll event - about */

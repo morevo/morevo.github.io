@@ -43,7 +43,6 @@ $( () => {  // Можно напписать так или $(() => { }) или �
 
     showModal.on("click", function(event) {
         event.preventDefault();
-
         let show = $(this).data("show");
 
         $("[data-modal]").each( function() {
@@ -62,12 +61,12 @@ $( () => {  // Можно напписать так или $(() => { }) или �
                     setTimeout( () => $(this).fadeIn("slow","swing")); 
                 });
             }
-            
         });
+        $("#worksSlider").slick("setPosition"); // After open modal window, slider set in center default position, don't outside
     });
 
 /* Click outside and hide modal - modal__dialog */
-    $(document).mouseup( function(e) {
+    $(document).mouseup(function(e) {
         let clickOut = $(".modal__dialog");
 
         if(!clickOut.is(e.target) && clickOut.has(e.target).length === 0) { // Если .modal__dialog не будет таргетом
@@ -125,7 +124,7 @@ $( () => {  // Можно напписать так или $(() => { }) или �
     });
 
     /* Create class up and fixed box arrow to up */
-    $(window).scroll( function() {
+    $(window).scroll(function() {
         let up = $("[data-up]").offset().top; // Scroll count
         
         if(up > 1200)  {
@@ -137,10 +136,10 @@ $( () => {  // Можно напписать так или $(() => { }) или �
         }
         
     });
-});
+    });
 
 /* Scroll event - about */
-$(window).scroll( function() {
+$(window).scroll(function() {
 
     let scrollDown = $("[data-scrollDown]").offset().top;
     if($(this).scrollTop() > scrollDown - 607 && $(this).scrollTop() < scrollDown + 100 ) {
@@ -154,3 +153,46 @@ $(window).scroll( function() {
         $(".about__bigtitle").removeClass("hover__off")
     }
 });
+
+/* Slick Slider: http://kenwheeler.github.io/slick/ */
+
+$('#worksSlider').slick({
+    infinite: true, // Infinity slide images
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows: false,
+    dots: true
+  });
+
+  let slick = $("[data-slick]");
+
+  slick.on("click", function(e) {
+    e.preventDefault();
+    let slickSwitch = $(this).data("slick");
+
+    switch(slickSwitch) {
+        case "previous": $("#worksSlider").slick("slickPrev");
+        break;
+
+        case "next": $("#worksSlider").slick("slickNext");
+        break;
+    }  
+});
+
+
+
+  /* Make different modals (work) for block (works) */
+    function ProjectConstructor(name, desc, cat) {    // Processing...
+        this.name = name;
+        this.desc = desc;
+        this.cat = cat;
+
+    }
+
+let infoModal = new ProjectConstructor("Hello", "asda", "asdasd");
+
+
+$(".modal-work__title").text(infoModal.name);
+$(".modal-work__text").text(infoModal.desc);
+$(".modal-work__cat").text(infoModal.cat);

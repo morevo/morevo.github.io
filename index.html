@@ -372,8 +372,8 @@
             </div>
 
             <div class="portfolio"> <!--Portfolio будем делать disp-flex,так как он лежит в container уже-->
-                <div class="portfolio__col" data-category="app" data-show="work"> <!--Отвечает за ширину каждой колонки-->
-                    <div class="work__shadow">
+                <div class="portfolio__col" data-category="app"> <!--Отвечает за ширину каждой колонки-->
+                    <div class="work__shadow" data-show="work">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo work__photo-demo" src="images/work_2.jpg" alt="">
                     </div>
@@ -386,8 +386,8 @@
                     </div>
                 </div> 
             </div>
-                <div class="portfolio__col" data-category="website" data-show="work"> <!--Отвечает за ширину каждой колонки-->
-                    <div class="work__shadow">
+                <div class="portfolio__col" data-category="website"> <!--Отвечает за ширину каждой колонки-->
+                    <div class="work__shadow" data-show="work">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
@@ -400,8 +400,8 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="interaction" data-show="work"> <!--Отвечает за ширину каждой колонки-->
-                    <div class="work__shadow">
+                <div class="portfolio__col" data-category="interaction"> <!--Отвечает за ширину каждой колонки-->
+                    <div class="work__shadow" data-show="work">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
@@ -414,8 +414,8 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="app" data-show="work"> <!--Отвечает за ширину каждой колонки-->
-                    <div class="work__shadow">
+                <div class="portfolio__col" data-category="app"> <!--Отвечает за ширину каждой колонки-->
+                    <div class="work__shadow" data-show="work">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
@@ -428,8 +428,8 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="website" data-show="work"> <!--Отвечает за ширину каждой колонки-->
-                    <div class="work__shadow">
+                <div class="portfolio__col" data-category="website"> <!--Отвечает за ширину каждой колонки-->
+                    <div class="work__shadow" data-show="work">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
@@ -442,8 +442,8 @@
                     </div>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="interaction" data-show="work"> <!--Отвечает за ширину каждой колонки-->
-                    <div class="work__shadow">
+                <div class="portfolio__col" data-category="interaction"> <!--Отвечает за ширину каждой колонки-->
+                    <div class="work__shadow" data-show="work">
                     <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
                         <img class="work__photo" src="https://via.placeholder.com/370x330" alt="">
                     </div>
@@ -642,9 +642,22 @@
                 </svg>
         </div>
             </button>
-            <div class="modal-work"> 
+            <div class="modal-work">  <!-- После открытия работ, сделать иконки использующихся стэков технологий (JS, CSS, LESS, PHP...) -->
+                
                 <div class="modal-work__preview">
-                    <img class="modal-work__photo" src="https://via.placeholder.com/790x780/" alt="">
+                    <div id="worksSlider">
+                        <div>
+                            <img class="modal-work__photo" src="https://via.placeholder.com/790x780/" alt="">
+                        </div>
+
+                        <div>
+                            <img class="modal-work__photo" src="https://via.placeholder.com/790x780/333" alt="">
+                        </div>
+
+                         <div>
+                            <img class="modal-work__photo" src="https://via.placeholder.com/790x780/10000" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-work__content">
                     <section class="modal-work__header">
@@ -668,7 +681,7 @@
                         <div class="modal-work__buttons">
                             <div class="news__button__arrow modal__buttons-rotate">
                                 <div class="work__button work__button--mod--left">
-                                    <a class="btn-works" href="#">
+                                    <a class="btn-works" href="#" data-slick="previous">
                                         <svg class="work__item work__item--up">
                                             <use class="work__icon" xlink:href="#arrow"></use>
                                         </svg>
@@ -680,7 +693,7 @@
                                 </div>
                                 <div class="news__button__arrow modal__buttons-rotate">
                                     <div class="work__button work__button--mod--right">
-                                        <a class="btn-works" href="#">
+                                        <a class="btn-works" href="#" data-slick="next">
                                             <svg class="work__item work__item--up">
                                                 <use class="work__icon" xlink:href="#arrow"></use>
                                             </svg>
@@ -925,7 +938,9 @@
         </div> <!--/modal__dialog-->
     </div> <!--/modal-->
 
-    <script src="/js/app.js"></script> <!-- Подключаем JS файл -->
+    <!--JS-->
+    <script src="/css/vendor/slick.min.js"></script>
+    <script src="/js/app.js"></script>
 
 </body>
 </html>

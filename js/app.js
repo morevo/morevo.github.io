@@ -82,9 +82,11 @@ $( () => {  // Можно напписать так или $(() => { }) или �
     let scrollFromNews = $(".start__news__scroll");
     let scrollFromFooter = $(".start__footer__scroll");
     let scrollFromUp = $(".start__up__scroll");
+    let scrollFromWorks = $(".start__works__scroll");
     let toAbout = $(".final__about__scroll");
     let toNews = $(".final__news__scroll");
     let toHeader = $(".final__up__scroll");
+    let toWorks = $(".final__works__scroll");
 
     scrollFromAbout.on("click", function(e) {
         e.preventDefault();
@@ -122,6 +124,17 @@ $( () => {  // Можно напписать так или $(() => { }) или �
             scrollTop: distance,
         },1500);
     });
+
+    scrollFromWorks.on("click", function(e) {
+        e.preventDefault();
+
+        let distance = toWorks.offset().top;
+        $("body, html").animate({
+            scrollTop: distance,
+        },1500);
+    });
+
+    
 
     /* Create class up and fixed box arrow to up */
     $(window).scroll(function() {
@@ -180,19 +193,96 @@ $('#worksSlider').slick({
     }  
 });
 
-
-
   /* Make different modals (work) for block (works) */
-    function ProjectConstructor(name, desc, cat) {    // Processing...
+    function ProjectConstructor(name, cat, year, customer, desc) {    // Processing...
         this.name = name;
-        this.desc = desc;
         this.cat = cat;
-
+        this.year = year;
+        this.customer = customer;
+        this.desc = desc;
+        
     }
 
-let infoModal = new ProjectConstructor("Hello", "asda", "asdasd");
+let infoModal = new ProjectConstructor("Hello", "asda", "2021","Agency good", "Nice project");
+let infoModalTwo = new ProjectConstructor("SSSS", "SSSSSasSSSSSda", "2021", "asgasasd", "cxcbx");
+let infoModalThree = new ProjectConstructor("TTTT", "SSSSSasSSSSSda", "2021", "dfgsd", "awrwet");
+let infoModalFour = new ProjectConstructor("YYYY", "SSSSSasSSSSSda", "2021", "dsfgsdf", "yioty");
+let infoModalFive = new ProjectConstructor("HHHH", "SSSSSasSSSSSda", "2021", "sdfgsdfg", "23412");
+let infoModalSix = new ProjectConstructor("ZZZZ", "SSSSSasSSSSSda", "2021", "dsfgsdf", "dsfj4s");
 
+let target = $("[data-target]");
 
-$(".modal-work__title").text(infoModal.name);
-$(".modal-work__text").text(infoModal.desc);
-$(".modal-work__cat").text(infoModal.cat);
+target.on("click", function(e) {
+    e.preventDefault();
+
+    let workTarget = $(this).data("target");
+
+    switch(workTarget) {
+        case "work-one": 
+        $(".modal-work__title").text(infoModal.name);
+        $(".modal-work__cat").text(infoModal.cat);
+        $(".modal-work__date").text(infoModal.date);
+        $(".modal-work__name").text(infoModal.customer);
+        $(".modal-work__text").text(infoModal.desc);
+        $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
+        $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
+        $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+        break;
+
+        case "work-two": 
+        $(".modal-work__title").text(infoModalTwo.name);
+        $(".modal-work__text").text(infoModalTwo.cat);
+        $(".modal-work__date").text(infoModalTwo.date);
+        $(".modal-work__name").text(infoModalTwo.customer);
+        $(".modal-work__cat").text(infoModalTwo.desc);
+        $(".modal-work__photo-one").attr("src", "../images/facebook.svg"); // Get src par. and change after click at work item
+        $(".modal-work__photo-two").attr("src", "../images/instagram.svg");
+        $(".modal-work__photo-three").attr("src", "../images/mail.svg");
+        break;
+
+        case "work-three": 
+        $(".modal-work__title").text(infoModalThree.name);
+        $(".modal-work__text").text(infoModalThree.cat);
+        $(".modal-work__date").text(infoModalThree.date);
+        $(".modal-work__name").text(infoModalThree.customer);
+        $(".modal-work__cat").text(infoModalThree.desc);
+        $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
+        $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
+        $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+        break;
+
+        case "work-four": 
+        $(".modal-work__title").text(infoModalFour.name);
+        $(".modal-work__text").text(infoModalFour.cat);
+        $(".modal-work__date").text(infoModalFour.date);
+        $(".modal-work__name").text(infoModalFour.customer);
+        $(".modal-work__cat").text(infoModalFour.desc);
+        $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
+        $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
+        $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+        break;
+
+        case "work-five": 
+        $(".modal-work__title").text(infoModalFive.name);
+        $(".modal-work__text").text(infoModalFive.cat);
+        $(".modal-work__date").text(infoModalFive.date);
+        $(".modal-work__name").text(infoModalFive.customer);
+        $(".modal-work__cat").text(infoModalFive.desc);
+        $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
+        $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
+        $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+        break;
+
+        case "work-six": 
+        $(".modal-work__title").text(infoModalSix.name);
+        $(".modal-work__text").text(infoModalSix.cat);
+        $(".modal-work__date").text(infoModalSix.date);
+        $(".modal-work__name").text(infoModalSix.customer);
+        $(".modal-work__cat").text(infoModalSix.desc);
+        $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
+        $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
+        $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+        break;
+    }
+});
+

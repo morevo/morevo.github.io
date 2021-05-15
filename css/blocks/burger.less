@@ -1,0 +1,60 @@
+// main: ../style.less
+
+.burger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 1.6rem;
+  height: 4px;
+  background: @black;
+
+  bottom: 30px;
+
+  border-radius: @radius;
+
+  &::before {
+    position: absolute;
+    top: .4rem;
+    right: 0;
+
+    content: "";
+    width: 1.9rem;
+    height: 4px;
+    background: @black;
+
+    border-radius: @radius;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: .4rem;
+    right: 0;
+    content: "";
+    width: 1.3rem;
+    height: 4px;
+    background: @black;
+
+    border-radius: @radius;
+
+    }
+
+    @media @tablet {
+        & {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+  }
+
+}
+
+.nav__burger {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    width: 1.85rem;
+    height: 1.2rem;
+    cursor: pointer;
+}

@@ -50,8 +50,7 @@ $( () => {  // Можно напписать так или $(() => { }) или �
             if(show == modal) {
                 $(this).fadeIn("slow","swing");
                 $("body").addClass("scroll__off");
-            }
-            else {
+            }else {
                 let close = $("[data-exit]");
 
                 close.on("click", function() {
@@ -147,6 +146,61 @@ $( () => {  // Можно напписать так или $(() => { }) или �
             $("[data-up]").css("opacity", "0");
             $("[data-up] a").css("cursor", "");
         }
+    });
+
+    /* Burger */
+    let burgerNav = $(".nav__burger");  // Element on click, and show menu nav.
+    let burgerBack =  $(".nav__burger__back"); // Element on click, and hive menu nav back.
+
+    let timer = $("[data-timer]");
+
+    burgerNav.on("click", function() {
+    
+
+
+        $(burgerBack).css("z-index","4");
+        $(burgerNav).css("z-index","3");
+        let timerItem = $(timer).each(function() {
+            let item = $(this).data("timer");
+            
+
+                setTimeout( () => {
+                    $("[data-timer='item-one']").addClass("nav__rotate");
+                 }, 100 );
+               setTimeout( () => {
+                    $("[data-timer='item-two']").addClass("nav__rotate");
+                 }, 150 );
+               setTimeout( () => {
+                    $("[data-timer='item-three']").addClass("nav__rotate");
+                  }, 200 );
+               setTimeout( () => {
+                    $("[data-timer='item-four']").addClass("nav__rotate");
+                 }, 250 );
+
+            burgerBack.on("click", function() {
+                $(burgerNav).css("z-index","4"); // Switch z-index's. Show and hide nav menu.
+                $(burgerBack).css("z-index","3");
+
+       
+                   setTimeout( () => {
+                        $("[data-timer='item-one']").removeClass("nav__rotate");
+                     }, 100 );
+                    setTimeout( () => {
+                        $("[data-timer='item-two']").removeClass("nav__rotate");
+                     }, 150 );
+                   setTimeout( () => {
+                        $("[data-timer='item-three']").removeClass("nav__rotate");
+                      }, 200 );
+                   setTimeout( () => {
+                        $("[data-timer='item-four']").removeClass("nav__rotate");
+                     }, 250 );
+
+
+            });
+        });  
+        
+       
+
         
     });
     });
@@ -155,7 +209,7 @@ $( () => {  // Можно напписать так или $(() => { }) или �
 $(window).scroll(function() {
 
     let scrollDown = $("[data-scrollDown]").offset().top;
-    if($(this).scrollTop() > scrollDown - 607 && $(this).scrollTop() < scrollDown + 100 ) {
+    if($(this).scrollTop() > scrollDown - 290 && $(this).scrollTop() < scrollDown - 100 ) {
         
         $(".about__bigtitle").addClass("hover__on");  
 
@@ -180,18 +234,22 @@ $('#worksSlider').slick({
 
   let slick = $("[data-slick]");
 
-  slick.on("click", function(e) {
-    e.preventDefault();
-    let slickSwitch = $(this).data("slick");
+    slick.on("click", function(e) {
+      e.preventDefault();
+      let slickSwitch = $(this).data("slick");
+      
+       switch(slickSwitch) {
 
-    switch(slickSwitch) {
-        case "previous": $("#worksSlider").slick("slickPrev");
-        break;
+            case "previous": $("#worksSlider").slick("slickPrev");
+            break;
+  
+            case "next": $("#worksSlider").slick("slickNext");
+            break;
+       }    
+    });
 
-        case "next": $("#worksSlider").slick("slickNext");
-        break;
-    }  
-});
+    /* Проходимся по item'am, если item == "work-one", делаем on.click на кнопки внутри модального окна, и делаем слайд slickPrev or slickNext */
+
 
   /* Make different modals (work) for block (works) */
     function ProjectConstructor(name, cat, year, customer, desc) {    // Processing...
@@ -200,7 +258,6 @@ $('#worksSlider').slick({
         this.year = year;
         this.customer = customer;
         this.desc = desc;
-        
     }
 
 let infoModal = new ProjectConstructor("Hello", "asda", "2021","Agency good", "Nice project");
@@ -218,6 +275,7 @@ target.on("click", function(e) {
     let workTarget = $(this).data("target");
 
     switch(workTarget) {
+
         case "work-one": 
         $(".modal-work__title").text(infoModal.name);
         $(".modal-work__cat").text(infoModal.cat);

@@ -237,7 +237,7 @@
                     </div>
                 </div>
                 <nav class="nav">
-                    <a class="nav__item start__works__scroll" href="#">
+                    <a class="nav__item start__works__scroll" href="#" data-timer="item-one">
                         <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                             <rect width="116" height="37" x="0.4" y="0" rx="20" ry="20" />
                           </svg>WORKS
@@ -248,7 +248,7 @@
                             <use xlink:href="#portfolio"></use>
                         </svg>
                     </a>
-                    <a class="nav__item start__about__scroll" href="#">
+                    <a class="nav__item start__about__scroll" href="#" data-timer="item-two">
                         <svg width="180px" height="60px" viewBox="0 0 180 60" class="border"> <!--Делаем размер по которому двигается линия-->
                             <rect width="138" height="37" x="0.4" y="0" rx="20" ry="20" /><!--Делаем полукруглую траэкт. по кнопке + располо-->
                           </svg>ABOUT ME
@@ -259,7 +259,7 @@
                             <use xlink:href="#portfolio"></use>
                         </svg>
                     </a>
-                    <a class="nav__item start__news__scroll" href="#">
+                    <a class="nav__item start__news__scroll" href="#" data-timer="item-three">
                         <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                             <rect width="101" height="37" x="0.4" y="0" rx="20" ry="20" />
                           </svg>BLOG
@@ -270,7 +270,7 @@
                             <use xlink:href="#portfolio"></use>
                         </svg>
                     </a>
-                        <a class="nav__item" href="#" data-show="contact">
+                        <a class="nav__item" href="#" data-show="contact" data-timer="item-four">
                             <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                                 <rect width="121" height="37" x="0.4" y="0" rx="20" ry="20" />
                               </svg>HIRE ME
@@ -282,6 +282,14 @@
                         </svg>
                     </a>
                 </nav>
+                
+                <div class="burger">
+                    <div class="nav__burger"></div>
+                        <div class="nav__burger nav__burger__back"></div>
+                </div>
+
+                
+            </div>
             </div> <!--/header__inner-->
         </div> <!--/container-->
     </header>
@@ -355,7 +363,9 @@
                           </svg>SEE MY RESUME</a>
                         </div>
                 </div>
-                <img class="intro__photo" src="/images/myPhoto.png" alt="MyPhoto">
+            <div class="intro__photo">
+                <img class="intro__img" src="/images/photo.png" alt="MyPhoto">
+            </div>
             </div> <!--/intro__inner-->
         </div> <!--/container-->
     </section>
@@ -621,7 +631,7 @@
             </div>
         </div>
             <nav class="footer__back-nav">
-                <a class="footer__back__links" href="#" data-show="work">Work</a>
+                <a class="footer__back__links start__works__scroll" href="#" data-show="works">Works</a>
                 <a class="footer__back__links start__footer__scroll" href="#">About Me</a>
                 <a class="footer__back__links start__news__scroll" href="#">Blog</a>
                 <a class="footer__back__links footer__last__link" href="#" data-show="contact">Hire Me</a>

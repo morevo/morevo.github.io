@@ -34,11 +34,18 @@
     }
 }
 
-.intro__photo {           /* Позиционируем нашу фотографию относительно блока intro__inner */
-    display: block;
+.intro__photo {
+    position: relative;
+    width: 100%;
+}
+
+.intro__img {           /* Позиционируем нашу фотографию относительно блока intro__inner */
     position: absolute;
-    bottom: -400px;
-    right: -220px;
-    z-index: 1;
-    height: 930px;
+
+    right: 0;
+    bottom: -40%;
+
+    
+    height: auto;
+    display: block;
 }

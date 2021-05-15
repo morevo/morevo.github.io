@@ -3,6 +3,19 @@
 .nav {
     display: flex;     /* Убрали пробелы между ссылками */
     height: 100%;      /* 100% высота, чтобы не ростягивались блоки вниз */
+
+    @media @tablet {  // Media for nav
+      & {
+        position: absolute;
+        transition: all .3s ease;
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        top: 30px;
+        right: -290px;
+        
+      }
+    }                      // При сужении до ~767 делать навигацию display-none, и проявлять бургер. По клику на бергер мы появляем навигацию но немного уменьшеную.
 }
 
 .nav__item {                   /* Для нашей выезжающей иконки на кнопке */
@@ -19,6 +32,21 @@
     margin-left: 0.66rem;     /* Добавляем расстояние между кнопками 0.66rem = 10px */
     transition: .2s linear;
     overflow: hidden;          /* Скрываем иконку до появления */
+
+    @media @tablet {  // Media for nav
+      & {
+        transition: all 1s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 1rem 2rem;
+
+        font-size: 0.8rem;
+
+        margin-bottom: 3px;
+      }
+    }              
 
   /* Modificators */
 
@@ -68,7 +96,7 @@
           }
           
           &:hover svg {
-            stroke-dashoffset: -480; /* Возвращаем в исзодное положение нашу линию движения */
+            stroke-dashoffset: -480; /* Возвращаем в исходное положение нашу линию движения */
           }
 
         &:hover {

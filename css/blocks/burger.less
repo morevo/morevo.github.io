@@ -4,14 +4,18 @@
   display: none;
   justify-content: center;
   align-items: center;
-  position: relative;
+
   width: 1.6rem;
   height: 4px;
   background: @black;
 
-  bottom: 30px;
+  top: 13px;
+  right: 12px;
 
   border-radius: @radius;
+
+  position: fixed;
+  z-index: 1000;
 
   &::before {
     position: absolute;
@@ -39,7 +43,7 @@
 
     }
 
-    @media @tablet {
+    @media @mobile {
         & {
             display: flex;
             align-items: center;
@@ -51,10 +55,15 @@
 }
 
 .nav__burger {
+  display: flex;
     position: absolute;
     right: 0;
     z-index: 2;
     width: 1.85rem;
     height: 1.2rem;
     cursor: pointer;
+
+    &:hover .burger {
+      background: red;
+    }
 }

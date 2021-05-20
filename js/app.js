@@ -102,7 +102,7 @@ $( () => {  // Можно напписать так или $(() => { }) или �
         let newsDistance = toNews.offset().top;
         $("body, html").animate({
             scrollTop: newsDistance,
-        },1500);
+        },2000);
     });
 
     scrollFromFooter.on("click", function(e) {
@@ -151,13 +151,11 @@ $( () => {  // Можно напписать так или $(() => { }) или �
     /* Burger */
     let burgerNav = $(".nav__burger");  // Element on click, and show menu nav.
     let burgerBack =  $(".nav__burger__back"); // Element on click, and hive menu nav back.
-
+    let burger = $(".burger");
     let timer = $("[data-timer]");
 
+
     burgerNav.on("click", function() {
-    
-
-
         $(burgerBack).css("z-index","4");
         $(burgerNav).css("z-index","3");
         let timerItem = $(timer).each(function() {
@@ -178,9 +176,9 @@ $( () => {  // Можно напписать так или $(() => { }) или �
                  }, 250 );
 
             burgerBack.on("click", function() {
+
                 $(burgerNav).css("z-index","4"); // Switch z-index's. Show and hide nav menu.
                 $(burgerBack).css("z-index","3");
-
        
                    setTimeout( () => {
                         $("[data-timer='item-one']").removeClass("nav__rotate");
@@ -197,11 +195,7 @@ $( () => {  // Можно напписать так или $(() => { }) или �
 
 
             });
-        });  
-        
-       
-
-        
+        });         
     });
     });
 

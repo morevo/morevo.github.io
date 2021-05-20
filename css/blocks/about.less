@@ -2,15 +2,42 @@
 
 .about {
     margin: 8.4rem 0;
+
+    @media @mobile {
+        & {
+            margin: 5rem 0;
+        }
+    }
 }
 
 .about__inner {          //Разбиваем photo и content на 2 ровные части
     display: flex;
+
+    @media @mobile {
+        & {
+            justify-content: center;
+        }
+    }
 }
 
 .about__photo {           
     flex-basis: 50%;     //Аналогично что и width: 50%;
     position: relative;
+
+    @media @tablet {
+        & {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    @media @mobile {
+        & {
+            display: none;
+        }
+    }
+}
 
     & .about__img {
         position: relative;
@@ -18,7 +45,6 @@
         display: block;
         max-width: 100%;
         height: auto;
-    }
 
     &:before {
         content: "";
@@ -30,12 +56,31 @@
         left: 0;
         bottom: 0;
         z-index: 1;
+
+        @media @tablet {
+            & {
+                display: none;
+            }
+        }
     }
 }
 
 .about__content {
     flex-basis: 50%;     //Аналогично что и width: 50%;
     padding: 2.66rem 1rem;
+
+    @media @mobile {
+        & {
+            flex-basis: 80%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        & .buttons {
+            justify-content: center;
+        }
+    }
+
 }
 
 .about__title {
@@ -49,20 +94,22 @@
     font-weight: 700;
     color: fade(@black; 15%);
     margin-bottom: 1rem;
+
+    @media @tablet {
+        & {
+            font-size: 4.3rem;
+        }
+    }
+
+    @media @mobile {
+       & {
+            font-size: 4rem;
+        }
+    }
 }
 
 .about__text {
     margin-bottom: 2.66rem;
     font-size: 0.8rem;
     color: @gray;
-}
-
-
-/* Media */
-
-@media @tablet {
-
-    .about__bigtitle {
-        font-size: 4rem;
-    }
 }

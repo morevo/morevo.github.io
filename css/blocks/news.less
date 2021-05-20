@@ -3,6 +3,12 @@
 .news {
     margin-top: 12rem;
     margin-bottom: 8.13rem;
+
+    @media @mobile {
+        & {
+            margin-top: 4rem;
+        }
+    }
 }
 
 .news__header {
@@ -27,6 +33,13 @@
     display: flex;
     margin: -1.2rem;
     flex-wrap: wrap;
+
+    @media @tablet {
+        & {
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 
 .news__item {
@@ -34,6 +47,12 @@
     flex-basis: 33.33333%;
     padding: 1rem;
     border-radius: 1.13rem;
+
+    @media @tablet {
+        &:nth-child(3) {
+           display: none;
+        }
+    }
 }
 
 .news__shadow {
@@ -41,6 +60,7 @@
     border-radius: 17px;
     border: 1px solid rgba(43,42,44,0);
     transition: .2s linear;
+    max-width: 100%;
 
     &:hover {
         box-shadow: 0 0 25px fade(@black, 25%);
@@ -183,4 +203,10 @@
 .news__button__arrow {
     width: 1200px;
     margin-top: 1rem;
+
+    @media @mobile {
+        & {
+            margin-top: 0;
+        }
+    }
 }

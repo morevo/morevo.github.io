@@ -8,15 +8,28 @@
     padding-top: 6.86rem;         /* Добавляем padding чтобы отделить наш контент внутрь и отлепить от шапки (6.86rem = 103px) */
     position: relative;           /* Задаем относительное позиционирование для .intro__inner чтобы двигать нашу фотографию */
     overflow: hidden;
+
+    @media @mobile {
+        & {
+            padding: 4rem 0 4rem 0;
+            background-size: 350px; // Change background size image
+        }
+    }
 }
 
 .intro__content {         /* Разделяем поле для контента и фото */
     width: 50%;
 
-    .intro__subtittle {
+    .intro__subtitle {
         font-size: 2.13rem;
         font-weight: 200;
         color: @black;
+
+        @media @mobile {
+            & {
+               font-size: 1.8rem;
+            }   
+        }
     }
 
     .intro__tittle {
@@ -24,6 +37,12 @@
         font-size: 3rem;
         font-weight: 700;
         color: @black;
+
+        @media @mobile {
+            & {
+               font-size: 2rem;
+            }   
+        }
     }
 
     .intro__text {
@@ -31,6 +50,12 @@
         font-weight: 400;
         color: fade(@black,70%);         /* Analog rgba только в less */
         margin-bottom: 42px;
+
+        @media @mobile {
+            & {
+                margin-bottom: 22px;
+            }
+        }
     }
 }
 
@@ -48,4 +73,11 @@
     
     height: auto;
     display: block;
+
+    @media @mobile {
+        & {
+            bottom: -28%;
+            width: 300px;
+        }
+    }
 }

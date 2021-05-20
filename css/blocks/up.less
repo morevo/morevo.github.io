@@ -8,12 +8,19 @@
 
     transform: rotate(180deg);
     opacity: 0;
+
+    z-index: 1000;
+
+    @media @laptop {
+        & {
+            right: 10px;
+        }
+    }
     
 }
 
 .btn-up-center {
     padding: 0.1rem;
-
 }
 
 .disp__block {

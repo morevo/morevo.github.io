@@ -55,7 +55,7 @@
 }
 
 .nav__burger {
-  display: flex;
+    display: flex;
     position: absolute;
     right: 0;
     z-index: 2;
@@ -66,4 +66,43 @@
     &:hover .burger {
       background: red;
     }
+}
+
+.nav__burger__back {
+    display: flex;
+    position: fixed;
+    top: 7px;
+    right: 10px;
+    display: none;
+}
+
+.burger__item {
+    width: 2rem;
+    height: 1.4rem;
+   
+    
+}
+
+.burger__icon {
+  
+}
+
+.close__turn {
+  transition: all .7s ease;
+  transform: rotate(180deg);
+}
+
+.close__turn-back {
+  transition: all .7s ease;
+  transform: rotate(-90deg);
+}
+
+.burger__turn {
+  transition: all .5s ease;
+  transform: scale(0.01);
+}
+
+.burger__turn-back {
+  transition: all .5s ease;
+  transform: scale(1);
 }

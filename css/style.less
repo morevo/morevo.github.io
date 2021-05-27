@@ -4,7 +4,12 @@
 html {
     font-size: 15px;          /* Теперь 1rem = 15px */
     cursor: default;
-    overflow-x: hidden;
+    
+    @media @mobile {
+        & {
+            overflow-x: hidden;
+        }
+    }
 }
 
 body {
@@ -13,13 +18,17 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;          /* Исп. много размеров шрифтов - плохо */
     color: @black;            /* Переменная с цветом - черный */
-    overflow-x: hidden;
-    background: url(/images/symbols.png);
-    background-size: 1200px;
+    
 
     &.no-scroll {  //Если у тега body есть тег no-scroll, тогда ты отменяем прокрутку колесика мыши
         overflow: hidden;  //Мы будем отменять скролл нашей страницы
     } //Пишем тегу body тег no-scroll
+
+    @media @mobile {
+        & {
+            overflow-x: hidden;
+        }
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {

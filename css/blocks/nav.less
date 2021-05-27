@@ -11,7 +11,7 @@
         display: flex;
         flex-direction: column;
         z-index: 3;
-        top: 30px;
+        top: 34px;
         right: -290px;
        // position: fixed;
         
@@ -61,6 +61,12 @@
         filter: invert(0%);  /* Инверсия черного цвета в белый */
         transition: .3s linear;
         fill: @white;
+
+        @media @mobile {
+          & {
+            display: none;
+          }
+        }
         }
 
         &--icon--right {
@@ -73,7 +79,13 @@
         filter: invert(0%);  /* Инверсия черного цвета в белый */
         transition: .3s linear;
         fill: @white;
+
+        @media @mobile {
+          & {
+            display: none;
+          }
         }
+      }
 
         
         & {
@@ -94,6 +106,15 @@
             stroke-dashoffset: 150;  /* Задает смещение пунктирной обводки относительно первоначального положения */
             stroke-width: 4px;       /* Толщина обводки */
             transition: 1s ease-in-out;
+
+            @media @mobile {
+              & {
+                stroke: @white;          /* Цвет обводки */
+                stroke-dasharray: 0;  /* 17(Длинна линии) 1(Расстояние между линиями) Управляет видом пунктирной обводки */
+                stroke-dashoffset: 0;  /* Задает смещение пунктирной обводки относительно первоначального положения */
+                stroke-width: 0;       /* Толщина обводки */
+              }
+            }
           }
           
           &:hover svg {

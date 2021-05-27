@@ -151,6 +151,7 @@ $( () => {  // Можно напписать так или $(() => { }) или �
     /* Burger */
     let burgerNav = $(".nav__burger");  // Element on click, and show menu nav.
     let burgerBack =  $(".nav__burger__back"); // Element on click, and hive menu nav back.
+    let burgerItem = $(".burger__item");
     let burger = $(".burger");
     let timer = $("[data-timer]");
 
@@ -158,39 +159,62 @@ $( () => {  // Можно напписать так или $(() => { }) или �
     burgerNav.on("click", function() {
         $(burgerBack).css("z-index","4");
         $(burgerNav).css("z-index","3");
+
+        $(burger).fadeOut("slow","swing");
+        $(burgerBack).fadeIn("slow", "swing");
+
+        $(burgerItem).addClass("close__turn");
+        $(burgerItem).removeClass("close__turn-back");
+
+        $(burger).addClass("burger__turn");
+        $(burger).removeClass("burger__turn-back");
+        
+
         let timerItem = $(timer).each(function() {
             let item = $(this).data("timer");
-            
-
+            let rotate = "nav__rotate";
+            let timerOne = "[data-timer='item-one']";
+            let timerTwo = "[data-timer='item-two']";
+            let timerThree = "[data-timer='item-three']";
+            let timerFour = "[data-timer='item-four']";
                 setTimeout( () => {
-                    $("[data-timer='item-one']").addClass("nav__rotate");
+                    $(timerOne).addClass(rotate);
                  }, 100 );
                setTimeout( () => {
-                    $("[data-timer='item-two']").addClass("nav__rotate");
+                    $(timerTwo).addClass(rotate);
                  }, 150 );
                setTimeout( () => {
-                    $("[data-timer='item-three']").addClass("nav__rotate");
+                    $(timerThree).addClass(rotate);
                   }, 200 );
                setTimeout( () => {
-                    $("[data-timer='item-four']").addClass("nav__rotate");
+                    $(timerFour).addClass(rotate);
                  }, 250 );
 
             burgerBack.on("click", function() {
 
                 $(burgerNav).css("z-index","4"); // Switch z-index's. Show and hide nav menu.
                 $(burgerBack).css("z-index","3");
+
+                $(burger).fadeIn("slow","swing");
+                $(burgerBack).fadeOut("slow","swing");
+
+                $(burgerItem).removeClass("close__turn");
+                $(burgerItem).addClass("close__turn-back");
+
+                $(burger).addClass("burger__turn-back");
+                $(burger).removeClass("burger__turn");
        
                    setTimeout( () => {
-                        $("[data-timer='item-one']").removeClass("nav__rotate");
+                        $(timerOne).removeClass(rotate);
                      }, 100 );
                     setTimeout( () => {
-                        $("[data-timer='item-two']").removeClass("nav__rotate");
+                        $(timerTwo).removeClass(rotate);
                      }, 150 );
                    setTimeout( () => {
-                        $("[data-timer='item-three']").removeClass("nav__rotate");
+                        $(timerThree).removeClass(rotate);
                       }, 200 );
                    setTimeout( () => {
-                        $("[data-timer='item-four']").removeClass("nav__rotate");
+                        $(timerFour).removeClass(rotate);
                      }, 250 );
 
 

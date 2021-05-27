@@ -43,14 +43,27 @@
 }
 
 .news__item {
+    display: flex;
     position: relative;
     flex-basis: 33.33333%;
     padding: 1rem;
     border-radius: 1.13rem;
-
+    
     @media @tablet {
         &:nth-child(3) {
            display: none;
+        }
+    }
+
+    @media @mobileAvg {
+        & {
+            flex-basis: 350px;
+        }
+    }
+
+    @media @mobile698px {
+        & {
+            flex-basis: 400px;
         }
     }
 }
@@ -61,6 +74,7 @@
     border: 1px solid rgba(43,42,44,0);
     transition: .2s linear;
     max-width: 100%;
+    cursor: pointer;
 
     &:hover {
         box-shadow: 0 0 25px fade(@black, 25%);
@@ -72,9 +86,38 @@
     }
 }
 
+.news__img {
+    border-top-left-radius: 1.13rem;
+    border-top-right-radius: 1.13rem;
+
+   @media @mobileAvg {
+       & {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    
+        overflow: hidden;
+       }
+   }  
+}
+
 .news__photo {
     border-top-left-radius: 1.13rem;
     border-top-right-radius: 1.13rem;
+
+    @media @mobileAvg {
+        & {
+            position: absolute;
+            width: 350px;
+            max-width: 100%;   // Расположили по центру картинку в полном её размере в маленький квадрат. Адаптивно.
+        }
+    }
+
+    @media @mobile698px {
+        & {
+            width: 400px;
+        }
+    }
 }
 
 .news__content {

@@ -19,7 +19,7 @@
 
   &::before {
     position: absolute;
-    top: .4rem;
+    top: 0.4rem;
     right: 0;
 
     content: "";
@@ -32,7 +32,7 @@
 
   &::after {
     position: absolute;
-    bottom: .4rem;
+    bottom: 0.4rem;
     right: 0;
     content: "";
     width: 1.3rem;
@@ -40,69 +40,63 @@
     background: @black;
 
     border-radius: @radius;
-
-    }
-
-    @media @mobile {
-        & {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
   }
 
+  @media @mobile {
+    & {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .nav__burger {
-    display: flex;
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    width: 1.85rem;
-    height: 1.2rem;
-    cursor: pointer;
+  display: flex;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  width: 1.85rem;
+  height: 1.2rem;
+  cursor: pointer;
 
-    &:hover .burger {
-      background: red;
-    }
+  &:hover .burger {
+    background: red;
+  }
 }
 
 .nav__burger__back {
-    display: flex;
-    position: fixed;
-    top: 7px;
-    right: 10px;
-    display: none;
+  display: flex;
+  position: fixed;
+  top: 7px;
+  right: 10px;
+  display: none;
 }
 
 .burger__item {
-    width: 2rem;
-    height: 1.4rem;
-   
-    
+  width: 2rem;
+  height: 1.4rem;
 }
 
 .burger__icon {
-  
 }
 
 .close__turn {
-  transition: all .7s ease;
+  transition: all 0.7s ease;
   transform: rotate(180deg);
 }
 
 .close__turn-back {
-  transition: all .7s ease;
+  transition: all 0.7s ease;
   transform: rotate(-90deg);
 }
 
 .burger__turn {
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   transform: scale(0.01);
 }
 
 .burger__turn-back {
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   transform: scale(1);
 }

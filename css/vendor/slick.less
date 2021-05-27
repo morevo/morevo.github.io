@@ -3,149 +3,149 @@
 /* Slider */
 
 .slick-slider {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
 .slick-list {
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-    &.dragging {
-        cursor: pointer;
-        cursor: hand;
-    }
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
 }
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .slick-track {
-    height: 100%;
-    position: relative;
-    left: 0;
-    top: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  height: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
-    &:before,
-    &:after {
-        content: "";
-        display: table;
-    }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
 
-    &:after {
-        clear: both;
-    }
+  &:after {
+    clear: both;
+  }
 
-    .slick-loading & {
-        visibility: hidden;
-    }
+  .slick-loading & {
+    visibility: hidden;
+  }
 }
 .slick-slide {
-    float: left;
-    height: 100%;
-    min-height: 1px;
-    [dir="rtl"] & {
-        float: right;
-    }
-    img {
-        display: block;
-    }
-    &.slick-loading img {
-        display: none;
-    }
-
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  [dir="rtl"] & {
+    float: right;
+  }
+  img {
+    display: block;
+  }
+  &.slick-loading img {
     display: none;
+  }
 
-    &.dragging img {
-        pointer-events: none;
-    }
+  display: none;
 
-    .slick-initialized & {
-        display: block;
-    }
+  &.dragging img {
+    pointer-events: none;
+  }
 
-    .slick-loading & {
-        visibility: hidden;
-    }
+  .slick-initialized & {
+    display: block;
+  }
 
-    .slick-vertical & {
-        display: block;
-        height: auto;
-        border: 1px solid transparent;
-    }
+  .slick-loading & {
+    visibility: hidden;
+  }
+
+  .slick-vertical & {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+  }
 }
 
 .slick-arrow.slick-hidden {
-    display: none;
+  display: none;
 }
 
-.slick-dots {  // Disable default behavior of list
-    display: flex;
-    width: 100%;
-    justify-content: center;
+.slick-dots {
+  // Disable default behavior of list
+  display: flex;
+  width: 100%;
+  justify-content: center;
 
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  padding: 0;
+  margin: 0;
+  list-style: none; // Default dots is list
+
+  background: none;
+  outline: none;
+
+  & button {
+    transition: all 0.5s ease;
+    margin-bottom: 1.4rem;
+
+    width: 11px;
+    height: 11px;
 
     padding: 0;
-    margin: 0;
-    list-style: none; // Default dots is list
+    border: 1px solid @white;
+    border-radius: 50%;
+    background: transparent;
 
-    background: none;
-    outline: none;
+    font-size: 0;
 
-   & button {
-    transition: all .5s ease;
-        margin-bottom: 1.4rem;
+    cursor: pointer;
+  }
 
-        width: 11px;
-        height: 11px;
+  .slick-active button {
+    background: @white;
+  }
 
-        padding: 0;
-        border: 1px solid @white;
-        border-radius: 50%;
-        background: transparent;
-
-        font-size: 0;
-        
-        cursor: pointer;
-
-    }
-
-    .slick-active button {
-        background: @white;
-    }
-
-    li{
-        margin: 0 0.5rem;
-    }
+  li {
+    margin: 0 0.5rem;
+  }
 }

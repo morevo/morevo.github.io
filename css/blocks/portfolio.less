@@ -1,50 +1,51 @@
 // main: ../style.less
 
 .portfolio {
-    display: flex;
-    flex-wrap: wrap;  //Разрешаем перенос колонок на след строку если не влизают на текущую
-    justify-content: center;
-    margin: 0 -1rem;  //Выравниваем наши элементы .portfolio__col по центру, компенсируем padding 1rem
-    margin-bottom: 2.2rem;
+  display: flex;
+  flex-wrap: wrap; //Разрешаем перенос колонок на след строку если не влизают на текущую
+  justify-content: center;
+  margin: 0 -1rem; //Выравниваем наши элементы .portfolio__col по центру, компенсируем padding 1rem
+  margin-bottom: 2.2rem;
 
-    @media @mobileBig {
-        & {
-            margin: 0 -3.89rem;
-        }
+  @media @mobileBig {
+    & {
+      margin: 0 -3.89rem;
     }
+  }
 
-    &__col {
-        padding: 1rem;
-        flex-basis: 33.33333%;  //Делает то же самое что и width: 33.33333%; (Выравниваем по центру блоки)
-        text-align: center;
+  &__col {
+    padding: 1rem;
+    flex-basis: 33.33333%; //Делает то же самое что и width: 33.33333%; (Выравниваем по центру блоки)
+    text-align: center;
 
-        @media @laptopTwo {
-            & {
-                flex-basis: 400px;
-                max-width: 400px;
-            }
+    @media @laptopTwo {
+      & {
+        flex-basis: 400px;
+        max-width: 400px;
+      }
 
-            &:nth-child(1n + 5) { // Каждый первый элемент начиная с пятого.
-                display: none;
-            }
+      &:nth-child(1n + 5) {
+        // Каждый первый элемент начиная с пятого.
+        display: none;
+      }
     }
 
     @media @mobileAvg {
-        &:nth-child(1n + 4) {
-            display: none;
-        }
+      &:nth-child(1n + 4) {
+        display: none;
+      }
 
-        & {
-            width: 350px;
-            max-width: 350px;
-        }
+      & {
+        width: 350px;
+        max-width: 350px;
+      }
     }
 
     @media @mobile698px {
-        & {
-            width: 400px;
-            max-width: 400px;
-        }
+      & {
+        width: 400px;
+        max-width: 400px;
+      }
     }
-    }
+  }
 }

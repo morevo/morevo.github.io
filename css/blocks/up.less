@@ -1,32 +1,42 @@
 //main: ../style.css
 
 .btn__up__header {
-    display: block;
-    position: fixed;
-    bottom: 5.3rem;
-    right: 11rem;
+  display: block;
+  position: fixed;
+  bottom: 5.3rem;
+  right: 11rem;
 
-    transform: rotate(180deg);
-    opacity: 0;
+  transform: rotate(180deg);
+  opacity: 0;
 
-    z-index: 1000;
+  z-index: 1000;
 
-    @media @laptop {
-        & {
-            right: 10px;
-        }
+  @media @laptop {
+    & {
+      right: 10px;
     }
-    
+  }
+
+  @media @mobileBig {
+    & {
+      bottom: 5.1rem;
+    }
+  }
+
+  @media @mobile560px {
+      & {
+          bottom: 7.9rem;
+      }
+  }
 }
 
 .btn-up-center {
-    padding: 0.1rem;
+  padding: 0.1rem;
 }
 
 .disp__block {
-    
 }
 
 .btn-cursor-default {
-    cursor: default;
+  cursor: default;
 }

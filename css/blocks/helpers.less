@@ -1,87 +1,85 @@
 // main: ../style.less
 
 .timeout {
-    transition: all .8s linear;
-    opacity: 0;
+  transition: all 0.8s linear;
+  opacity: 0;
 }
 
 /* Click filter - portfolio */
 
 .hide {
-    transition: all .1s linear;
-    opacity: 0;
+  transition: all 0.1s linear;
+  opacity: 0;
 }
 
 .show {
-   
 }
 
 /* Scroll event - about */
 
 .hover__on {
-    & span {
-        transition: all .4s linear;
-    }
+  & span {
+    transition: all 0.4s linear;
+  }
 
-    & span:nth-child(2) {
-        transition-delay: .1s;
-    }
+  & span:nth-child(2) {
+    transition-delay: 0.1s;
+  }
 
-    & span:nth-child(3) {
-        transition-delay: .2s;
-    }
+  & span:nth-child(3) {
+    transition-delay: 0.2s;
+  }
 
-    & span:nth-child(4) {
-        transition-delay: .3s;
-    }
-    
-    & span:nth-child(5) {
-        transition-delay: .4s;
-    }
+  & span:nth-child(4) {
+    transition-delay: 0.3s;
+  }
 
-    & span:nth-child(6) {
-        transition-delay: .5s;
-    }
-        color: @black;
+  & span:nth-child(5) {
+    transition-delay: 0.4s;
+  }
+
+  & span:nth-child(6) {
+    transition-delay: 0.5s;
+  }
+  color: @black;
 }
 
 .hover__off {
-    & span {
-        transition: all .4s linear;
-    }
+  & span {
+    transition: all 0.4s linear;
+  }
 
-    & span:nth-child(2) {
-        transition-delay: .1s;
-    }
+  & span:nth-child(2) {
+    transition-delay: 0.1s;
+  }
 
-    & span:nth-child(3) {
-        transition-delay: .2s;
-    }
+  & span:nth-child(3) {
+    transition-delay: 0.2s;
+  }
 
-    & span:nth-child(4) {
-        transition-delay: .3s;
-    }
-    
-    & span:nth-child(5) {
-        transition-delay: .4s;
-    }
+  & span:nth-child(4) {
+    transition-delay: 0.3s;
+  }
 
-    & span:nth-child(6) {
-        transition-delay: .5s;
-    }
-        color: rgba(43,42,44,0.15);
+  & span:nth-child(5) {
+    transition-delay: 0.4s;
+  }
+
+  & span:nth-child(6) {
+    transition-delay: 0.5s;
+  }
+  color: rgba(43, 42, 44, 0.15);
 }
 
 .scroll__off {
-    overflow: hidden;
-    
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
 
 .nav__rotate {
-    transition: all 1s ease;
-    transform: translateX(-290px);
+  transition: all 1s ease;
+  transform: translateX(-290px);
 }

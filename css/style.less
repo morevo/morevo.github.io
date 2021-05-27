@@ -2,44 +2,49 @@
 @import "vars";
 
 html {
-    font-size: 15px;          /* Теперь 1rem = 15px */
-    cursor: default;
-    
-    @media @mobile {
-        & {
-            overflow-x: hidden;
-        }
+  font-size: 15px; /* Теперь 1rem = 15px */
+  cursor: default;
+
+  @media @mobile {
+    & {
+      overflow-x: hidden;
     }
+  }
 }
 
 body {
-    margin: 0; 
+  margin: 0;
 
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;          /* Исп. много размеров шрифтов - плохо */
-    color: @black;            /* Переменная с цветом - черный */
-    
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem; /* Исп. много размеров шрифтов - плохо */
+  color: @black; /* Переменная с цветом - черный */
 
-    &.no-scroll {  //Если у тега body есть тег no-scroll, тогда ты отменяем прокрутку колесика мыши
-        overflow: hidden;  //Мы будем отменять скролл нашей страницы
-    } //Пишем тегу body тег no-scroll
+  &.no-scroll {
+    //Если у тега body есть тег no-scroll, тогда ты отменяем прокрутку колесика мыши
+    overflow: hidden; //Мы будем отменять скролл нашей страницы
+  } //Пишем тегу body тег no-scroll
 
-    @media @mobile {
-        & {
-            overflow-x: hidden;
-        }
+  @media @mobile {
+    & {
+      overflow-x: hidden;
     }
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;           /* Убираем margin у всех заголовков, так удобнее работать */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; /* Убираем margin у всех заголовков, так удобнее работать */
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;   /* Алгоритм подсчетов, все padding'i во внутрь */
-                              /* padding не меняют размер наших блоков */
+  box-sizing: border-box; /* Алгоритм подсчетов, все padding'i во внутрь */
+  /* padding не меняют размер наших блоков */
 }
 
 /* Vendor */
@@ -69,18 +74,5 @@ h1, h2, h3, h4, h5, h6 {
 @import "blocks/up";
 @import "blocks/burger";
 
-
 /* Helpers */
 @import "blocks/helpers";
-
-
-
-
-
-
-
-
-
-
-
-

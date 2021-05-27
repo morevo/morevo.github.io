@@ -1,96 +1,116 @@
 // main: ../style.less
 
 .works {
-    margin: 2.8rem;
+  margin: 2.8rem;
 }
 
 .works__nav {
-    display: flex;
-    justify-content: center;
-    padding-top: 2.66rem;
-    padding-bottom: 2.66rem;
+  display: flex;
+  justify-content: center;
+  padding: 2.66rem 0;
+
+  @media @mobile605px {
+    & {
+        padding: 2rem 0;
+    }
+}
 }
 
 .works__nav-link {
-    position: relative;
-    margin: 0 1.8rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: fade(@black, 70%);
-    text-decoration: none;
-    transition: .2s linear;
+  position: relative;
+  margin: 0 1.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: fade(@black, 70%);
+  text-decoration: none;
+  transition: 0.2s linear;
 
-    
-&:after {                    //Создаем нашу линию подчеркивания у навигации работ
+  @media @mobile605px {
+    & {
+        margin: 0 1.2rem;
+    }
+}
+
+  &:after {
+    //Создаем нашу линию подчеркивания у навигации работ
     position: absolute;
     content: "";
-    width: 0;                //Изначально ширина 0%
+    width: 0; //Изначально ширина 0%
     height: 2px;
-    right: 0;                //Когда убираем курсор с ссылки, исчезает слева-направо (Откуда заканчиваем)
+    right: 0; //Когда убираем курсор с ссылки, исчезает слева-направо (Откуда заканчиваем)
     bottom: -5px;
     background: @black;
-    transition: .2s linear;
+    transition: 0.2s linear;
     z-index: 1;
+  }
+
+  &:hover:after {
+    left: 0; //При наведении полоса начнет двигаться(появляться) слева-направо (Откуда начинаем)
+    width: 100%; //При наведении ширина = 100%
+  }
+
+  & span {
+    font-size: 20px;
+    font-weight: 300;
+    transition: all 0.1s linear; //Скорость жирности текста
+    color: @black;
+
+    @media @mobile605px {
+        & {
+            font-size: 1.3rem;
+        }
+    }
+  }
+  //Это таймер последовательного ожирения текста
+  & span:nth-child(2) {
+    //Таким образом выбрали второй элемент (букву, для нее время ожидания .1s)
+    transition-delay: 0.1s; //Устанавливает время ожидания перед запуском эффекта (Второй спустя 0.1s и т.д)
+  }
+
+  & span:nth-child(3) {
+    //Задаем таймер ожирения текста, для каждой буквы
+    transition-delay: 0.2s;
+  }
+
+  & span:nth-child(4) {
+    //При наведении последовательно ожиряет текст,при уводе утончает с первого элемента(.1s)
+    transition-delay: 0.3s;
+  }
+
+  & span:nth-child(5) {
+    transition-delay: 0.4s;
+  }
+
+  & span:nth-child(6) {
+    transition-delay: 0.5s;
+  }
+
+  & span:nth-child(7) {
+    transition-delay: 0.6s;
+  }
+
+  & span:nth-child(8) {
+    transition-delay: 0.7s;
+  }
+
+  & span:nth-child(9) {
+    transition-delay: 0.8s;
+  }
+
+  & span:nth-child(10) {
+    transition-delay: 0.9s;
+  }
+
+  & span:nth-child(11) {
+    transition-delay: 1s;
+  }
+
+  &:hover span {
+    //А это уже эффект при наведении
+    font-weight: 700; //При наведении на span(текст ссылок) увеличивать жирность до bold
+  }
+
+  &:hover {
+    color: @black;
+  }
 }
-
-&:hover:after {
-    left: 0;                  //При наведении полоса начнет двигаться(появляться) слева-направо (Откуда начинаем)
-    width: 100%;              //При наведении ширина = 100%
-}
-
-    & span {
-        font-size: 20px;
-        font-weight: 300;
-        transition: all .1s linear; //Скорость жирности текста
-        color: @black;
-    }
-                          //Это таймер последовательного ожирения текста
-    & span:nth-child(2) { //Таким образом выбрали второй элемент (букву, для нее время ожидания .1s)
-        transition-delay: .1s;  //Устанавливает время ожидания перед запуском эффекта (Второй спустя 0.1s и т.д)
-    }
-
-    & span:nth-child(3) { //Задаем таймер ожирения текста, для каждой буквы
-        transition-delay: .2s;
-    }
-
-    & span:nth-child(4) { //При наведении последовательно ожиряет текст,при уводе утончает с первого элемента(.1s)
-        transition-delay: .3s;
-    }
-
-    & span:nth-child(5) {
-        transition-delay: .4s;
-    }
-
-    & span:nth-child(6) {
-        transition-delay: .5s;
-    }
-
-    & span:nth-child(7) {
-        transition-delay: .6s;
-    }
-
-    & span:nth-child(8) {
-        transition-delay: .7s;
-    }
-
-    & span:nth-child(9) {
-        transition-delay: .8s;
-    }
-
-    & span:nth-child(10) {
-        transition-delay: .9s;
-    }
-
-    & span:nth-child(11) {
-        transition-delay: 1s;
-    }
-
-    &:hover span {        //А это уже эффект при наведении
-        font-weight: 700; //При наведении на span(текст ссылок) увеличивать жирность до bold
-    }
-
-    &:hover {
-        color: @black;
-    }
-}
-

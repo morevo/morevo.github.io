@@ -1,83 +1,115 @@
 // main: ../style.less
 
 .intro__inner {
-    background: url(/images/symbols.png) no-repeat right bottom;  //Распологаем наш фоновый рисунок справа, прижимаем вниз(bottom) и не повторяем(no-repeat).
-    display: flex;
-    border-bottom: 0.5px solid fade(@gray,30%);   /* Добавляем границы + непрозрачность */
-    padding-bottom: 8rem;         /* Добавляем padding снизу, чтобы отделить наш border-bottom от контента */
-    padding-top: 6.86rem;         /* Добавляем padding чтобы отделить наш контент внутрь и отлепить от шапки (6.86rem = 103px) */
-    position: relative;           /* Задаем относительное позиционирование для .intro__inner чтобы двигать нашу фотографию */
-    overflow: hidden;
+  background: url(/images/symbols.png) no-repeat right bottom; //Распологаем наш фоновый рисунок справа, прижимаем вниз(bottom) и не повторяем(no-repeat).
+  display: flex;
+  border-bottom: 0.5px solid fade(@gray, 30%); /* Добавляем границы + непрозрачность */
+  padding-bottom: 8rem; /* Добавляем padding снизу, чтобы отделить наш border-bottom от контента */
+  padding-top: 6.86rem; /* Добавляем padding чтобы отделить наш контент внутрь и отлепить от шапки (6.86rem = 103px) */
+  position: relative; /* Задаем относительное позиционирование для .intro__inner чтобы двигать нашу фотографию */
+  overflow: hidden;
 
-    @media @mobile {
-        & {
-            padding: 4rem 0 4rem 0;
-            background-size: 350px; // Change background size image
-        }
+  @media @mobile {
+    & {
+      padding: 4rem 0 4rem 0;
+      background-size: 350px; // Change background size image
     }
+  }
+
+  @media @mobile605px {
+    & {
+      background: none;
+    }
+  }
 }
 
-.intro__content {         /* Разделяем поле для контента и фото */
-    width: 50%;
+.intro__content {
+  /* Разделяем поле для контента и фото */
+  width: 50%;
+  z-index: 5;
 
-    .intro__subtitle {
-        font-size: 2.13rem;
-        font-weight: 200;
-        color: @black;
+  .intro__subtitle {
+    font-size: 2.13rem;
+    font-weight: 200;
+    color: @black;
 
-        @media @mobile {
-            & {
-               font-size: 1.8rem;
-            }   
-        }
+    @media @mobile {
+      & {
+        font-size: 1.8rem;
+      }
     }
+  }
 
-    .intro__tittle {
-        margin-bottom: 5px;
-        font-size: 3rem;
-        font-weight: 700;
-        color: @black;
+  .intro__tittle {
+    margin-bottom: 5px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: @black;
 
-        @media @mobile {
-            & {
-               font-size: 2rem;
-            }   
-        }
+    @media @mobile {
+      & {
+        font-size: 2rem;
+      }
     }
+  }
 
-    .intro__text {
-        font-size: 1.2rem;               /* 18px/15px = 1.2rem (0.1rem = 1.5px) */
-        font-weight: 400;
-        color: fade(@black,70%);         /* Analog rgba только в less */
-        margin-bottom: 42px;
+  .intro__text {
+    font-size: 1.2rem; /* 18px/15px = 1.2rem (0.1rem = 1.5px) */
+    font-weight: 400;
+    color: fade(@black, 70%); /* Analog rgba только в less */
+    margin-bottom: 42px;
 
-        @media @mobile {
-            & {
-                margin-bottom: 22px;
-            }
-        }
+    @media @mobile {
+      & {
+        margin-bottom: 22px;
+      }
     }
+  }
+
+  @media @mobile605px {
+    & {
+      width: 100%;
+    }
+  }
 }
 
 .intro__photo {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
+
+  @media @mobile605px {
+    & {
+        display: none;
+    }
+  }
 }
 
-.intro__img {           /* Позиционируем нашу фотографию относительно блока intro__inner */
-    position: absolute;
+.intro__img {
+  /* Позиционируем нашу фотографию относительно блока intro__inner */
+  position: absolute;
 
-    right: 0;
-    bottom: -40%;
+  right: 0;
+  bottom: -40%;
 
-    
-    height: auto;
-    display: block;
+  height: auto;
+  display: block;
 
-    @media @mobile {
-        & {
-            bottom: -28%;
-            width: 300px;
-        }
+  @media @mobileBig {
+      & {
+          width: 430px;
+      }
+  }
+
+  @media @mobile {
+    & {
+      bottom: -28%;
+      width: 300px;
     }
+  }
+
+  @media @mobileNormal {
+      & {
+          right: -25px;
+      }
+  }
 }

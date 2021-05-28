@@ -22,11 +22,6 @@
       padding: 1rem 0.1rem;
     }
   }
-
-  @media @mobile {
-    & {
-    }
-  }
 }
 
 .modal__resume__title {
@@ -43,15 +38,34 @@
     }
   }
 
-  @media @mobile {
+  @media @tablet1040px {
     & {
+      margin-bottom: 2.2rem;
+    }
+  }
+
+  @media @mobileBig {
+    & {
+      font-size: 2.7rem;
       margin-bottom: 2rem;
     }
   }
 
-  @media @mobile698px {
+  @media @mobile {
     & {
-      font-size: 2.5rem;
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  @media @mobileNormal {
+    & {
+      font-size: 2rem;
+    }
+  }
+
+  @media @mobile560px {
+    & {
+      margin-bottom: 0.9rem;
     }
   }
 }
@@ -77,9 +91,27 @@
     }
   }
 
+  @media @tablet1040px {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media @mobileBig {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
   @media @mobile {
     & {
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media @mobile560px {
+    &:not(:last-child) {
+      margin-bottom: 1.3rem;
     }
   }
 }
@@ -124,6 +156,12 @@
   &:hover .modal__resume__icon {
     fill: @white;
   }
+
+  @media @mobile {
+    & {
+      padding: 0.8rem;
+    }
+  }
 }
 
 .modal__resume__item {
@@ -156,6 +194,12 @@
       margin-bottom: 2rem;
     }
   }
+
+  @media @mobile560px {
+    & {
+      margin-bottom: 1.3rem;
+    }
+  }
 }
 
 .modal__resume__inner {
@@ -176,10 +220,25 @@
   text-transform: uppercase;
   margin-bottom: 2.46rem;
 
+  @media @mobile {
+    & {
+      margin-bottom: 1.3rem;
+    }
+  }
+
   @media @mobileNormal {
     & {
-      display: none;
       text-align: center;
+    }
+
+    &-hide {
+      display: none;
+    }
+
+    &-background {
+      font-size: 0.9rem;
+      padding: 0 0.5rem;
+      margin-bottom: 0.9rem;
     }
   }
 }
@@ -191,7 +250,14 @@
     & {
       display: flex;
       justify-content: center;
-      margin-bottom: 2rem;
+      margin-bottom: 0.9rem;
+      padding: 0 1rem;
+    }
+  }
+
+  @media @mobile560px {
+    &{
+      margin-bottom: 0;
     }
   }
 }
@@ -238,6 +304,18 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media @mobileBig {
+    & {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media @mobile560px {
+    & {
+      margin-bottom: 1.3rem;
+    }
+  }
 }
 
 .modal__inner__item-none {
@@ -252,6 +330,12 @@
   font-size: 0.93rem;
   font-weight: 400;
   margin-bottom: 0.8rem;
+
+  @media @mobileNormal {
+    & {
+      margin-bottom: 0.6rem;
+    }
+  }
 }
 
 .modal__inner__work {
@@ -273,6 +357,12 @@
   font-weight: 300;
   color: @gray;
   line-height: 1.2;
+
+  @media @mobile405px {
+    & {
+      font-size: 0.7rem;
+    }
+  }
 }
 
 .modal__resume__experience {
@@ -302,6 +392,12 @@
     & {
       text-align: center;
       width: 60%;
+    }
+  }
+
+  @media @mobile605px {
+    & {
+      padding: 0;
     }
   }
 }

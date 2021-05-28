@@ -233,7 +233,6 @@ $(() => {
   });
 
   /* Show more in about content */
-  let width = window.matchMedia("(max-width: 605px)");
   let aboutLink = $(".about__text-link");
   let aboutLinkFade = $(".about__text-fade");
   let AboutTextOne = $(".about__text-one");

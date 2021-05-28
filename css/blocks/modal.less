@@ -39,12 +39,6 @@
     }
   }
 
-  @media @mobileBig {
-    & {
-      padding: 3rem 0.5rem;
-    }
-  }
-
   @media @mobile {
     & {
       padding: 3rem 5rem;
@@ -71,4 +65,31 @@
   max-width: 1200px; //Максимальная ширина 1200px, чтобы модальное окно при сужении не вылазило за экран, было адаптивным.
   margin: auto; //Выровняли по центру по горизонтали и вертикали
   background-color: @white;
+}
+
+.modal__resume-padding {
+
+  @media @tablet1040px {
+    & {
+      padding: 3rem 3rem;
+    }
+  }
+
+  @media @mobile {
+    & {
+      padding: 3rem 2rem;
+    }
+  }
+
+  @media @mobile698px {
+    & {
+      padding: 3rem 3rem;
+    }
+  }
+
+  @media @mobile560px {
+    & {
+      padding: 3rem 1rem;
+    }
+  }
 }

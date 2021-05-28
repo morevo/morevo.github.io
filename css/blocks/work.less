@@ -17,6 +17,10 @@
     //При наведении на work__shadow, в любом месте, будет прокручиваться работа вниз
     transform: translate(-50%, -2180px);
   }
+
+  &:hover .work__photo-item {
+    transform: translate(-50%, -2180px);
+  }
 }
 
 .work {
@@ -26,6 +30,47 @@
   border-top-right-radius: 17px;
   border-top-left-radius: 17px;
   overflow: hidden;
+
+  &__inner-items {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    &-title {
+      position: absolute;
+      font-size: 7rem;
+      position: absolute;
+      color: @gray-light;
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__photo-title {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: rotate(30deg);
+  }
+
+  &__photo-item {
+    width: 300px;
+    height: 300px;
+    transition: all 7s ease;
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__photo-item-soon {
+    fill: @gray;
+  }
 
   @media @mobileSmall {
     & {
@@ -56,9 +101,26 @@
   text-transform: uppercase;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+
+  &-soon {
+    width: 100%;
+
+    font-size: 2.2rem;
+    font-weight: 300;
+
+    text-transform: none;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+  }
 }
 
 .work__cat {
+  position: relative;
   font-size: 0.8rem;
   font-weight: 400;
   display: flex;

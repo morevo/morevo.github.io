@@ -231,6 +231,28 @@ $(() => {
       });
     });
   });
+
+  /* Show more in about content */
+  let width = window.matchMedia("(max-width: 605px)");
+  let aboutLink = $(".about__text-link");
+  let aboutLinkFade = $(".about__text-fade");
+  let AboutTextOne = $(".about__text-one");
+  let AboutTextTwo = $(".about__text-two");
+
+  aboutLink.on("click", function (e) {
+    e.preventDefault();
+    $(this).css("display", "none");
+    $(aboutLinkFade).css("display", "block");
+    $(AboutTextOne).fadeIn("slow", "swing");
+    $(AboutTextTwo).fadeIn("slow", "swing");
+  });
+  aboutLinkFade.on("click", function (e) {
+    e.preventDefault();
+    $(this).css("display", "none");
+    $(aboutLink).css("display", "block");
+    $(AboutTextOne).fadeOut("slow", "swing");
+    $(AboutTextTwo).fadeOut("slow", "swing");
+  });
 });
 
 /* Scroll event - about */

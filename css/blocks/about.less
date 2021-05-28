@@ -8,6 +8,12 @@
       margin: 5rem 0;
     }
   }
+
+  @media @mobile605px {
+    & {
+      margin: 4rem 0;
+    }
+  }
 }
 
 .about__inner {
@@ -87,6 +93,12 @@
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
+
+  @media @mobile605px {
+    & {
+      font-size: 2.4rem;
+    }
+  }
 }
 
 .about__bigtitle {
@@ -106,6 +118,12 @@
       font-size: 4rem;
     }
   }
+
+  @media @mobile605px {
+    & {
+      font-size: 3.5rem;
+    }
+  }
 }
 
 .about__text {
@@ -113,3 +131,79 @@
   font-size: 0.8rem;
   color: @gray;
 }
+
+.about__text-one {
+
+  @media @mobile605px {
+    & {
+      display: none;
+    }
+  }
+}
+
+.about__text-two {
+
+  @media @mobile605px {
+    & {
+      display: none;
+    }
+  }
+}
+
+.about__text-more {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 15px;
+}
+
+.about__link-hide {
+  width: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__text-link {
+  position: absolute;
+  width: 95px;
+  display: none;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: @black;
+
+  &:hover {
+    color: @gray-light;
+  }
+
+  @media @mobile605px {
+    & {
+      display: block;
+
+    }
+  }
+ }
+
+ .about__text-fade {
+  position: absolute;
+  width: 95px;
+  display: none;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: @black;
+
+  &:hover {
+    color: @gray-light;
+  }
+
+  @media @mobile605px {
+    & {
+      display: none;
+    }
+  }
+ }

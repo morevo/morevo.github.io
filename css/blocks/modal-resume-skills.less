@@ -26,6 +26,19 @@
 
 .progress__bar-left {
   width: 30%;
+
+  @media @laptopThree {
+    & {
+      width: 20%;
+    }
+  }
+
+  @media @mobile {
+    & {
+      width: 25%;
+    }
+  }
+
 }
 
 .progress__bar-right {
@@ -38,9 +51,9 @@
   background-color: #efefef;
 
   @media @mobile698px {
-      & {
-          width: 100px;
-      }
+    & {
+      width: 100px;
+    }
   }
 }
 

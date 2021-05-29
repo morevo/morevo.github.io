@@ -7,7 +7,7 @@
   margin: 0 -1rem; //Выравниваем наши элементы .portfolio__col по центру, компенсируем padding 1rem
   margin-bottom: 2.2rem;
 
-  @media @mobileBig {
+  @media @mobile {
     & {
       margin: 0 -3.89rem;
     }
@@ -18,7 +18,7 @@
     flex-basis: 33.33333%; //Делает то же самое что и width: 33.33333%; (Выравниваем по центру блоки)
     text-align: center;
 
-    @media @laptopTwo {
+    @media @tablet {
       & {
         flex-basis: 400px;
         max-width: 400px;
@@ -31,14 +31,15 @@
     }
 
     @media @mobileAvg {
-      &:nth-child(1n + 4) {
-        display: none;
-      }
-
       & {
         width: 350px;
         max-width: 350px;
       }
+      
+      &:nth-child(1n + 4) {
+        display: none;
+      }
+
     }
 
     @media @mobile698px {

@@ -524,7 +524,7 @@
             </div> <!--/portfolio__col-->
             </div> <!--/portfolio--> 
 
-            <div class="work__button">
+            <div class="work__button work__button-first-show">
             <a class="btn-works" href="#">
                 <svg class="work__item work__item--up">
                     <use class="work__icon" xlink:href="#arrow"></use>
@@ -534,6 +534,16 @@
                 </svg>
             </a>
             </div>
+            <div class="work__button work__button-second-hide">
+                <a class="btn-works" href="#">
+                    <svg class="work__item work__item--up">
+                        <use class="work__icon" xlink:href="#arrow"></use>
+                    </svg>
+                    <svg class="work__item work__item--down">
+                        <use class="work__icon" xlink:href="#arrow"></use>
+                    </svg>
+                </a>
+                </div>
         </div>
         </div> <!--/container-->
     </div> <!--/works-->
@@ -585,7 +595,7 @@
                 <div class="news__text">Sometimes i write something smart</div>
             </div>
             <section class="news__items">
-                <div class="news__item">
+                <div class="news__item" data-news="news-one">
                     <div class="news__shadow">
                     <div class="news__content-main">
                         <div class="news__content">
@@ -603,7 +613,7 @@
                 </div>
                 </div>
                 </div>
-                <div class="news__item">
+                <div class="news__item" data-news="news-two">
                     <div class="news__shadow">
                     <div class="news__content-main">
                         <div class="news__content">
@@ -621,7 +631,7 @@
                 </div>
                 </div>
                 </div>
-                <div class="news__item">
+                <div class="news__item" data-news="news-three">
                     <div class="news__shadow">
                     <div class="news__content-main">
                         <div class="news__content">
@@ -639,7 +649,7 @@
                 </div>
                 </div>
                 </div>
-                <div class="news__button__arrow">
+                <div class="news__button__arrow news__button-first-show">
                 <div class="work__button">
                     <a class="btn-works" href="#">
                         <svg class="work__item work__item--up">
@@ -651,6 +661,18 @@
                     </a>
                     </div>
                 </div>
+                <div class="news__button__arrow news__button-second-hide">
+                    <div class="work__button">
+                        <a class="btn-works" href="#">
+                            <svg class="work__item work__item--up">
+                                <use class="work__icon" xlink:href="#arrow"></use>
+                            </svg>
+                            <svg class="work__item work__item--down">
+                                <use class="work__icon" xlink:href="#arrow"></use>
+                            </svg>
+                        </a>
+                        </div>
+                    </div>
             </section>
         </div> <!-- /container -->
     </section> <!-- /news -->

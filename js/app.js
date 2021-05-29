@@ -252,6 +252,74 @@ $(() => {
     $(AboutTextOne).fadeOut("slow", "swing");
     $(AboutTextTwo).fadeOut("slow", "swing");
   });
+
+  /* Show more work items */
+  let worksWidth1199px = window.matchMedia("(max-width: 1199px)");
+  let worksWidth797px = window.matchMedia("(max-width: 797px)");
+  let buttonWorksFirstShow = $(".work__button-first-show");
+  let buttonWorksSecondHide = $(".work__button-second-hide");
+  let buttonNewsFirstShow = $(".news__button-first-show");
+  let buttonNewsSecondHide = $(".news__button-second-hide");
+  let buttonCategory = $("[data-category]");
+
+  buttonWorksFirstShow.on("click", function(e) {  // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
+    e.preventDefault();
+  });
+
+  buttonNewsFirstShow.on("click", function(e) {  // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
+    e.preventDefault();
+  });
+
+  if (worksWidth1199px.matches) { // If max-width: 1199px will be true
+    buttonWorksFirstShow.on("click", function (e) {
+      e.preventDefault();
+
+      $(buttonWorksFirstShow).css("display", "none");
+      $(buttonWorksSecondHide).css("display", "flex");
+
+      $(buttonCategory).fadeIn("slow", "swing");
+      $("[data-target='work-five']").fadeTo(400, 1, "linear");
+      $("[data-target='work-six']").fadeTo(400, 1, "linear");
+
+      if (worksWidth797px.matches) {
+        $("[data-target='work-four']").fadeTo(400, 1, "linear");
+      }
+    });
+
+    buttonWorksSecondHide.on("click", function (e) { // If max-width: 797px will be true
+      e.preventDefault();
+
+      $(buttonWorksSecondHide).css("display", "none");
+      $(buttonWorksFirstShow).css("display", "flex");
+
+      $("[data-target='work-five']").fadeOut("slow", "swing");
+      $("[data-target='work-six']").fadeOut("slow", "swing");
+
+      if (worksWidth797px.matches) {
+        $("[data-target='work-four']").parents("[data-category='website']").fadeOut("slow", "swing");
+        $("[data-target='work-five']").parents("[data-category='app']").fadeOut("slow", "swing");
+        $("[data-target='work-six']").parents("[data-category='interaction']").fadeOut("slow", "swing");
+      }
+    });
+
+    buttonNewsFirstShow.on("click", function(e) {
+      e.preventDefault();
+
+      $(buttonNewsSecondHide).css("display", "block");
+      $(buttonNewsFirstShow).css("display", "none");
+
+      $("[data-news='news-three']").fadeIn("slow","swing");
+    });
+
+    buttonNewsSecondHide.on("click", function(e) {
+      e.preventDefault();
+
+      $(buttonNewsSecondHide).css("display", "none");
+      $(buttonNewsFirstShow).css("display", "block");
+
+      $("[data-news='news-three']").fadeOut("slow","swing");
+    });
+  }
 });
 
 /* Scroll event - about */

@@ -146,6 +146,16 @@
   align-items: center;
 }
 
+.work__button-second-hide {
+  display: none;
+
+  @media @tablet {
+    & {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 .btn-works {
   position: relative;
   display: flex;
@@ -153,7 +163,7 @@
   align-items: center;
   border: 1px solid @black;
   border-radius: 50%;
-  width: 2.8rem;
+  width: 2.7rem;
   height: 2.8rem;
   transition: all 0.3s ease;
   overflow: hidden;

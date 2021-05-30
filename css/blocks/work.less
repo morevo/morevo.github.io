@@ -146,9 +146,11 @@
   align-items: center;
 }
 
-.work__button-second-hide {
+.work__button .work__button-second-hide {
   display: none;
+}
 
+.work__button-second-rotate {
   @media @tablet {
     & {
       transform: rotate(180deg);
@@ -209,5 +211,37 @@
   &--down {
     bottom: 0.3rem;
     fill: @black;
+  }
+
+  .news__button-second-hide &--up {
+    @media @tablet {
+      & {
+        left: 3.5px;
+      }
+    }
+  }
+
+  .news__button-first-show &--up {
+    @media @tablet {
+      & {
+        left: 3.5px;
+      }
+    }
+  }
+
+  .news__button-second-hide &--down {
+    @media @tablet {
+      & {
+        left: 3.5px;
+      }
+    }
+  }
+
+  .news__button-first-show &--down {
+    @media @tablet {
+      & {
+        left: 3.5px;
+      }
+    }
   }
 }

@@ -3,7 +3,6 @@ $(() => {
   // Можно напписать так или $(() => { }) или так $( function() { });-$(document).ready(())
 
   let filter = $("[data-filter]"); //Сохр. элементы с data-filter, по которым будем отслеживать клик
-
   filter.on("click", function (event) {
     // По клику на элементы с атрибутом ( [data-filter] ) мы будем что-то делать
     event.preventDefault(); // Убираем стандартное поведенее ссылки, при клике перебрось на верх сайта
@@ -262,6 +261,8 @@ $(() => {
   let buttonNewsSecondHide = $(".news__button-second-hide");
   let buttonCategory = $("[data-category]");
   let buttonTarget = $("[data-target]");
+  let buttonTargetWorkFive = $("[data-target='work-five']");
+  let buttonTargetWorkSix = $("[data-target='work-six']");
 
   buttonWorksFirstShow.on("click", function (e) {
     // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
@@ -273,23 +274,56 @@ $(() => {
     e.preventDefault();
   });
 
+  filter.on("click", function () {
+    let cat = $(this).data("filter");
+    if (cat == "all") {
+      $(buttonWorksSecondHide).css("display", "flex");
+      $(buttonWorksFirstShow).css("display", "none");
+    }
+  });
+
   if (worksWidth1199px.matches) {
     // If max-width: 1199px will be true
     buttonWorksFirstShow.on("click", function (e) {
       e.preventDefault();
 
+      filter.on("click", function () {
+        // After click on arrow hide, activate event click on filter items
+        $(buttonWorksSecondHide).css("display", "none");
+        $(buttonWorksFirstShow).css("display", "flex");
+        let cat = $(this).data("filter");
+
+        switch (cat) {
+          case "all":
+            $(buttonWorksSecondHide).css("display", "flex");
+            $(buttonWorksFirstShow).css("display", "none");
+
+            $(buttonTargetWorkFive).fadeIn("slow", "swing");
+            $(buttonTargetWorkSix).fadeIn("slow", "swing");
+            break;
+
+          case "app":
+            $(buttonTargetWorkFive).fadeIn("slow", "swing");
+            break;
+
+          case "interaction":
+            $(buttonTargetWorkSix).fadeIn("slow", "swing");
+            break;
+        }
+      });
+
       $(buttonWorksFirstShow).css("display", "none");
       $(buttonWorksSecondHide).css("display", "flex");
 
       $(buttonCategory).fadeIn("slow", "swing");
-      $("[data-target='work-five']").fadeTo(400, 1, "linear");
-      $("[data-target='work-six']").fadeTo(400, 1, "linear");
+      $(buttonTargetWorkFive).fadeTo(400, 1, "linear");
+      $(buttonTargetWorkSix).fadeTo(400, 1, "linear");
 
       if (worksWidth797px.matches) {
         $("[data-target='work-four']").fadeTo(400, 1, "linear");
       }
 
-      $(".hide").toggleClass("hide show");
+      $(".hide").toggleClass("hide show"); // For show blocks after click on filter menu, and click on button show more
     });
 
     buttonWorksSecondHide.on("click", function (e) {
@@ -299,17 +333,17 @@ $(() => {
       $(buttonWorksSecondHide).css("display", "none");
       $(buttonWorksFirstShow).css("display", "flex");
 
-      $("[data-target='work-five']").fadeOut("slow", "swing");
-      $("[data-target='work-six']").fadeOut("slow", "swing");
+      $(buttonTargetWorkFive).fadeOut("slow", "swing");
+      $(buttonTargetWorkSix).fadeOut("slow", "swing");
 
       if (worksWidth797px.matches) {
         $("[data-target='work-four']")
           .parents("[data-category='website']")
           .fadeOut("slow", "swing");
-        $("[data-target='work-five']")
+        $(buttonTargetWorkFive)
           .parents("[data-category='app']")
           .fadeOut("slow", "swing");
-        $("[data-target='work-six']")
+        $(buttonTargetWorkSix)
           .parents("[data-category='interaction']")
           .fadeOut("slow", "swing");
       }
@@ -317,16 +351,16 @@ $(() => {
 
     buttonNewsFirstShow.on("click", function (e) {
       e.preventDefault();
-
+      $(".news__button-second-hide").parents(".news__button__arrow").css("margin", "0");
       $(buttonNewsSecondHide).css("display", "block");
       $(buttonNewsFirstShow).css("display", "none");
+
 
       $("[data-news='news-three']").fadeIn("slow", "swing");
     });
 
     buttonNewsSecondHide.on("click", function (e) {
       e.preventDefault();
-
       $(buttonNewsSecondHide).css("display", "none");
       $(buttonNewsFirstShow).css("display", "block");
 

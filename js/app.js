@@ -261,16 +261,20 @@ $(() => {
   let buttonNewsFirstShow = $(".news__button-first-show");
   let buttonNewsSecondHide = $(".news__button-second-hide");
   let buttonCategory = $("[data-category]");
+  let buttonTarget = $("[data-target]");
 
-  buttonWorksFirstShow.on("click", function(e) {  // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
+  buttonWorksFirstShow.on("click", function (e) {
+    // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
     e.preventDefault();
   });
 
-  buttonNewsFirstShow.on("click", function(e) {  // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
+  buttonNewsFirstShow.on("click", function (e) {
+    // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
     e.preventDefault();
   });
 
-  if (worksWidth1199px.matches) { // If max-width: 1199px will be true
+  if (worksWidth1199px.matches) {
+    // If max-width: 1199px will be true
     buttonWorksFirstShow.on("click", function (e) {
       e.preventDefault();
 
@@ -284,9 +288,12 @@ $(() => {
       if (worksWidth797px.matches) {
         $("[data-target='work-four']").fadeTo(400, 1, "linear");
       }
+
+      $(".hide").toggleClass("hide show");
     });
 
-    buttonWorksSecondHide.on("click", function (e) { // If max-width: 797px will be true
+    buttonWorksSecondHide.on("click", function (e) {
+      // If max-width: 797px will be true
       e.preventDefault();
 
       $(buttonWorksSecondHide).css("display", "none");
@@ -296,28 +303,34 @@ $(() => {
       $("[data-target='work-six']").fadeOut("slow", "swing");
 
       if (worksWidth797px.matches) {
-        $("[data-target='work-four']").parents("[data-category='website']").fadeOut("slow", "swing");
-        $("[data-target='work-five']").parents("[data-category='app']").fadeOut("slow", "swing");
-        $("[data-target='work-six']").parents("[data-category='interaction']").fadeOut("slow", "swing");
+        $("[data-target='work-four']")
+          .parents("[data-category='website']")
+          .fadeOut("slow", "swing");
+        $("[data-target='work-five']")
+          .parents("[data-category='app']")
+          .fadeOut("slow", "swing");
+        $("[data-target='work-six']")
+          .parents("[data-category='interaction']")
+          .fadeOut("slow", "swing");
       }
     });
 
-    buttonNewsFirstShow.on("click", function(e) {
+    buttonNewsFirstShow.on("click", function (e) {
       e.preventDefault();
 
       $(buttonNewsSecondHide).css("display", "block");
       $(buttonNewsFirstShow).css("display", "none");
 
-      $("[data-news='news-three']").fadeIn("slow","swing");
+      $("[data-news='news-three']").fadeIn("slow", "swing");
     });
 
-    buttonNewsSecondHide.on("click", function(e) {
+    buttonNewsSecondHide.on("click", function (e) {
       e.preventDefault();
 
       $(buttonNewsSecondHide).css("display", "none");
       $(buttonNewsFirstShow).css("display", "block");
 
-      $("[data-news='news-three']").fadeOut("slow","swing");
+      $("[data-news='news-three']").fadeOut("slow", "swing");
     });
   }
 });

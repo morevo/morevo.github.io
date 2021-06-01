@@ -253,14 +253,17 @@ $(() => {
   });
 
   /* Show more work items */
-  let worksWidth1199px = window.matchMedia("(max-width: 1199px)");
-  let worksWidth797px = window.matchMedia("(max-width: 797px)");
+  let worksWidth1199px = window.matchMedia("(max-width: 1199px)"); // Less than 1199px
+  let worksWidth797px = window.matchMedia("(max-width: 797px)"); // Less than 797px // Максимальная и от нее вниз (min-width) - минимальная и от нее вверх.
+  let worksMinWidth1199px = window.matchMedia("(min-width: 1199px"); // More than 1199px //If my width will be more than 1199px,i make my button arrow(learn more workd)active and apadt.
   let buttonWorksFirstShow = $(".work__button-first-show");
   let buttonWorksSecondHide = $(".work__button-second-hide");
   let buttonNewsFirstShow = $(".news__button-first-show");
   let buttonNewsSecondHide = $(".news__button-second-hide");
   let buttonCategory = $("[data-category]");
   let buttonTarget = $("[data-target]");
+  let buttonTargetWorkThree = $("[data-target='work-three']");
+  let buttonTargetWorkFour = $("[data-target='work-four']");
   let buttonTargetWorkFive = $("[data-target='work-five']");
   let buttonTargetWorkSix = $("[data-target='work-six']");
 
@@ -276,11 +279,56 @@ $(() => {
 
   filter.on("click", function () {
     let cat = $(this).data("filter");
+
+    $("[data-target]").each(function () {
+      let target = $(this).data("target");
+    });
     if (cat == "all") {
       $(buttonWorksSecondHide).css("display", "flex");
       $(buttonWorksFirstShow).css("display", "none");
     }
   });
+
+  if (worksMinWidth1199px.matches) {
+    buttonWorksFirstShow.on("click", function (e) {
+      e.preventDefault();
+      filter.on("click", function () {
+        $(buttonWorksSecondHide).css("display", "none");
+        $(buttonWorksFirstShow).css("display", "flex");
+        let cat = $(this).data("filter");
+
+        switch (cat) {
+          case "all":
+            $(buttonWorksSecondHide).css("display", "flex");
+            $(buttonWorksFirstShow).css("display", "none");
+        }
+      });
+      $(buttonCategory).fadeIn("slow", "swing");
+      $(".hide").toggleClass("hide show");
+      $(buttonWorksFirstShow).css("display", "none");
+      $(buttonWorksSecondHide).css("display", "flex");
+    });
+
+    buttonWorksSecondHide.on("click", function (e) {
+      e.preventDefault();
+
+      $(buttonWorksSecondHide).css("display", "none");
+      $(buttonWorksFirstShow).css("display", "flex");
+
+      $("[data-target='work-three']")
+        .parents("[data-category='interaction']")
+        .fadeOut("slow", "swing");
+      $("[data-target='work-four']")
+        .parents("[data-category='website']")
+        .fadeOut("slow", "swing");
+      $(buttonTargetWorkFive)
+        .parents("[data-category='app']")
+        .fadeOut("slow", "swing");
+      $(buttonTargetWorkSix)
+        .parents("[data-category='interaction']")
+        .fadeOut("slow", "swing");
+    });
+  }
 
   if (worksWidth1199px.matches) {
     // If max-width: 1199px will be true
@@ -351,10 +399,11 @@ $(() => {
 
     buttonNewsFirstShow.on("click", function (e) {
       e.preventDefault();
-      $(".news__button-second-hide").parents(".news__button__arrow").css("margin", "0");
+      $(".news__button-second-hide")
+        .parents(".news__button__arrow")
+        .css("margin", "0");
       $(buttonNewsSecondHide).css("display", "block");
       $(buttonNewsFirstShow).css("display", "none");
-
 
       $("[data-news='news-three']").fadeIn("slow", "swing");
     });
@@ -367,6 +416,17 @@ $(() => {
       $("[data-news='news-three']").fadeOut("slow", "swing");
     });
   }
+
+  /* For modal, copy contacts on click.. Processing... */
+  // let contactCopy = $(".modal__contact__hover");
+
+  // $(contactCopy).on("click", function(el) {
+  //   let copyNumber = $(".contact__text-number").val(".contact__text-number").text();
+  //   let copyEmail = $(".contact__text-email").val(".contact__text-email").text();
+
+  //   document.execCommand("copy");
+
+  // });
 });
 
 /* Scroll event - about */
@@ -417,6 +477,7 @@ slick.on("click", function (e) {
 
 /* Make different modals (work) for block (works) */
 function ProjectConstructor(name, cat, year, customer, desc) {
+  /* По клику на item work я буду добавлять элементы data-target в modal-work, и проверять, какой скролить. */
   // Processing...
   this.name = name;
   this.cat = cat;
@@ -472,7 +533,6 @@ let target = $("[data-target]");
 
 target.on("click", function (e) {
   e.preventDefault();
-
   let workTarget = $(this).data("target");
 
   switch (workTarget) {

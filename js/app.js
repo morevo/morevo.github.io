@@ -268,12 +268,12 @@ $(() => {
   let buttonTargetWorkSix = $("[data-target='work-six']");
 
   buttonWorksFirstShow.on("click", function (e) {
-    // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
+    // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing.. Done
     e.preventDefault();
   });
 
   buttonNewsFirstShow.on("click", function (e) {
-    // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing..
+    // When will be appends more works, i make activate this moment. When max-width be more than 1199px... Processing.. Done
     e.preventDefault();
   });
 
@@ -327,6 +327,23 @@ $(() => {
       $(buttonTargetWorkSix)
         .parents("[data-category='interaction']")
         .fadeOut("slow", "swing");
+    });
+
+    buttonNewsFirstShow.on("click", function (e) {
+      e.preventDefault();
+
+      $(buttonNewsSecondHide).css("display", "block");
+      $(buttonNewsFirstShow).css("display", "none");
+
+
+    });
+
+    buttonNewsSecondHide.on("click", function (e) {
+      e.preventDefault();
+      $(buttonNewsSecondHide).css("display", "none");
+      $(buttonNewsFirstShow).css("display", "block");
+
+   
     });
   }
 

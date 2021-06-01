@@ -240,6 +240,13 @@
 }
 
 .news__button-second-rotate {
+
+  @media @fullHd1920px {
+    & {
+      transform: rotate(180deg);
+    }
+  }
+
   @media @tablet {
     & {
       transform: rotate(180deg);
@@ -260,11 +267,13 @@
 
 .news__button__arrow {
   width: 1200px;
-  margin-top: 1rem;
+  margin-top: 0;
+}
 
-  @media @mobile {
-    & {
-      margin-top: 0;
-    }
-  }
+.news__button-first-show {
+  margin-top: 1rem;
+}
+
+.news__button-second-hide {
+  margin-bottom: 1rem;
 }

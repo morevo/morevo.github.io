@@ -334,16 +334,12 @@ $(() => {
 
       $(buttonNewsSecondHide).css("display", "block");
       $(buttonNewsFirstShow).css("display", "none");
-
-
     });
 
     buttonNewsSecondHide.on("click", function (e) {
       e.preventDefault();
       $(buttonNewsSecondHide).css("display", "none");
       $(buttonNewsFirstShow).css("display", "block");
-
-   
     });
   }
 
@@ -444,6 +440,36 @@ $(() => {
   //   document.execCommand("copy");
 
   // });
+
+  /* For adaptation modal work */
+  let maxWidth1200px = window.matchMedia("(max-width: 1200px)");
+  let maxWidth1040px = window.matchMedia("(max-width: 1040px)");
+  let maxWidth750px = window.matchMedia("(max-width: 750px)");
+  let modalWork = $(".modal-work").parents(".modal");
+  if (maxWidth1200px.matches) {
+    $(modalWork).css("padding", "0 1rem");
+  }
+  if (maxWidth1040px.matches) {
+    $("[data-slick='previous']").css("width", "2.3rem").css("height", "2.4rem");
+    $("[data-slick='next']").css("width", "2.3rem").css("height", "2.4rem");
+
+    $("[data-slick='previous']")
+      .find(".work__item")
+      .css("width", "1.6rem")
+      .css("height", "1.6rem"); // find - for searching childs elements
+    $("[data-slick='next']")
+      .find(".work__item")
+      .css("width", "1.6rem")
+      .css("height", "1.6rem");
+    $(".modal__dialog")
+      .find(".modal__close-img")
+      .css("width", "36px")
+      .css("height", "36px");
+  }
+  if(maxWidth750px.matches) {
+    //$(".modal-work").parents(".modal").css("padding", "5rem 1rem 5rem 1rem")
+    $(".modal-work").parents(".modal__dialog").css("overflow", "hidden");
+  }
 });
 
 /* Scroll event - about */
@@ -504,11 +530,11 @@ function ProjectConstructor(name, cat, year, customer, desc) {
 }
 
 let infoModal = new ProjectConstructor(
-  "Hello",
-  "asda",
+  "Landing page",
+  "Website",
   "2021",
-  "Agency good",
-  "Nice project"
+  "Game news",
+  "So, imagine that you need some page, that will be storaged information about yours project. This landing page can will be employ for games news, game app dev. and many another themes which relations with many modern tehnologies"
 );
 let infoModalTwo = new ProjectConstructor(
   "SSSS",
@@ -556,18 +582,18 @@ target.on("click", function (e) {
     case "work-one":
       $(".modal-work__title").text(infoModal.name);
       $(".modal-work__cat").text(infoModal.cat);
-      $(".modal-work__date").text(infoModal.date);
+      $(".modal-work__date").text(infoModal.year);
       $(".modal-work__name").text(infoModal.customer);
       $(".modal-work__text").text(infoModal.desc);
-      $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
-      $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+      $(".modal-work__photo-one").attr("src", "../images/GameNews1.png"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/GameNews2.png");
+      $(".modal-work__photo-three").attr("src", "../images/GameNews3.png");
       break;
 
     case "work-two":
       $(".modal-work__title").text(infoModalTwo.name);
       $(".modal-work__text").text(infoModalTwo.cat);
-      $(".modal-work__date").text(infoModalTwo.date);
+      $(".modal-work__date").text(infoModalTwo.year);
       $(".modal-work__name").text(infoModalTwo.customer);
       $(".modal-work__cat").text(infoModalTwo.desc);
       $(".modal-work__photo-one").attr("src", "../images/facebook.svg"); // Get src par. and change after click at work item
@@ -578,7 +604,7 @@ target.on("click", function (e) {
     case "work-three":
       $(".modal-work__title").text(infoModalThree.name);
       $(".modal-work__text").text(infoModalThree.cat);
-      $(".modal-work__date").text(infoModalThree.date);
+      $(".modal-work__date").text(infoModalThree.year);
       $(".modal-work__name").text(infoModalThree.customer);
       $(".modal-work__cat").text(infoModalThree.desc);
       $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
@@ -589,7 +615,7 @@ target.on("click", function (e) {
     case "work-four":
       $(".modal-work__title").text(infoModalFour.name);
       $(".modal-work__text").text(infoModalFour.cat);
-      $(".modal-work__date").text(infoModalFour.date);
+      $(".modal-work__date").text(infoModalFour.year);
       $(".modal-work__name").text(infoModalFour.customer);
       $(".modal-work__cat").text(infoModalFour.desc);
       $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
@@ -600,7 +626,7 @@ target.on("click", function (e) {
     case "work-five":
       $(".modal-work__title").text(infoModalFive.name);
       $(".modal-work__text").text(infoModalFive.cat);
-      $(".modal-work__date").text(infoModalFive.date);
+      $(".modal-work__date").text(infoModalFive.year);
       $(".modal-work__name").text(infoModalFive.customer);
       $(".modal-work__cat").text(infoModalFive.desc);
       $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
@@ -611,7 +637,7 @@ target.on("click", function (e) {
     case "work-six":
       $(".modal-work__title").text(infoModalSix.name);
       $(".modal-work__text").text(infoModalSix.cat);
-      $(".modal-work__date").text(infoModalSix.date);
+      $(".modal-work__date").text(infoModalSix.year);
       $(".modal-work__name").text(infoModalSix.customer);
       $(".modal-work__cat").text(infoModalSix.desc);
       $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item

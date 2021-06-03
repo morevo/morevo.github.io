@@ -675,7 +675,7 @@ target.on("click", function (e) {
       $(".modal-work__name").text(infoModalNewsSeven.customer);
       $(".modal-work__cat").text(infoModalNewsSeven.desc);
       $(".modal-work__photo-one").attr("src", "../images/reactOne.jpg"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/reactTwos.jpg");
+      $(".modal-work__photo-two").attr("src", "../images/reactTwo.jpg");
       $(".modal-work__photo-three").attr("src", "../images/reactThree.jpg");
       break;
 

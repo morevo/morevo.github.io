@@ -470,6 +470,11 @@ $(() => {
     //$(".modal-work").parents(".modal").css("padding", "5rem 1rem 5rem 1rem")
     $(".modal-work").parents(".modal__dialog").css("overflow", "hidden");
   }
+
+  /* form__button prevenrDefault() */
+  $(".form__button").on("click", function(e) {   // Feedback Form. Processing.
+    e.preventDefault();
+  });
 });
 
 /* Scroll event - about */

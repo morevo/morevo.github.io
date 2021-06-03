@@ -22,6 +22,12 @@
       padding: 1rem 0.1rem;
     }
   }
+  
+  @media @mobile405px{
+    & {
+      padding: 0.5rem 0.1rem;
+    }
+  }
 }
 
 .modal__resume__title {
@@ -111,7 +117,7 @@
 
   @media @mobile560px {
     &:not(:last-child) {
-      margin-bottom: 1.3rem;
+      margin-bottom: .9rem;
     }
   }
 }
@@ -318,14 +324,6 @@
   }
 }
 
-.modal__inner__item-none {
-  @media @mobile698px {
-    & {
-      display: none;
-    }
-  }
-}
-
 .modal__inner__subtitle {
   font-size: 0.93rem;
   font-weight: 400;
@@ -342,6 +340,12 @@
   font-size: 1.06rem;
   font-weight: 700;
   color: @black;
+
+  @media @mobile405px {
+    & {
+      font-size: .9rem;
+    }
+  }
 }
 
 .modal__inner__post {
@@ -350,6 +354,12 @@
   font-weight: 700;
   color: @black;
   margin-bottom: 0.53rem;
+
+  @media @mobile405px {
+    & {
+      font-size: .9rem;
+    }
+  }
 }
 
 .modal__inner__text {
@@ -391,7 +401,7 @@
   @media @mobileNormal {
     & {
       text-align: center;
-      width: 60%;
+      width: 66%;
     }
   }
 

@@ -466,7 +466,7 @@ $(() => {
       .css("width", "36px")
       .css("height", "36px");
   }
-  if(maxWidth750px.matches) {
+  if (maxWidth750px.matches) {
     //$(".modal-work").parents(".modal").css("padding", "5rem 1rem 5rem 1rem")
     $(".modal-work").parents(".modal__dialog").css("overflow", "hidden");
   }
@@ -491,6 +491,7 @@ $(window).scroll(function () {
 /* Slick Slider: http://kenwheeler.github.io/slick/ */
 
 $("#worksSlider").slick({
+  // This moment need optimization... Click on news, show 10 slides, click on works, show 3 images... Processing
   infinite: true, // Infinity slide images
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -523,10 +524,10 @@ function ProjectConstructor(name, cat, year, customer, desc) {
   /* По клику на item work я буду добавлять элементы data-target в modal-work, и проверять, какой скролить. */
   // Processing...
   this.name = name;
-  this.cat = cat;
+  this.desc = desc;
   this.year = year;
   this.customer = customer;
-  this.desc = desc;
+  this.cat = cat;
 }
 
 let infoModal = new ProjectConstructor(
@@ -537,47 +538,69 @@ let infoModal = new ProjectConstructor(
   "So, imagine that you need some page, that will be storaged information about yours project. This landing page can will be employ for games news, game app dev. and many another themes which relations with many modern tehnologies"
 );
 let infoModalTwo = new ProjectConstructor(
-  "SSSS",
-  "SSSSSasSSSSSda",
-  "2021",
-  "asgasasd",
-  "cxcbx"
+  "Coming soon",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty"
 );
 let infoModalThree = new ProjectConstructor(
-  "TTTT",
-  "SSSSSasSSSSSda",
-  "2021",
-  "dfgsd",
-  "awrwet"
+  "Coming soon",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty"
 );
 let infoModalFour = new ProjectConstructor(
-  "YYYY",
-  "SSSSSasSSSSSda",
-  "2021",
-  "dsfgsdf",
-  "yioty"
+  "Coming soon",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty"
 );
 let infoModalFive = new ProjectConstructor(
-  "HHHH",
-  "SSSSSasSSSSSda",
-  "2021",
-  "sdfgsdfg",
-  "23412"
+  "Coming soon",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty"
 );
 let infoModalSix = new ProjectConstructor(
-  "ZZZZ",
-  "SSSSSasSSSSSda",
+  "Coming soon",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty"
+);
+
+let infoModalNewsSeven = new ProjectConstructor(
+  "REACT.JS",
+  "This framework works with interface faster than others. Thanks to this, programmers can save a lot of time and become more efficient. Compared to Angular, React's productivity has grown steadily, becoming a tool for creating serious and complex software.",
   "2021",
-  "dsfgsdf",
-  "dsfj4s"
+  "The most important functions",
+  "REACT.JS"
+);  
+
+let infoModalNewsEight = new ProjectConstructor(
+  "Coming soon",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty"
+);
+
+let infoModalNewsNine = new ProjectConstructor(
+  "Coming soon",
+  "Empty",
+  "Empty",
+  "Empty",
+  "Empty"
 );
 
 let target = $("[data-target]");
-
 target.on("click", function (e) {
   e.preventDefault();
   let workTarget = $(this).data("target");
-
   switch (workTarget) {
     case "work-one":
       $(".modal-work__title").text(infoModal.name);
@@ -596,9 +619,9 @@ target.on("click", function (e) {
       $(".modal-work__date").text(infoModalTwo.year);
       $(".modal-work__name").text(infoModalTwo.customer);
       $(".modal-work__cat").text(infoModalTwo.desc);
-      $(".modal-work__photo-one").attr("src", "../images/facebook.svg"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/instagram.svg");
-      $(".modal-work__photo-three").attr("src", "../images/mail.svg");
+      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       break;
 
     case "work-three":
@@ -607,9 +630,9 @@ target.on("click", function (e) {
       $(".modal-work__date").text(infoModalThree.year);
       $(".modal-work__name").text(infoModalThree.customer);
       $(".modal-work__cat").text(infoModalThree.desc);
-      $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
-      $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       break;
 
     case "work-four":
@@ -618,9 +641,9 @@ target.on("click", function (e) {
       $(".modal-work__date").text(infoModalFour.year);
       $(".modal-work__name").text(infoModalFour.customer);
       $(".modal-work__cat").text(infoModalFour.desc);
-      $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
-      $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       break;
 
     case "work-five":
@@ -629,9 +652,9 @@ target.on("click", function (e) {
       $(".modal-work__date").text(infoModalFive.year);
       $(".modal-work__name").text(infoModalFive.customer);
       $(".modal-work__cat").text(infoModalFive.desc);
-      $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
-      $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       break;
 
     case "work-six":
@@ -640,6 +663,39 @@ target.on("click", function (e) {
       $(".modal-work__date").text(infoModalSix.year);
       $(".modal-work__name").text(infoModalSix.customer);
       $(".modal-work__cat").text(infoModalSix.desc);
+      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      break;
+
+    case "work-seven":
+      $(".modal-work__title").text(infoModalNewsSeven.name);
+      $(".modal-work__text").text(infoModalNewsSeven.cat);
+      $(".modal-work__date").text(infoModalNewsSeven.year);
+      $(".modal-work__name").text(infoModalNewsSeven.customer);
+      $(".modal-work__cat").text(infoModalNewsSeven.desc);
+      $(".modal-work__photo-one").attr("src", "../images/reactOne.jpg"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/reactTwo.jpg");
+      $(".modal-work__photo-three").attr("src", "../images/reactThree.jpg");
+      break;
+
+    case "work-eight":
+      $(".modal-work__title").text(infoModalNewsEight.name);
+      $(".modal-work__text").text(infoModalNewsEight.cat);
+      $(".modal-work__date").text(infoModalNewsEight.year);
+      $(".modal-work__name").text(infoModalNewsEight.customer);
+      $(".modal-work__cat").text(infoModalNewsEight.desc);
+      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      break;
+
+    case "work-nine":
+      $(".modal-work__title").text(infoModalNewsNine.name);
+      $(".modal-work__text").text(infoModalNewsNine.cat);
+      $(".modal-work__date").text(infoModalNewsNine.year);
+      $(".modal-work__name").text(infoModalNewsNine.customer);
+      $(".modal-work__cat").text(infoModalNewsNine.desc);
       $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
       $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
       $(".modal-work__photo-three").attr("src", "../images/twitter.svg");

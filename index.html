@@ -1012,20 +1012,20 @@
                     </div>
                             </div>
                             
-                            <form class="form" action="/php/handler.php" method="POST" name="form"> <!--Тег<form> устанавливает форму на веб-странице. -->
+                            <form class="form" action="/php/feedback.php" method="POST" name="form"> <!--Тег<form> устанавливает форму на веб-странице. -->
                                 <div class="form__group">
                                 <label for="input-email" class="form__label">Adress e-mail</label> <!--Название которое выше поля для ввода. for - нужен для связки id input'a и label.-->
-                                <input class="form__input form__width" type="text" placeholder="Adress e-mail" id="input-email" name="email"> <!-- placeholder - Текст который исчезает после ввода текста в input -->
+                                <input class="form__input form__width" type="text" placeholder="Adress e-mail" id="input-email" name="email" required oninvalid="this.setCustomValidity('Fill this place')" oninput="setCustomValidity('')"> <!-- placeholder - Текст который исчезает после ввода текста в input -->  <!-- Requiered request -->
                         </div>
 
                             <div class="form__group">
                                 <label for="textarea-message" class="form__label">Request</label> <!-- Request - запрос, заявка -->
-                                <textarea class="form__textarea" id="textarea-message" placeholder="Type your request..." name="message"></textarea>
+                                <textarea class="form__textarea" id="textarea-message" placeholder="Type your request..." name="message" required oninvalid="this.setCustomValidity('Fill this place')" oninput="setCustomValidity('')"></textarea> <!-- Requiered request -->
                             </div>
                             
                             <div class="modal__form__button">
                                 <div class="form__button__inner">
-                                <button type="submit" class="form__button"><span class="form__text__opacity">Send</span> 
+                                <button type="submit" class="form__button" value="Send"><span class="form__text__opacity">Send</span> 
                                     <svg class="button__item">
                                         <use class="button__icon" xlink:href="#mail"></use>
                                     </svg>

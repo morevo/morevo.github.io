@@ -472,9 +472,20 @@ $(() => {
   }
 
   /* form__button prevenrDefault() */
-  $(".form__button").on("click", function(e) {   // Feedback Form. Processing.
-    e.preventDefault();
-  });
+  // $(".form__button").on("click", function(e) {   // Feedback Form. Processing.
+  //   e.preventDefault();
+  // });
+  /* Work with form, reset after sent message to email */
+  $(".form").submit(function() {  // After click on submit
+    var form = this;
+    $.ajax({
+      type: "GET",
+      url: "../php/feedback.php",
+      data: $(".form").serialize()  // serialize for read datas from form - (input, textarea...)
+    }).done(function() {
+        form.reset();  // Delete datas after sent message
+    });
+});
 });
 
 /* Scroll event - about */

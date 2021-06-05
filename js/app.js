@@ -473,7 +473,7 @@ $(() => {
 
   /* form__button prevenrDefault() */
   // $(".form__button").on("click", function(e) {   // Feedback Form. Processing.
-  //   e.preventDefault();
+    // e.preventDefault();
   // });
   /* Work with form, reset after sent message to email */
   $(".form").submit(function() {  // After click on submit

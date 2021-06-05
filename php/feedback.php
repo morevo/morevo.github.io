@@ -21,9 +21,11 @@
             "Email: ".$email."\n".
             "Message: ".$message."\n")
             ) {
-                echo("Message success sent!");
+                echo("Message successfuly sent!");
+                header("Location: ../index.html"); // Redirection user to index.html after click on button
             } else {
                 echo("Have some errors! Please, check datas...");
+                header("Location: ../index.html");
             }
 
 ?>

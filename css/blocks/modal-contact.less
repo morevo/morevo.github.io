@@ -19,7 +19,6 @@
       padding: 1.5rem 2rem;
     }
   }
-
 }
 
 .modal__contact__title {
@@ -147,6 +146,41 @@
   @media @mobile {
     & {
       display: none;
+    }
+  }
+
+  &-map {
+    position: relative;
+    border-top-right-radius: 2.3rem;
+    border-bottom-right-radius: 2.3rem;
+    width: 100%;
+    height: 100%;
+
+    &-title {
+      text-transform: uppercase;
+      font-size: 2rem;
+      position: absolute;
+      top: 2rem;
+      left: 39%;
+      color: fade(@black, 70%);
+
+      @media @tablet {
+        & {
+          left: 37%;
+        }
+      }
+
+      @media @tablet1040px {
+        & {
+          left: 35.5%;
+        }
+      }
+
+      @media @mobile867px {
+        & {
+          left: 32%;
+        }
+      }
     }
   }
 }

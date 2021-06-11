@@ -482,7 +482,7 @@ $(() => {
       type: "GET",
       url: "../php/feedback.php",
       data: $(".form").serialize()  // serialize for read datas from form - (input, textarea...)
-    }).done(function() {
+    }).done(function() {  // After successfuly done click on button into ".form"
         form.reset();  // Delete datas after sent message
     });
 });
@@ -712,9 +712,9 @@ target.on("click", function (e) {
       $(".modal-work__date").text(infoModalNewsNine.year);
       $(".modal-work__name").text(infoModalNewsNine.customer);
       $(".modal-work__cat").text(infoModalNewsNine.desc);
-      $(".modal-work__photo-one").attr("src", "../images/linkedin.svg"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/phone-call.svg");
-      $(".modal-work__photo-three").attr("src", "../images/twitter.svg");
+      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       break;
   }
 });

@@ -17,6 +17,13 @@
   -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
+
+  @media @mobile750px {
+    & {
+      border-top-left-radius: 2.3rem;
+      border-top-right-radius: 2.3rem;
+    }
+  }
 }
 .slick-list {
   height: 100%;
@@ -33,6 +40,13 @@
   &.dragging {
     cursor: pointer;
     cursor: hand;
+  }
+
+  @media @mobile750px {
+    & {
+      border-top-left-radius: 2.3rem;
+      border-top-right-radius: 2.3rem;
+    }
   }
 }
 .slick-slider .slick-track,
@@ -65,6 +79,13 @@
 
   .slick-loading & {
     visibility: hidden;
+  }
+
+  @media @mobile750px {
+    & {
+      border-top-left-radius: 2.3rem;
+      border-top-right-radius: 2.3rem;
+    }
   }
 }
 .slick-slide {
@@ -114,6 +135,13 @@
     display: block;
     height: auto;
     border: 1px solid transparent;
+  }
+
+  @media @mobile750px {
+    & {
+      border-top-left-radius: 2.3rem;
+      border-top-right-radius: 2.3rem;
+    }
   }
 }
 

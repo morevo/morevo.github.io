@@ -473,19 +473,21 @@ $(() => {
 
   /* form__button prevenrDefault() */
   // $(".form__button").on("click", function(e) {   // Feedback Form. Processing.
-    // e.preventDefault();
+  // e.preventDefault();
   // });
   /* Work with form, reset after sent message to email */
-  $(".form").submit(function() {  // After click on submit
+  $(".form").submit(function () {
+    // After click on submit
     var form = this;
     $.ajax({
       type: "GET",
       url: "../php/feedback.php",
-      data: $(".form").serialize()  // serialize for read datas from form - (input, textarea...)
-    }).done(function() {  // After successfuly done click on button into ".form"
-        form.reset();  // Delete datas after sent message
+      data: $(".form").serialize(), // serialize for read datas from form - (input, textarea...)
+    }).done(function () {
+      // After successfuly done click on button into ".form"
+      form.reset(); // Delete datas after sent message
     });
-});
+  });
 });
 
 /* Scroll event - about */
@@ -595,7 +597,7 @@ let infoModalNewsSeven = new ProjectConstructor(
   "2021",
   "The most important functions",
   "REACT.JS"
-);  
+);
 
 let infoModalNewsEight = new ProjectConstructor(
   "Coming soon",
@@ -616,105 +618,151 @@ let infoModalNewsNine = new ProjectConstructor(
 let target = $("[data-target]");
 target.on("click", function (e) {
   e.preventDefault();
+
+  let workTitle = $(".modal-work__title");
+  let workCat = $(".modal-work__cat");
+  let workDate = $(".modal-work__date");
+  let workName = $(".modal-work__name");
+  let workText = $(".modal-work__text");
+  let workImgOne = $(".modal-work__photo-one");
+  let workImgTwo = $(".modal-work__photo-two");
+  let workImgThree = $(".modal-work__photo-three");
+
   let workTarget = $(this).data("target");
   switch (workTarget) {
     case "work-one":
-      $(".modal-work__title").text(infoModal.name);
-      $(".modal-work__cat").text(infoModal.cat);
-      $(".modal-work__date").text(infoModal.year);
-      $(".modal-work__name").text(infoModal.customer);
-      $(".modal-work__text").text(infoModal.desc);
-      $(".modal-work__photo-one").attr("src", "../images/GameNews1.png"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/GameNews2.png");
-      $(".modal-work__photo-three").attr("src", "../images/GameNews3.png");
+      $(workTitle).text(infoModal.name);
+      $(workCat).text(infoModal.cat);
+      $(workDate).text(infoModal.year);
+      $(workName).text(infoModal.customer);
+      $(workText).text(infoModal.desc);
+      $(workImgOne).attr("src", "../images/GameNews1.png"); // Get src par. and change after click at work item
+      $(workImgTwo).attr("src", "../images/GameNews2.png");
+      $(workImgThree).attr("src", "../images/GameNews3.png");
       break;
 
     case "work-two":
-      $(".modal-work__title").text(infoModalTwo.name);
-      $(".modal-work__text").text(infoModalTwo.cat);
-      $(".modal-work__date").text(infoModalTwo.year);
-      $(".modal-work__name").text(infoModalTwo.customer);
-      $(".modal-work__cat").text(infoModalTwo.desc);
-      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
-      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(workTitle).text(infoModalTwo.name);
+      $(workCat).text(infoModalTwo.cat);
+      $(workDate).text(infoModalTwo.year);
+      $(workName).text(infoModalTwo.customer);
+      $(workText).text(infoModalTwo.desc);
+      $(workImgOne)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(workImgTwo)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
+      $(workImgThree)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
       break;
 
     case "work-three":
-      $(".modal-work__title").text(infoModalThree.name);
-      $(".modal-work__text").text(infoModalThree.cat);
-      $(".modal-work__date").text(infoModalThree.year);
-      $(".modal-work__name").text(infoModalThree.customer);
-      $(".modal-work__cat").text(infoModalThree.desc);
-      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
-      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(workTitle).text(infoModalThree.name);
+      $(workCat).text(infoModalThree.cat);
+      $(workDate).text(infoModalThree.year);
+      $(workName).text(infoModalThree.customer);
+      $(workText).text(infoModalThree.desc);
+      $(workImgOne)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(workImgTwo)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
+      $(workImgThree)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
       break;
 
     case "work-four":
-      $(".modal-work__title").text(infoModalFour.name);
-      $(".modal-work__text").text(infoModalFour.cat);
-      $(".modal-work__date").text(infoModalFour.year);
-      $(".modal-work__name").text(infoModalFour.customer);
-      $(".modal-work__cat").text(infoModalFour.desc);
-      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
-      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(workTitle).text(infoModalFour.name);
+      $(workCat).text(infoModalFour.cat);
+      $(workDate).text(infoModalFour.year);
+      $(workName).text(infoModalFour.customer);
+      $(workText).text(infoModalFour.desc);
+      $(workImgOne)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(workImgTwo)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
+      $(workImgThree)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
       break;
 
     case "work-five":
-      $(".modal-work__title").text(infoModalFive.name);
-      $(".modal-work__text").text(infoModalFive.cat);
-      $(".modal-work__date").text(infoModalFive.year);
-      $(".modal-work__name").text(infoModalFive.customer);
-      $(".modal-work__cat").text(infoModalFive.desc);
-      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
-      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(workTitle).text(infoModalFive.name);
+      $(workCat).text(infoModalFive.cat);
+      $(workDate).text(infoModalFive.year);
+      $(workName).text(infoModalFive.customer);
+      $(workText).text(infoModalFive.desc);
+      $(workImgOne)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(workImgTwo)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
+      $(workImgThree)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
       break;
 
     case "work-six":
-      $(".modal-work__title").text(infoModalSix.name);
-      $(".modal-work__text").text(infoModalSix.cat);
-      $(".modal-work__date").text(infoModalSix.year);
-      $(".modal-work__name").text(infoModalSix.customer);
-      $(".modal-work__cat").text(infoModalSix.desc);
-      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
-      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(workTitle).text(infoModalSix.name);
+      $(workCat).text(infoModalSix.cat);
+      $(workDate).text(infoModalSix.year);
+      $(workName).text(infoModalSix.customer);
+      $(workText).text(infoModalSix.desc);
+      $(workImgOne)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(workImgTwo)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
+      $(workImgThree)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
       break;
 
     case "work-seven":
-      $(".modal-work__title").text(infoModalNewsSeven.name);
-      $(".modal-work__text").text(infoModalNewsSeven.cat);
-      $(".modal-work__date").text(infoModalNewsSeven.year);
-      $(".modal-work__name").text(infoModalNewsSeven.customer);
-      $(".modal-work__cat").text(infoModalNewsSeven.desc);
-      $(".modal-work__photo-one").attr("src", "../images/reactOne.jpg"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/reactTwo.jpg");
-      $(".modal-work__photo-three").attr("src", "../images/reactThree.jpg");
+      $(workTitle).text(infoModalNewsSeven.name);
+      $(workCat).text(infoModalNewsSeven.cat);
+      $(workDate).text(infoModalNewsSeven.year);
+      $(workName).text(infoModalNewsSeven.customer);
+      $(workText).text(infoModalNewsSeven.desc);
+      $(workImgOne).attr("src", "../images/reactOne.jpg"); // Get src par. and change after click at work item
+      $(workImgTwo).attr("src", "../images/reactTwo.jpg");
+      $(workImgThree).attr("src", "../images/reactThree.jpg");
       break;
 
     case "work-eight":
-      $(".modal-work__title").text(infoModalNewsEight.name);
-      $(".modal-work__text").text(infoModalNewsEight.cat);
-      $(".modal-work__date").text(infoModalNewsEight.year);
-      $(".modal-work__name").text(infoModalNewsEight.customer);
-      $(".modal-work__cat").text(infoModalNewsEight.desc);
-      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
-      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(workTitle).text(infoModalNewsEight.name);
+      $(workCat).text(infoModalNewsEight.cat);
+      $(workDate).text(infoModalNewsEight.year);
+      $(workName).text(infoModalNewsEight.customer);
+      $(workText).text(infoModalNewsEight.desc);
+      $(workImgOne)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(workImgTwo)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
+      $(workImgThree)
+        .attr("src", "../images/brick-wall.svg")
+        .css("background", "#2b2a2c");
       break;
 
     case "work-nine":
-      $(".modal-work__title").text(infoModalNewsNine.name);
-      $(".modal-work__text").text(infoModalNewsNine.cat);
-      $(".modal-work__date").text(infoModalNewsNine.year);
-      $(".modal-work__name").text(infoModalNewsNine.customer);
-      $(".modal-work__cat").text(infoModalNewsNine.desc);
-      $(".modal-work__photo-one").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
-      $(".modal-work__photo-two").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
-      $(".modal-work__photo-three").attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(workTitle).text(infoModalNewsNine.name);
+      $(workCat).text(infoModalNewsNine.cat);
+      $(workDate).text(infoModalNewsNine.year);
+      $(workName).text(infoModalNewsNine.customer);
+      $(workText).text(infoModalNewsNine.desc);
+      $(workImgOne).attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(workImgTwo).attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
+      $(workImgThree).attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       break;
   }
 });

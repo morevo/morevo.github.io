@@ -593,10 +593,10 @@ let infoModalSix = new ProjectConstructor(
 
 let infoModalNewsSeven = new ProjectConstructor(
   "REACT.JS",
-  "This framework works with interface faster than others. Thanks to this, programmers can save a lot of time and become more efficient. Compared to Angular, React's productivity has grown steadily, becoming a tool for creating serious and complex software.",
+  "Library",
   "2021",
   "The most important functions",
-  "REACT.JS"
+  "This framework works with interface faster than others. Thanks to this, programmers can save a lot of time and become more efficient. Compared to Angular, React's productivity has grown steadily, becoming a tool for creating serious and complex software."
 );
 
 let infoModalNewsEight = new ProjectConstructor(

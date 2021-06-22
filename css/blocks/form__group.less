@@ -11,9 +11,7 @@
 }
 
 .form__label {
-  display: inline-block; // Делает label (inline-block) - чтобы мы могли сделать margin-bottom для label
-  // В отличие от display: block; - display:inline-block; не добавляет разрыв строки после элемента, поэтому элемент может сидеть рядом с другими элементами.
-  // Он игнорирует все свойства блочного элемента, не растягивается, не зависит ни от чего, просто к нему можно добавить разные свойства наподобие margin-bottom: 0.6rem;
+  display: inline-block;
   margin: 0 0 0.6rem 1.6rem;
 
   font-size: 0.8rem;
@@ -21,9 +19,9 @@
   color: @black;
 }
 
-.form__input, // Делаем отступы для наших полей input,textarea,до кнопки.Для этих полей одни и те же значения применяем
+.form__input,
 .form__textarea {
-  display: block; // Чтобы растянуть input и textarea, можно и без него.
+  display: block;
   width: 100%;
 
   border: 1px solid fade(@gray, 30%);
@@ -33,7 +31,7 @@
 
   transition: all 0.3s ease;
 
-  font-family: inherit; // Так как у input шрифты по умолчанию заданы, а font-family: Monzerat; не действует на них, меняем на наши шрифты путем наследование от родителей.
+  font-family: inherit;
 
   font-size: 0.8rem;
   font-weight: 400;
@@ -45,17 +43,16 @@
   }
 
   &:focus {
-    outline: none; // Убираем стандартный border при фокусе, и добавляем свой, который будет работать с radius.
+    outline: none;
     border: 1px solid fade(@black, 70%);
   }
 
   &::placeholder {
     transition: all 0.2s ease;
-    color: @gray; // Указываем цвет для нашего placeholder
+    color: @gray;
   }
 
   &:focus::placeholder {
-    // Меняем цвет placefolder'a при фокусе на input и textarea
     color: @black;
     transform: translateY(-13px);
   }
@@ -69,8 +66,8 @@
 }
 
 .form__textarea {
-  height: 200px; // Устанавливаем фиксированную высоту для textarea
-  resize: none; // Убираем произвольное расширение, растягивание окна textarea
+  height: 200px;
+  resize: none;
 
   @media @mobile605px {
     & {
@@ -83,9 +80,6 @@
   display: flex;
   justify-content: center;
   transition: all 0.7s ease;
-}
-
-.form__button__inner {
 }
 
 .form__button {

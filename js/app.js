@@ -1,13 +1,11 @@
 /* Click filter - portfolio */
 $(() => {
-  // Можно напписать так или $(() => { }) или так $( function() { });-$(document).ready(())
 
-  let filter = $("[data-filter]"); //Сохр. элементы с data-filter, по которым будем отслеживать клик
+  let filter = $("[data-filter]");
   filter.on("click", function (event) {
-    // По клику на элементы с атрибутом ( [data-filter] ) мы будем что-то делать
-    event.preventDefault(); // Убираем стандартное поведенее ссылки, при клике перебрось на верх сайта
+    event.preventDefault();
 
-    let cat = $(this).data("filter"); // При клике на data-filter(this) атрибут, будем получать значение после filter=""
+    let cat = $(this).data("filter");
 
     if (cat == "all") {
       $("[data-category]").removeClass("hide");
@@ -18,19 +16,17 @@ $(() => {
       setTimeout(() => $("[data-category]").fadeIn("slow", "swing"), 600);
     } else {
       $("[data-category]").each(function () {
-        // Проходимся по всем data-category
 
-        let workCat = $(this).data("category"); // Сохраняем все значения data-category(this) в переменную
+        let workCat = $(this).data("category"); 
 
         if (workCat != cat) {
-          // Если значение из переменной workCat != значению cat
-          $(this).addClass("hide"); // Тогда мы добавляем им класс "hide" который будет скрывать дургое
+          $(this).addClass("hide"); 
           $(".hide").fadeOut("slow", "swing");
-          $(this).removeClass("show"); // Тогда мы добавляем им класс "hide" который будет скрывать дургое
-          // Тогда мы добавляем им класс "hide" который будет скрывать дургое
+          $(this).removeClass("show");
+          
         } else {
-          $(this).removeClass("hide"); // Иначе, если workCat == cat, то мы удаляем у них класс hide
-          $(this).addClass("show"); // Иначе, если workCat == cat, то мы удаляем у них класс hide
+          $(this).removeClass("hide");
+          $(this).addClass("show");
           $(".show").fadeOut("slow", "swing");
 
           setTimeout(() => $(".show").fadeIn("slow", "swing"), 600);
@@ -535,11 +531,10 @@ slick.on("click", function (e) {
   }
 });
 
-/* Проходимся по item'am, если item == "work-one", делаем on.click на кнопки внутри модального окна, и делаем слайд slickPrev or slickNext */
+
 
 /* Make different modals (work) for block (works) */
 function ProjectConstructor(name, cat, year, customer, desc) {
-  /* По клику на item work я буду добавлять элементы data-target в modal-work, и проверять, какой скролить. */
   // Processing...
   this.name = name;
   this.desc = desc;
@@ -649,7 +644,7 @@ target.on("click", function (e) {
       $(workText).text(infoModalTwo.desc);
       $(workImgOne)
         .attr("src", "../images/brick-wall.svg")
-        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+        .css("background", "#2b2a2c"); 
       $(workImgTwo)
         .attr("src", "../images/brick-wall.svg")
         .css("background", "#2b2a2c");
@@ -666,7 +661,7 @@ target.on("click", function (e) {
       $(workText).text(infoModalThree.desc);
       $(workImgOne)
         .attr("src", "../images/brick-wall.svg")
-        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+        .css("background", "#2b2a2c"); 
       $(workImgTwo)
         .attr("src", "../images/brick-wall.svg")
         .css("background", "#2b2a2c");
@@ -683,7 +678,7 @@ target.on("click", function (e) {
       $(workText).text(infoModalFour.desc);
       $(workImgOne)
         .attr("src", "../images/brick-wall.svg")
-        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+        .css("background", "#2b2a2c"); 
       $(workImgTwo)
         .attr("src", "../images/brick-wall.svg")
         .css("background", "#2b2a2c");
@@ -700,7 +695,7 @@ target.on("click", function (e) {
       $(workText).text(infoModalFive.desc);
       $(workImgOne)
         .attr("src", "../images/brick-wall.svg")
-        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+        .css("background", "#2b2a2c"); 
       $(workImgTwo)
         .attr("src", "../images/brick-wall.svg")
         .css("background", "#2b2a2c");
@@ -717,7 +712,7 @@ target.on("click", function (e) {
       $(workText).text(infoModalSix.desc);
       $(workImgOne)
         .attr("src", "../images/brick-wall.svg")
-        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+        .css("background", "#2b2a2c"); 
       $(workImgTwo)
         .attr("src", "../images/brick-wall.svg")
         .css("background", "#2b2a2c");
@@ -732,7 +727,7 @@ target.on("click", function (e) {
       $(workDate).text(infoModalNewsSeven.year);
       $(workName).text(infoModalNewsSeven.customer);
       $(workText).text(infoModalNewsSeven.desc);
-      $(workImgOne).attr("src", "../images/reactOne.jpg"); // Get src par. and change after click at work item
+      $(workImgOne).attr("src", "../images/reactOne.jpg"); 
       $(workImgTwo).attr("src", "../images/reactTwo.jpg");
       $(workImgThree).attr("src", "../images/reactThree.jpg");
       break;
@@ -745,7 +740,7 @@ target.on("click", function (e) {
       $(workText).text(infoModalNewsEight.desc);
       $(workImgOne)
         .attr("src", "../images/brick-wall.svg")
-        .css("background", "#2b2a2c"); // Get src par. and change after click at work item
+        .css("background", "#2b2a2c"); 
       $(workImgTwo)
         .attr("src", "../images/brick-wall.svg")
         .css("background", "#2b2a2c");
@@ -760,7 +755,7 @@ target.on("click", function (e) {
       $(workDate).text(infoModalNewsNine.year);
       $(workName).text(infoModalNewsNine.customer);
       $(workText).text(infoModalNewsNine.desc);
-      $(workImgOne).attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c"); // Get src par. and change after click at work item
+      $(workImgOne).attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       $(workImgTwo).attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       $(workImgThree).attr("src", "../images/brick-wall.svg").css("background", "#2b2a2c");
       break;

@@ -1,8 +1,8 @@
-// compress: true             /* Сжимаем наш код в css */
+// compress: true
 @import "vars";
 
 html {
-  font-size: 15px; /* Теперь 1rem = 15px */
+  font-size: 15px;
   cursor: default;
 
   @media @mobile {
@@ -16,13 +16,13 @@ body {
   margin: 0;
 
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem; /* Исп. много размеров шрифтов - плохо */
-  color: @black; /* Переменная с цветом - черный */
+  font-size: 1rem;
+  color: @black;
 
   &.no-scroll {
-    //Если у тега body есть тег no-scroll, тогда ты отменяем прокрутку колесика мыши
-    overflow: hidden; //Мы будем отменять скролл нашей страницы
-  } //Пишем тегу body тег no-scroll
+
+    overflow: hidden;
+  }
 
   @media @mobile {
     & {
@@ -37,14 +37,13 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0; /* Убираем margin у всех заголовков, так удобнее работать */
+  margin: 0;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: border-box; /* Алгоритм подсчетов, все padding'i во внутрь */
-  /* padding не меняют размер наших блоков */
+  box-sizing: border-box;
 }
 
 /* Vendor */

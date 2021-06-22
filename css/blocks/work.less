@@ -1,7 +1,6 @@
 // main: ../style.less
 
 .work__shadow {
-  //Делаем тень для наших work айтемов, начальную и при наведении
   box-shadow: 0 0 4px fade(@black, 25%);
   border-radius: 17px;
   border: 1px solid fade(@black, 0%);
@@ -14,7 +13,6 @@
   }
 
   &:hover .work__photo {
-    //При наведении на work__shadow, в любом месте, будет прокручиваться работа вниз
     transform: translate(-50%, -2180px);
   }
 
@@ -80,7 +78,6 @@
 }
 
 .work__photo {
-  //Делаем адаптацию для нашей картинки
   width: 100%;
   display: block;
   max-width: 100%;
@@ -90,7 +87,7 @@
   left: 50%;
   top: 50%;
 
-  transform: translate(-50%, -150px); //Задаем начальную позицию фотографии
+  transform: translate(-50%, -150px);
   transition: 7s ease;
 }
 
@@ -185,7 +182,7 @@
     box-shadow: 0 0 7px fade(@black, 100%);
     transform: scale(
       1.3
-    ); //Делаем увеличение элемента при наведении (Очень удобно)
+    );
   }
 
   &:hover .work__icon {
@@ -193,12 +190,10 @@
   }
 
   &:hover .work__item--up {
-    //Чтобы соблюдать плавный hover стрелок, нужно указывать здесь top и в просто --up top
     top: 0.4rem;
   }
 
   &:hover .work__item--down {
-    //Чтобы соблюдать плавный hover стрелок, нужно указывать здесь bottom и в просто --down bottom
     bottom: -2rem;
     fill: @white;
   }

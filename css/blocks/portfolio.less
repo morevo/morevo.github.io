@@ -2,9 +2,9 @@
 
 .portfolio {
   display: flex;
-  flex-wrap: wrap; //Разрешаем перенос колонок на след строку если не влизают на текущую
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 0 -1rem; //Выравниваем наши элементы .portfolio__col по центру, компенсируем padding 1rem
+  margin: 0 -1rem;
   margin-bottom: 2.2rem;
 
   @media @mobile {
@@ -15,7 +15,7 @@
 
   &__col {
     padding: 1rem;
-    flex-basis: 33.33333%; //Делает то же самое что и width: 33.33333%; (Выравниваем по центру блоки)
+    flex-basis: 33.33333%;
     text-align: center;
 
     @media @tablet {
@@ -25,7 +25,6 @@
       }
 
       &:nth-child(1n + 5) {
-        // Каждый первый элемент начиная с пятого.
         display: none;
       }
     }

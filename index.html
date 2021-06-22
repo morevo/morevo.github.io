@@ -256,8 +256,8 @@
                         </svg>
                     </a>
                     <a class="nav__item start__about__scroll" href="#" data-timer="item-two">
-                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border"> <!--Делаем размер по которому двигается линия-->
-                            <rect width="138" height="37" x="0.4" y="0" rx="20" ry="20" /><!--Делаем полукруглую траэкт. по кнопке + располо-->
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                            <rect width="138" height="37" x="0.4" y="0" rx="20" ry="20" />
                           </svg>ABOUT ME
                         <svg class="nav__item--icon">
                             <use xlink:href="#portfolio"></use>
@@ -321,9 +321,9 @@
 
     <!-- Intro -->
 
-    <section class="intro">       <!--Используем section вместо div потому-что внутри есть заголовок, хорошо для SEO (поисковая оптимизация)-->
+    <section class="intro"> 
         <div class="container">
-            <div class="intro__inner">    <!--Флэксовый контейнер-->
+            <div class="intro__inner">
                 <div class="intro__content">
                     <h2 class="intro__subtitle">Hello, I’m</h2>
                     <h1 class="intro__tittle">Ivan Svilohuzov</h1>
@@ -393,24 +393,24 @@
                 <a class="works__nav-link" href="#" data-filter="interaction"><span>I</span><span>n</span><span>t</span><span>e</span><span>r</span><span>a</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span></a>
             </div>
 
-            <div class="portfolio"> <!--Portfolio будем делать disp-flex,так как он лежит в container уже-->
-                <div class="portfolio__col" data-category="website"> <!--Отвечает за ширину каждой колонки-->
+            <div class="portfolio">
+                <div class="portfolio__col" data-category="website">
                     <div class="work__shadow" data-show="work" data-target="work-one">
-                    <div class="work"> <!--Здесь сама информация внутри portfolio__col-->
+                    <div class="work">
                         <img class="work__photo work__photo-demo" src="images/work_2.jpg" alt="Game Development">
                     </div>
                     <div class="work__text">
                         <div class="work__cat">Landing page</div> 
-                        <div class="work__info">                    <!--Для разделения Game Dev. от даты jus. cont. space between-->
+                        <div class="work__info">
                         <div class="work__title">Game Development</div>
-                        <time class="work__date" datetime="2020-11-10 18:00">2020</time> <!--Используем тэг time для отображения даты, для семантики-->
+                        <time class="work__date" datetime="2020-11-10 18:00">2020</time>
                     </div>
                     </div>
                 </div> 
             </div>
-                <div class="portfolio__col" data-category="app"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="app">
                     <div class="work__shadow" data-show="work" data-target="work-two">
-                    <section class="work"> <!--Здесь сама информация внутри portfolio__col-->
+                    <section class="work">
                         <div class="work__inner-items">
                             <div class="work__photo-title">
                             <h3 class="work__inner-items-title">Soon</h3>
@@ -431,9 +431,9 @@
                 </section>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="interaction"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="interaction">
                     <div class="work__shadow" data-show="work" data-target="work-three">
-                        <section class="work"> <!--Здесь сама информация внутри portfolio__col-->
+                        <section class="work">
                             <div class="work__inner-items">
                                 <div class="work__photo-title">
                                 <h3 class="work__inner-items-title">Soon</h3>
@@ -454,9 +454,9 @@
                     </section>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="website"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="website">
                     <div class="work__shadow" data-show="work" data-target="work-four">
-                        <section class="work"> <!--Здесь сама информация внутри portfolio__col-->
+                        <section class="work">
                             <div class="work__inner-items">
                                 <div class="work__photo-title">
                                 <h3 class="work__inner-items-title">Soon</h3>
@@ -477,9 +477,9 @@
                     </section>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="app"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="app">
                     <div class="work__shadow" data-show="work" data-target="work-five">
-                        <section class="work"> <!--Здесь сама информация внутри portfolio__col-->
+                        <section class="work">
                             <div class="work__inner-items">
                                 <div class="work__photo-title">
                                 <h3 class="work__inner-items-title">Soon</h3>
@@ -500,9 +500,9 @@
                     </section>
                 </div>
             </div>
-                <div class="portfolio__col" data-category="interaction"> <!--Отвечает за ширину каждой колонки-->
+                <div class="portfolio__col" data-category="interaction">
                     <div class="work__shadow" data-show="work" data-target="work-six">
-                        <section class="work"> <!--Здесь сама информация внутри portfolio__col-->
+                        <section class="work">
                             <div class="work__inner-items">
                                 <div class="work__photo-title">
                                 <h3 class="work__inner-items-title">Soon</h3>
@@ -743,9 +743,9 @@
     </footer>
 
     <!-- Modals --> 
-    <div class="modal" style="display: none;" data-modal="work">  <!-- В этом блоке будет храниться маска, фон -->
+    <div class="modal" style="display: none;" data-modal="work">
 
-        <div class="modal__dialog"> <!-- Здесь будет содержмое модального окна -->
+        <div class="modal__dialog">
             <button type="button" class="modal__close" data-exit="close">
                 <div class="modal__pleace-img">
                 <svg class="modal__close-img">
@@ -753,7 +753,7 @@
                 </svg>
         </div>
             </button>
-            <div class="modal-work">  <!-- После открытия работ, сделать иконки использующихся стэков технологий (JS, CSS, LESS, PHP...) -->
+            <div class="modal-work">
                 <div class="modal-work__preview">
                     <div id="worksSlider">
                         <div>
@@ -820,8 +820,8 @@
         </div> <!--/modal__dialog-->
     </div> <!--/modal-->
 
-    <div class="modal modal__resume-padding" style="display: none;" data-modal="resume">  <!-- В этом блоке будет храниться маска, фон -->
-        <div class="modal__dialog"> <!-- Здесь будет содержмое модального окна -->
+    <div class="modal modal__resume-padding" style="display: none;" data-modal="resume">
+        <div class="modal__dialog">
             <button type="button" class="modal__close" data-exit="close">
                 <div class="modal__pleace-img">
                 <svg class="modal__close-img">
@@ -1055,15 +1055,15 @@
                     </div>
                             </div>
                             
-                            <form class="form" action="/php/feedback.php" method="POST" name="form"> <!--Тег<form> устанавливает форму на веб-странице. -->
+                            <form class="form" action="/php/feedback.php" method="POST" name="form">
                                 <div class="form__group">
-                                <label for="input-email" class="form__label">Adress e-mail</label> <!--Название которое выше поля для ввода. for - нужен для связки id input'a и label.-->
-                                <input class="form__input form__width" type="text" placeholder="Adress e-mail" id="input-email" name="email" required oninvalid="this.setCustomValidity('Fill this place')" oninput="setCustomValidity('')"> <!-- placeholder - Текст который исчезает после ввода текста в input -->  <!-- Requiered request -->
+                                <label for="input-email" class="form__label">Adress e-mail</label>
+                                <input class="form__input form__width" type="text" placeholder="Adress e-mail" id="input-email" name="email" required oninvalid="this.setCustomValidity('Fill this place')" oninput="setCustomValidity('')"> 
                         </div>
 
                             <div class="form__group">
-                                <label for="textarea-message" class="form__label">Request</label> <!-- Request - запрос, заявка -->
-                                <textarea class="form__textarea" id="textarea-message" placeholder="Type your request..." name="message" required oninvalid="this.setCustomValidity('Fill this place')" oninput="setCustomValidity('')"></textarea> <!-- Requiered request -->
+                                <label for="textarea-message" class="form__label">Request</label>
+                                <textarea class="form__textarea" id="textarea-message" placeholder="Type your request..." name="message" required oninvalid="this.setCustomValidity('Fill this place')" oninput="setCustomValidity('')"></textarea>
                             </div>
                             
                             <div class="modal__form__button">

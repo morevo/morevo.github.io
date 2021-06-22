@@ -1,8 +1,8 @@
 // main: ../style.less
 
 .nav {
-  display: flex; /* Убрали пробелы между ссылками */
-  height: 100%; /* 100% высота, чтобы не ростягивались блоки вниз */
+  display: flex;
+  height: 100%;
 
   @media @mobile {
     // Media for nav
@@ -16,27 +16,25 @@
       right: -290px;
       // position: fixed;
     }
-  } // При сужении до ~767 делать навигацию display-none, и проявлять бургер. По клику на бергер мы появляем навигацию но немного уменьшеную.
+  }
 }
 
 .nav__item {
-  /* Для нашей выезжающей иконки на кнопке */
-  position: relative; /* Для позиции иконки */
+  position: relative;
   display: flex;
-  font-size: 0.93rem; /* 14px/15px = 0.93rem */
+  font-size: 0.93rem;
   color: @black;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
   border: 1px solid @black;
   border-radius: 20px;
-  padding: 0.66rem 2rem; /* Расширяем наш border 0.66rem = 10px*/
-  margin-left: 0.66rem; /* Добавляем расстояние между кнопками 0.66rem = 10px */
+  padding: 0.66rem 2rem;
+  margin-left: 0.66rem;
   transition: 0.2s linear;
-  overflow: hidden; /* Скрываем иконку до появления */
+  overflow: hidden;
 
-  @media @mobile {
-    // Media for nav
+  @media @mobile {  // Media for nav
     & {
       display: flex;
       transition: all 1s ease;
@@ -54,16 +52,14 @@
   }
 
   /* Modificators */
-
   &--icon {
-    /* Появление иконки на кнопке */
-    position: absolute; /* Относительное позиционирование иконки .nav__item */
+    position: absolute;
     left: -2rem;
     top: -2rem;
-    display: block; /* Делаем иконку блоком чтобы менять размер и (x,y) */
+    display: block;
     height: 20px;
     width: 20px;
-    filter: invert(0%); /* Инверсия черного цвета в белый */
+    filter: invert(0%);
     transition: 0.3s linear;
     fill: @white;
 
@@ -75,13 +71,13 @@
   }
 
   &--icon--right {
-    position: absolute; /* Относительное позиционирование иконки .nav__item */
+    position: absolute;
     right: -2rem;
     bottom: -2rem;
     display: block;
     height: 20px;
     width: 20px;
-    filter: invert(0%); /* Инверсия черного цвета в белый */
+    filter: invert(0%);
     transition: 0.3s linear;
     fill: @white;
 
@@ -101,46 +97,43 @@
   }
 
   .border {
-    /* Делаем движение по траэктории нашей границы кнопки */
     position: absolute;
     left: 0;
     top: 0;
     fill: none;
-    stroke: @white; /* Цвет обводки */
-    stroke-dasharray: 17 1; /* 17(Длинна линии) 1(Расстояние между линиями) Управляет видом пунктирной обводки */
-    stroke-dashoffset: 150; /* Задает смещение пунктирной обводки относительно первоначального положения */
-    stroke-width: 4px; /* Толщина обводки */
+    stroke: @white;
+    stroke-dasharray: 17 1;
+    stroke-dashoffset: 150;
+    stroke-width: 4px;
     transition: 1s ease-in-out;
 
     @media @mobile {
       & {
-        stroke: @white; /* Цвет обводки */
-        stroke-dasharray: 0; /* 17(Длинна линии) 1(Расстояние между линиями) Управляет видом пунктирной обводки */
-        stroke-dashoffset: 0; /* Задает смещение пунктирной обводки относительно первоначального положения */
-        stroke-width: 0; /* Толщина обводки */
+        stroke: @white;
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+        stroke-width: 0;
       }
     }
   }
 
   &:hover svg {
-    stroke-dashoffset: -480; /* Возвращаем в исходное положение нашу линию движения */
+    stroke-dashoffset: -480;
   }
 
   &:hover {
     background-color: @black;
     color: @white;
-    box-shadow: 0 0 13px rgba(0, 0, 0, 0.5); /* Добавляем тень кнопкам */
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
     background-position: 0;
   }
 
   &:hover &--icon {
-    /* Меняем положение иконки при наведении на кнопку */
     left: 7px;
     top: 9px;
   }
 
   &:hover &--icon--right {
-    /* Меняем положение 2 иконки при наведении на btn */
     right: 6px;
     bottom: 8px;
   }

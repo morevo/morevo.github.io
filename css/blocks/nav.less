@@ -34,7 +34,8 @@
   transition: 0.2s linear;
   overflow: hidden;
 
-  @media @mobile {  // Media for nav
+  @media @mobile {
+    // Media for nav
     & {
       display: flex;
       transition: all 1s ease;
@@ -46,9 +47,13 @@
       font-size: 0.8rem;
 
       margin-bottom: 3px;
-      
+
       background: @white;
     }
+  }
+
+  @media @mobile867px {
+    padding: 0.5rem 1.3rem;
   }
 
   /* Modificators */
@@ -68,6 +73,10 @@
         display: none;
       }
     }
+
+    @media @mobile867px {
+      display: none;
+    }
   }
 
   &--icon--right {
@@ -85,6 +94,10 @@
       & {
         display: none;
       }
+    }
+
+    @media @mobile867px {
+      display: none;
     }
   }
 
@@ -114,6 +127,10 @@
         stroke-dashoffset: 0;
         stroke-width: 0;
       }
+    }
+
+    @media @mobile867px {
+      stroke: none;
     }
   }
 
